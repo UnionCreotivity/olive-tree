@@ -7,7 +7,7 @@
 }
 
 body {
-    //     background-image: url(/src/assets/images/bg.png);
+    //     background-image: url(images/bg.png);
     background-size: cover;
     background-repeat: repeat;
     //   width: 100%;
@@ -15,7 +15,7 @@ body {
 }
 
 .contanier {
-    background-image: url(/src/assets/images/bgNEW.png);
+    background-image: url(../images/bgNEW.png);
     // background-size: 180%;
     background-size: 190%;
     background-repeat: no-repeat;
@@ -45,7 +45,7 @@ body {
     }
 
     @media all and (max-width:1024px) {
-        background-image: url(/src/assets/images/bg.png);
+        background-image: url(../images/bg.png);
         background-size: 320% 100%;
         padding-bottom: 0vw;
     }

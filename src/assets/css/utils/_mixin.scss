@@ -155,7 +155,7 @@
 
 @mixin cardContentBox() {
     // background-color: rgba(0, 0, 0, 0.473);
-    background-image: url(/src/assets/images/back_blur_bg.png);
+    background-image: url(../images/back_blur_bg.png);
     // background-position: center;
     background-size: 11.7vw;
     padding-top: 3vw;
@@ -252,7 +252,7 @@
         }
 
         @media all and (max-width:500px) {
-            width: 59.65vw;
+            width: 59.9vw;
         }
     }
 }
