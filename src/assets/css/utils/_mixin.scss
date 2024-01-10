@@ -1,0 +1,276 @@
+@mixin cardBoxSet() {
+    border-radius: 13%;
+    width: 11.7vw;
+    height: 16.4vw;
+    position: relative;
+    z-index: 2;
+
+    @media all and (max-width:1440px) {
+        width: 15vw;
+        height: 20vw;
+    }
+
+    @media all and (max-width:1024px) {
+        width: 42vw;
+        height: 57vw;
+        margin-top: 20vw;
+    }
+
+    @media all and (max-width:500px) {
+        width: 54vw;
+        height: 71vw;
+        margin-top: 23vw;
+    }
+}
+
+
+@mixin cardFontBackSet() {
+    position: absolute;
+    backface-visibility: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 11.7vw;
+    height: 16.4vw;
+    // width: 300px;
+    // height: 420px;
+    border: 10px solid white;
+    border-radius: 6%;
+    overflow: hidden;
+
+    @media all and (max-width:1680px) {
+        border: 7px solid white;
+    }
+
+    @media all and (max-width:1440px) {
+        border: 5.5px solid white;
+        width: 15vw;
+        height: 20vw;
+    }
+
+    @media all and (max-width:1024px) {
+        width: 42vw;
+        height: 57vw;
+        border: 10px solid white;
+        border-radius: 6%;
+    }
+
+    @media all and (max-width:500px) {
+        border: 6px solid white;
+        border-radius: 6%;
+        width: 54vw;
+        height: 71vw;
+    }
+}
+
+@mixin cardPageNameBox() {
+    display: flex;
+    margin-top: 18.5vw;
+    z-index: 33;
+    text-align: center;
+    justify-content: center;
+
+    @media all and (max-width:1440px) {
+        margin-top: 22.5vw;
+    }
+
+    @media all and (max-width:1024px) {
+        margin-top: 68vw;
+    }
+
+    @media all and (max-width:500px) {
+        margin-top: 78vw;
+    }
+}
+
+@mixin cardPageIcon() {
+    padding-top: 2px;
+    display: block;
+    align-items: center;
+    align-self: center;
+
+    img {
+        width: 25px;
+        align-items: center;
+        align-self: center;
+        display: block;
+
+        @media all and (max-width:1680px) {
+            width: 18px;
+        }
+
+        @media all and (max-width:1440px) {
+            width: 16px;
+        }
+
+        @media all and (max-width:1366px) {
+            width: 14px;
+        }
+
+        @media all and (max-width:1024px) {
+            width: 26px;
+        }
+
+        @media all and (max-width:500px) {
+            width: 3.5vw;
+        }
+    }
+}
+
+@mixin cardPageNameText() {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.2vw;
+    text-align: center;
+    font-weight: 600;
+    color: #4f4f4f;
+    margin-left: 0.8vw;
+    letter-spacing: 0.07em;
+
+    @media all and (max-width:1024px) {
+        font-size: 3.5vw;
+        margin-left: 2vw;
+        letter-spacing: 0.1em;
+
+    }
+
+    @media all and (max-width:500px) {
+        font-size: 4.6vw;
+        letter-spacing: 0.1em;
+        margin-left: 2vw;
+    }
+}
+
+@mixin cardTitle() {
+    font-size: 1.2vw;
+    color: #adbc8a;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    z-index: 5;
+    opacity: 0;
+
+    @media all and (max-width:1024px) {
+        font-size: 4.5vw;
+    }
+}
+
+@mixin cardContentBox() {
+    // background-color: rgba(0, 0, 0, 0.473);
+    background-image: url(/src/assets/images/back_blur_bg.png);
+    // background-position: center;
+    background-size: 11.7vw;
+    padding-top: 3vw;
+    z-index: 30;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 7vw;
+    position: relative;
+    z-index: 10;
+    opacity: 0;
+
+    @media all and (max-width:1440px) {
+        background-size: cover;
+        padding-top: 4vw;
+    }
+
+    @media all and (max-width:1024px) {
+        background-size: 44.5vw;
+        background-position: center;
+        padding-top: 11vw;
+        padding-bottom: 15vw;
+    }
+
+    @media all and (max-width:500px) {
+        background-size: cover;
+        padding-top: 13vw;
+    }
+}
+
+@mixin cardContent() {
+    margin-top: 1.2vw;
+    font-size: 0.7vw;
+    font-family: '微軟正黑體';
+    letter-spacing: 0.1em;
+    line-height: 1.6vw;
+    z-index: 100;
+    color: white;
+    opacity: 0;
+    padding-left: 0.2vw;
+
+    @media all and (max-width:1440px) {
+        font-size: 0.9vw;
+        line-height: 2.2vw;
+    }
+
+    @media all and (max-width:1024px) {
+        font-size: 2.5vw;
+        line-height: 6vw;
+        margin-top: 4vw;
+    }
+
+    @media all and (max-width:500px) {
+        font-size: 3.2vw;
+        line-height: 8vw;
+    }
+
+    @media all and (max-width:500px) {
+        padding-left: 1.5vw;
+    }
+}
+
+@mixin envelope() {
+    position: absolute;
+    z-index: 10;
+    bottom: -0.5vw;
+    left: -0.65vw;
+
+    @media all and (max-width:1440px) {
+        left: -0.75vw;
+    }
+
+    @media all and (max-width:1024px) {
+        left: -2.2vw;
+        bottom: -1.5vw;
+    }
+
+    @media all and (max-width:500px) {
+        left: -3vw;
+        bottom: -1.5vw;
+    }
+
+    img {
+        width: 13vw;
+
+        @media all and (max-width:1440px) {
+            width: 16.5vw;
+        }
+
+        @media all and (max-width:1024px) {
+            width: 46.5vw;
+        }
+
+        @media all and (max-width:500px) {
+            width: 59.65vw;
+        }
+    }
+}
+
+
+@mixin cardShadow() {
+    position: absolute;
+    z-index: 1;
+    left: 1.8vw;
+    top: 0.3vw;
+
+    img {
+        width: 11.7vw;
+        height: 17.5vw;
+
+        @media all and (max-width:500px) {
+            width: 60.7vw;
+            height: 78.5vw;
+        }
+    }
+}

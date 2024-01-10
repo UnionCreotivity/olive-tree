@@ -1,0 +1,89 @@
+.footer-info {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    z-index: 10;
+    color: #808080;
+    text-align: center;
+    font-family: 'Noto Serif TC', serif;
+    align-self: center;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 12pt;
+    padding-bottom: 0.6vw;
+
+
+    @media all and (max-width:1440px) {
+        font-size: 0.8vw;
+    }
+
+    @media all and (max-width:1024px) {
+        font-size: 2.3vw;
+        padding-bottom: 3.5vw;
+    }
+
+    @media all and (max-width:500px) {
+        padding-bottom: 5vw;
+        font-size: 12px;
+    }
+
+    .copy-right {
+        margin-right: 1.5vw;
+        letter-spacing: 0.1em;
+    }
+
+    .address {
+        margin-right: 1.5vw;
+        letter-spacing: 0.1em;
+
+        @media all and (max-width:1024px) {
+            display: none;
+        }
+    }
+
+    .phone {
+        margin-right: 1.5vw;
+        letter-spacing: 0.1em;
+
+        @media all and (max-width:1024px) {
+            display: none;
+        }
+    }
+
+    .email-box {
+        display: block;
+        cursor: pointer;
+
+        @media all and (max-width:1024px) {
+            display: none;
+        }
+
+        img {
+            display: block;
+            width: 40px;
+        }
+    }
+}
+
+.line {
+    position: absolute;
+    right: 2vw;
+    bottom: 3vw;
+    cursor: pointer;
+    z-index: 99;
+
+    @media all and (max-width:1024px) {
+        right: 7vw;
+        bottom: 10vw;
+    }
+
+    img {
+        width: 2.7vw;
+        min-width: 55px;
+
+        @media all and (max-width:1024px) {
+            width: 7vw;
+        }
+    }
+}

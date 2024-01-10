@@ -1,0 +1,57 @@
+.header {
+    display: flex;
+    width: 100%;
+    // border: 1px solid red;
+    padding: 2.5vw 10vw;
+    justify-content: space-between;
+    z-index: 99;
+    position: relative;
+    background-color: none;
+    background: none;
+    position: absolute;
+    top: 0px;
+
+    @media all and (max-width:1024px) {
+        position: fixed;
+        padding: 3.5vw 7vw;
+        top: 0px;
+    }
+
+    @media all and (max-width:500px) {
+
+        padding: 5vw 7vw;
+
+    }
+
+    .logo-box {
+
+        display: block;
+        align-self: center;
+
+        img {
+            width: 13vw;
+
+            @media all and (max-width:1024px) {
+                width: 38vw;
+            }
+        }
+    }
+
+    .menu-btn {
+        display: none;
+
+        align-self: center;
+
+        @media all and (max-width:1024px) {
+            display: block;
+        }
+
+        img {
+            width: 7vw;
+
+            @media all and (max-width:500px) {
+                width: 9vw;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.case-content {
+
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10vw;
+
+    .flower {
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 25%;
+        }
+    }
+
+    .text {
+        display: flex;
+        justify-content: center;
+        margin-top: 5vw;
+
+        img {
+            width: 15%;
+        }
+    }
+}

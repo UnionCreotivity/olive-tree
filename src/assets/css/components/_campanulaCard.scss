@@ -1,0 +1,477 @@
+.campanula-box {
+    @include cardBoxSet();
+
+    .card {
+        .font {
+            background: linear-gradient(to bottom, rgba(208, 211, 196, 1) 2%, rgba(167, 173, 145, 1) 27%, rgba(145, 152, 110, 1) 60%, rgba(128, 141, 103, 1) 81%, rgba(101, 122, 92, 1) 100%);
+            @include cardFontBackSet();
+
+            .item-img {
+
+                z-index: 2;
+
+                img {
+                    width: 6vw;
+
+                    @media all and (max-width:1440px) {
+                        width: 8vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        width: 20vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        width: 26vw;
+                    }
+                }
+            }
+
+            .campanula {
+                position: absolute;
+                left: 1.1vw;
+                top: 3vw;
+                z-index: 3;
+
+                @media all and (max-width:2055px) {
+                    top: 3.2vw;
+                }
+
+                @media all and (max-width:1440px) {
+                    left: 1.6vw;
+                }
+
+                @media all and (max-width:1024px) {
+                    left: 6vw;
+                    top: 13vw;
+                }
+
+                @media all and (max-width:500px) {
+                    top: 12vw;
+                    left: 7vw;
+                }
+            }
+
+            .campanula-component1 {
+                position: absolute;
+                right: 1.3vw;
+                bottom: 2.8vw;
+                z-index: 2;
+
+                @media all and (max-width:2055px) {
+                    bottom: 3.5vw;
+                    right: 1.5vw;
+                }
+
+                @media all and (max-width:1920px) {
+                    bottom: 3vw;
+                    right: 1.2vw;
+                }
+
+                @media all and (max-width:1440px) {
+                    bottom: 3.2vw;
+                    right: 1.8vw;
+                }
+
+                @media all and (max-width:1024px) {
+                    left: 25.7vw;
+                    top: 23.5vw;
+                }
+
+                @media all and (max-width:500px) {
+                    left: 33vw;
+                    top: 26vw;
+                }
+
+                img {
+                    width: 2.5vw;
+
+                    @media all and (max-width:1440px) {
+                        width: 3vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        width: 9vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        width: 11vw;
+                    }
+                }
+            }
+
+            .campanula-component2 {
+                position: absolute;
+                right: 0vw;
+                bottom: 2vw;
+                z-index: 3;
+
+                @media all and (max-width:1920px) {
+                    bottom: 2vw;
+                    right: 0vw;
+                }
+
+                @media all and (max-width:1440px) {
+                    right: 0.3vw;
+                }
+
+                @media all and (max-width:1024px) {
+                    left: 25.5vw;
+                    top: 28.5vw;
+                }
+
+                @media all and (max-width:500px) {
+                    top: 31.5vw;
+                    left: 32vw;
+                }
+
+                img {
+                    width: 4vw;
+
+                    @media all and (max-width:1920px) {
+                        width: 3.8vw;
+                    }
+
+                    @media all and (max-width:1440px) {
+                        width: 4.7vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        width: 13vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        width: 17vw;
+                    }
+                }
+            }
+
+            .campanula-component3 {
+                position: absolute;
+                right: -0.3vw;
+                bottom: 2.1vw;
+                z-index: 2;
+
+                @media all and (max-width:2055px) {
+                    bottom: 1.9vw;
+                    right: 0vw;
+                }
+
+                @media all and (max-width:1024px) {
+                    bottom: 7.9vw;
+                    right: 1.5vw;
+                }
+
+                @media all and (max-width:500px) {
+                    right: 1vw;
+                    top: 41vw;
+                }
+
+                img {
+                    width: 3.6vw;
+
+                    @media all and (max-width:1440px) {
+                        width: 4.2vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        width: 11vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        width: 15vw;
+                    }
+                }
+            }
+
+            .campanula-component4 {
+                position: absolute;
+                left: 0vw;
+                top: 3.2vw;
+                z-index: 4;
+
+                @media all and (max-width:1440px) {
+                    left: 0.3vw;
+                    top: 3vw;
+                }
+
+                @media all and (max-width:1024px) {
+                    left: 1vw;
+                    top: 13vw;
+                }
+
+                @media all and (max-width:500px) {
+                    top: 13vw;
+                    left: 2vw;
+                }
+
+                img {
+                    width: 1.7vw;
+
+                    @media all and (max-width:1440px) {
+                        width: 2vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        width: 6vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        width: 7vw;
+                    }
+                }
+            }
+
+            .campanula-component5 {
+                position: absolute;
+                left: 1.4vw;
+                top: 4.8vw;
+                z-index: 4;
+
+                @media all and (max-width:1440px) {
+                    left: 2.2vw;
+                    top: 5vw;
+                }
+
+                @media all and (max-width:1024px) {
+                    left: 6.3vw;
+                    top: 17.5vw;
+                }
+
+                @media all and (max-width:500px) {
+                    top: 19vw;
+                    left: 8vw;
+                }
+
+                img {
+                    width: 1.7vw;
+
+                    @media all and (max-width:1440px) {
+                        width: 2vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        width: 6vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        width: 7vw;
+                    }
+                }
+            }
+
+            .campanula-component6 {
+                position: absolute;
+                left: 2.6vw;
+                top: 6.4vw;
+                z-index: 4;
+
+                @media all and (max-width:1440px) {
+                    left: 3.5vw;
+                    top: 7.5vw;
+                }
+
+                @media all and (max-width:1024px) {
+                    left: 11.3vw;
+                    top: 23vw;
+                }
+
+                @media all and (max-width:500px) {
+                    top: 26vw;
+                    left: 13vw;
+                }
+
+                img {
+                    width: 1.7vw;
+
+                    @media all and (max-width:1440px) {
+                        width: 2vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        width: 6vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        width: 7vw;
+                    }
+                }
+            }
+
+            .campanula-component7 {
+                position: absolute;
+                left: 3.5vw;
+                top: 8.2vw;
+                z-index: 4;
+
+                @media all and (max-width:1440px) {
+                    left: 4.6vw;
+                    top: 10vw;
+                }
+
+                @media all and (max-width:1024px) {
+                    left: 14.3vw;
+                    top: 30vw;
+                }
+
+                @media all and (max-width:500px) {
+                    top: 34vw;
+                    left: 17vw;
+                }
+
+                img {
+                    width: 1.7vw;
+
+                    @media all and (max-width:1440px) {
+                        width: 2vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        width: 6vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        width: 7vw;
+                    }
+                }
+            }
+
+            .campanula-component8 {
+                position: absolute;
+                left: 4.3vw;
+                top: 10vw;
+                z-index: 4;
+
+                @media all and (max-width:1440px) {
+                    left: 5.7vw;
+                    top: 12.5vw;
+                }
+
+                @media all and (max-width:1024px) {
+                    left: 16.3vw;
+                    top: 37vw;
+                }
+
+                @media all and (max-width:500px) {
+                    top: 42.5vw;
+                    left: 21vw;
+                }
+
+                img {
+                    width: 1.7vw;
+
+                    @media all and (max-width:1440px) {
+                        width: 2vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        width: 6vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        width: 7vw;
+                    }
+                }
+            }
+        }
+
+        .back {
+            transform: rotateY(180deg);
+            background: linear-gradient(to bottom, rgba(208, 211, 196, 1) 2%, rgba(167, 173, 145, 1) 27%, rgba(145, 152, 110, 1) 60%, rgba(128, 141, 103, 1) 81%, rgba(101, 122, 92, 1) 100%);
+
+            @include cardFontBackSet();
+
+            .back-content {
+
+                .item-img {
+                    position: absolute;
+                    left: 0.1vw;
+                    top: 3.5vw;
+                    z-index: 1;
+
+                    @media all and (max-width:1024px) {
+                        left: 8vw;
+                        top: 25vw;
+                    }
+
+                    img {
+                        width: 11.3vw;
+
+                        @media all and (max-width:1024px) {
+                            width: 13vw;
+                        }
+                    }
+                }
+            }
+
+            .text-content {
+                @include cardContentBox();
+
+                .title {
+                    @include cardTitle();
+                }
+
+                .content {
+                    @include cardContent();
+                }
+
+            }
+        }
+    }
+
+    .envelope {
+        @include envelope();
+
+        .envelope-text-svg {
+            position: absolute;
+            top: 2.4vw;
+            right: 1.7vw;
+
+            @media all and (max-width:1440px) {
+                top: 3vw;
+            }
+
+            @media all and (max-width:1024px) {
+                top: 8.1vw;
+                right: 5.7vw;
+            }
+
+            @media all and (max-width:500px) {
+                top: 10.5vw;
+                right: 7vw;
+            }
+
+            img {
+                width: 2.3vw;
+
+                @media all and (max-width:1440px) {
+                    width: 2.8vw;
+                }
+
+                @media all and (max-width:1024px) {
+                    width: 8vw;
+                }
+
+                @media all and (max-width:500px) {
+                    width: 10vw;
+                }
+            }
+        }
+    }
+
+    .card-shadow {
+        @include cardShadow();
+    }
+
+    .card-page-name-box {
+        @include cardPageNameBox();
+
+        .icon {
+            @include cardPageIcon();
+        }
+
+        .page-name {
+            @include cardPageNameText();
+        }
+    }
+}

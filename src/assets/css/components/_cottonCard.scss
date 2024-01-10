@@ -1,0 +1,246 @@
+.cotton-box {
+    @include cardBoxSet();
+
+    .card {
+
+        .font {
+            background: linear-gradient(to bottom, rgba(208, 211, 196, 1) 2%, rgba(167, 173, 145, 1) 27%, rgba(145, 152, 110, 1) 60%, rgba(128, 141, 103, 1) 81%, rgba(101, 122, 92, 1) 100%);
+            @include cardFontBackSet();
+
+            .item-img {
+                position: absolute;
+                left: 0.5vw;
+                top: 2vw;
+                z-index: 1;
+
+                @media all and (max-width:1024px) {
+                    left: 4vw;
+                    top: 8vw;
+                }
+
+                @media all and (max-width:500px) {
+                    left: 5.5vw;
+
+                }
+
+                img {
+                    width: 9vw;
+
+                    @media all and (max-width:1440px) {
+                        width: 11.5vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        width: 30vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        width: 39vw;
+                    }
+                }
+
+                .cotton-component {
+                    position: absolute;
+                    top: 4.8vw;
+
+                    img {
+                        width: 3.5vw;
+
+                        @media all and (max-width:1024px) {
+                            width: 7vw;
+                        }
+                    }
+                }
+
+                .cotton-component2 {
+                    position: absolute;
+                    top: 0vw;
+                    right: 0vw;
+
+                    img {
+                        width: 3.5vw;
+                    }
+                }
+
+                .cotton-component3 {
+                    position: absolute;
+                    top: 1.4vw;
+                    left: 2vw;
+
+                    @media all and (max-width:1440px) {
+                        top: 2.1vw;
+                        left: 2.7vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        top: 5vw;
+                        left: 7vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        top: 6vw;
+                        left: 9vw;
+                    }
+
+                    img {
+                        width: 3.8vw;
+
+                        @media all and (max-width:1440px) {
+                            width: 4.5vw;
+                        }
+
+                        @media all and (max-width:1024px) {
+                            width: 12vw;
+                        }
+
+                        @media all and (max-width:500px) {
+                            width: 16vw;
+                        }
+                    }
+                }
+
+
+                .cotton-component4 {
+                    position: absolute;
+                    top: 5.8vw;
+                    right: 0.3vw;
+
+                    @media all and (max-width:1440px) {
+                        top: 7.5vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        top: 20.5vw;
+                        right: 2vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        top: 26vw;
+                        right: 2vw;
+                    }
+
+                    img {
+                        width: 4vw;
+
+                        @media all and (max-width:1440px) {
+                            width: 5vw;
+                        }
+
+                        @media all and (max-width:1024px) {
+                            width: 12vw;
+                        }
+
+                        @media all and (max-width:500px) {
+                            width: 16vw;
+                        }
+                    }
+                }
+            }
+        }
+
+        .back {
+            transform: rotateY(180deg);
+            background: linear-gradient(to bottom, rgba(208, 211, 196, 1) 2%, rgba(167, 173, 145, 1) 27%, rgba(145, 152, 110, 1) 60%, rgba(128, 141, 103, 1) 81%, rgba(101, 122, 92, 1) 100%);
+
+            @include cardFontBackSet();
+
+            .back-content {
+
+                .item-img {
+                    position: absolute;
+                    left: 1vw;
+                    top: 2vw;
+                    z-index: 1;
+
+                    @media all and (max-width:1440px) {
+                        left: 2vw;
+                        top: 3vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        left: 4vw;
+                        top: 2vw;
+                    }
+
+                    img {
+                        width: 9vw;
+
+                        @media all and (max-width:1024px) {
+                            width: 30vw;
+                        }
+                    }
+                }
+            }
+
+            .text-content {
+                @include cardContentBox();
+
+                .title {
+                    @include cardTitle();
+                }
+
+                .content {
+                    @include cardContent();
+                }
+
+
+            }
+        }
+    }
+
+    .envelope {
+        @include envelope();
+
+        .envelope-text-svg {
+            position: absolute;
+            top: 2.4vw;
+            right: 1.7vw;
+
+            @media all and (max-width:1440px) {
+                top: 3vw;
+            }
+
+            @media all and (max-width:1024px) {
+                top: 8.1vw;
+                right: 5.7vw;
+            }
+
+            @media all and (max-width:500px) {
+                top: 10.5vw;
+                right: 7vw;
+            }
+
+            img {
+                width: 3.5vw;
+
+                @media all and (max-width:1440px) {
+                    width: 4vw;
+                }
+
+                @media all and (max-width:1024px) {
+                    width: 12vw;
+                }
+
+                @media all and (max-width:500px) {
+                    width: 14vw;
+                }
+            }
+        }
+    }
+
+    .card-shadow {
+        @include cardShadow();
+    }
+
+    .card-page-name-box {
+        @include cardPageNameBox();
+
+        .icon {
+            @include cardPageIcon();
+        }
+
+        .page-name {
+            @include cardPageNameText();
+        }
+    }
+}

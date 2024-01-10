@@ -1,0 +1,391 @@
+.lily-box {
+    @include cardBoxSet();
+
+    .card {
+
+        .font {
+            background: linear-gradient(to bottom, rgba(208, 211, 196, 1) 2%, rgba(167, 173, 145, 1) 27%, rgba(145, 152, 110, 1) 60%, rgba(128, 141, 103, 1) 81%, rgba(101, 122, 92, 1) 100%);
+
+            @include cardFontBackSet();
+
+            .item-img {
+                position: absolute;
+                left: 0.5vw;
+                top: 2vw;
+
+                @media all and (max-width:1440px) {
+                    left: 1vw;
+                    top: 2.3vw;
+                }
+
+                @media all and (max-width:1024px) {
+                    left: 3.5vw;
+                    top: 7vw;
+                }
+
+                @media all and (max-width:300px) {
+                    left: 1vw;
+                }
+
+                img {
+                    z-index: 2;
+                    width: 10vw;
+
+                    @media all and (max-width:1440px) {
+                        width: 12.5vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        width: 35vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        width: 45vw;
+                    }
+                }
+
+                .lily-component1 {
+                    position: absolute;
+                    top: 2.5vw;
+                    right: 2.6vw;
+                    opacity: 0.8;
+                    z-index: 1;
+
+                    @media all and (max-width:1440px) {
+                        top: 3.2vw;
+                        right: 3.5vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        top: 8.8vw;
+                        right: 9.4vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        right: 12vw;
+                        top: 11.5vw;
+                    }
+
+                    img {
+                        width: 1.65vw;
+
+                        @media all and (max-width:1440px) {
+                            width: 2vw;
+                        }
+
+                        @media all and (max-width:1024px) {
+                            width: 5.2vw;
+                        }
+
+                        @media all and (max-width:500px) {
+                            width: 7vw;
+                        }
+                    }
+                }
+
+                .lily-component2 {
+                    position: absolute;
+                    top: 2.2vw;
+                    right: 3.1vw;
+                    z-index: 10;
+                    opacity: 0.8;
+
+                    @media all and (max-width:1440px) {
+                        top: 2.6vw;
+                        right: 3.8vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        top: 8vw;
+                        right: 10.5vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        top: 10vw;
+                        right: 14vw;
+                    }
+
+                    img {
+                        width: 1.3vw;
+
+                        @media all and (max-width:1440px) {
+                            width: 1.6vw;
+                        }
+
+                        @media all and (max-width:1024px) {
+                            width: 4vw;
+                        }
+
+                        @media all and (max-width:500px) {
+                            width: 5vw;
+                        }
+                    }
+                }
+
+                .lily-component3 {
+                    position: absolute;
+                    top: 1.6vw;
+                    right: 3.3vw;
+                    opacity: 0.8;
+                    // mix-blend-mode: difference;
+
+                    @media all and (max-width:1440px) {
+                        top: 2.2vw;
+                        right: 3.8vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        top: 7vw;
+                        right: 11.3vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        top: 8.3vw;
+                        right: 14.7vw;
+                    }
+
+                    img {
+                        width: 1.2vw;
+
+                        @media all and (max-width:1440px) {
+                            width: 1.4vw;
+                        }
+
+                        @media all and (max-width:1024px) {
+                            width: 3.4vw;
+                        }
+
+                        @media all and (max-width:500px) {
+                            width: 4.5vw;
+                            // display: none;
+                        }
+                    }
+                }
+
+                .lily-component4 {
+                    position: absolute;
+                    top: 1.2vw;
+                    right: 3.8vw;
+                    z-index: 2;
+                    opacity: 0.8;
+                    z-index: 23;
+
+                    @media all and (max-width:1440px) {
+                        top: 1.6vw;
+                        right: 4.5vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        top: 6vw;
+                        right: 12.8vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        top: 6.8vw;
+                        right: 16.3vw;
+                    }
+
+                    img {
+                        width: 1.1vw;
+
+                        @media all and (max-width:1440px) {
+                            width: 1.3vw;
+                        }
+
+                        @media all and (max-width:1024px) {
+                            width: 3.1vw;
+                        }
+
+                        @media all and (max-width:500px) {
+                            width: 4vw;
+                            // display: none;
+                        }
+                    }
+                }
+
+                .lily-component5 {
+                    position: absolute;
+                    top: 1.7vw;
+                    right: 4.1vw;
+                    opacity: 0.8;
+                    z-index: 21;
+
+                    @media all and (max-width:1440px) {
+                        top: 2vw;
+                        right: 4.7vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        top: 7vw;
+                        right: 13.2vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        top: 8.5vw;
+                        right: 17.5vw;
+                    }
+
+                    img {
+                        width: 1.1vw;
+
+                        @media all and (max-width:1440px) {
+                            width: 1.3vw;
+                        }
+
+                        @media all and (max-width:1024px) {
+                            width: 3.2vw;
+                        }
+
+                        @media all and (max-width:500px) {
+                            width: 4vw;
+                            // display: none;
+                        }
+                    }
+                }
+
+                .lily-component6 {
+                    position: absolute;
+                    top: 2.2vw;
+                    right: 4.3vw;
+                    opacity: 0.8;
+                    z-index: 1;
+
+                    @media all and (max-width:1440px) {
+                        top: 2.7vw;
+                        right: 5vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        top: 9vw;
+                        right: 14.3vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        top: 11.3vw;
+                        right: 18.5vw;
+                    }
+
+                    img {
+                        width: 1.2vw;
+
+                        @media all and (max-width:1440px) {
+                            width: 1.4vw;
+                        }
+
+                        @media all and (max-width:1024px) {
+                            width: 3.3vw;
+                        }
+
+                        @media all and (max-width:500px) {
+                            width: 3.7vw;
+                            // display: none;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .back {
+            transform: rotateY(180deg);
+            background: linear-gradient(to bottom, rgba(208, 211, 196, 1) 2%, rgba(167, 173, 145, 1) 27%, rgba(145, 152, 110, 1) 60%, rgba(128, 141, 103, 1) 81%, rgba(101, 122, 92, 1) 100%);
+            z-index: 33;
+
+            @include cardFontBackSet();
+
+            .back-content {
+
+                .item-img {
+                    position: absolute;
+                    left: 0.5vw;
+                    top: 3vw;
+                    z-index: 1;
+
+                    @media all and (max-width:1440px) {
+                        left: 2vw;
+                        top: 5vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        left: 15vw;
+                        top: 10vw;
+                    }
+
+                    img {
+                        width: 10vw;
+                    }
+                }
+            }
+
+            .text-content {
+                @include cardContentBox();
+
+                .title {
+                    @include cardTitle();
+                }
+
+                .content {
+                    @include cardContent();
+                }
+
+
+            }
+        }
+    }
+
+    .envelope {
+        @include envelope();
+
+        .envelope-text-svg {
+            position: absolute;
+            top: 2.4vw;
+            right: 1.7vw;
+
+            @media all and (max-width:1440px) {
+                top: 3vw;
+            }
+
+            @media all and (max-width:1024px) {
+                top: 8.5vw;
+                right: 5.7vw;
+            }
+
+            @media all and (max-width:500px) {
+                top: 10.5vw;
+                right: 7vw;
+            }
+
+            img {
+                width: 2vw;
+
+                @media all and (max-width:1440px) {
+                    width: 2.5vw;
+                }
+
+                @media all and (max-width:1024px) {
+                    width: 7vw;
+                }
+
+                @media all and (max-width:500px) {
+                    width: 8.8vw;
+                }
+            }
+        }
+    }
+
+    .card-shadow {
+        @include cardShadow();
+    }
+
+    .card-page-name-box {
+        @include cardPageNameBox();
+
+        .icon {
+            @include cardPageIcon();
+        }
+
+        .page-name {
+            @include cardPageNameText();
+        }
+    }
+}

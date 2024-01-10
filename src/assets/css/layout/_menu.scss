@@ -1,0 +1,127 @@
+.menu-box {
+    max-width: 1024px;
+    background-color: white;
+    height: 0vh;
+    // z-index: 9999;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    overflow: hidden;
+    opacity: 0;
+
+    // display: none;
+    // height: calc(var(--vh, 2.8vh) * 100);
+
+    .menu-tree-shadow {
+        position: absolute;
+        top: 20vw;
+        right: -40%;
+        width: 75%;
+        transform: rotate(-10deg);
+        z-index: 0;
+        opacity: 0.7;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .close {
+        position: fixed;
+        top: 6vw;
+        right: 1.5vw;
+        z-index: 11;
+        width: 50px;
+        height: 50px;
+
+        // border: 1px solid red;
+        @media all and (max-width:1024px) {
+            right: 1.5vw;
+        }
+
+        img {
+            width: 30px;
+
+            @media all and (max-width:500px) {
+                width: 20px;
+            }
+        }
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: calc(var(--vh, 2.8vh) * 100);
+
+        margin: 0 auto;
+        justify-content: center;
+
+        @media all and (max-width:430px) {
+            justify-content: center;
+            // padding-bottom: 12vw;
+
+            // padding-bottom: calc(var(--vh, 2.8vh) * 12)
+        }
+
+        .item-box {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+            z-index: 2;
+
+
+        }
+
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            margin: 5vw 5vw;
+            width: 23%;
+
+            @media all and (max-width:809px) {
+                width: 35%;
+            }
+
+            div {
+                text-align: center;
+
+                img {
+                    width: 19vw;
+
+                    @media all and (max-width:500px) {
+                        width: 30vw;
+                    }
+                }
+            }
+
+            .text {
+                // font-size: 3vw;
+                font-size: 4vw;
+                font-family: 'Noto Serif TC', serif;
+                text-align: center;
+                font-weight: 500;
+                color: #4f4f4f;
+                margin-left: 0.8vw;
+                letter-spacing: 0.1em;
+                margin-top: 2vw;
+
+            }
+
+            .news {
+                img {
+                    width: 20.2vw;
+
+                    @media all and (max-width:500px) {
+                        width: 32.5vw;
+                    }
+                }
+            }
+        }
+
+    }
+}

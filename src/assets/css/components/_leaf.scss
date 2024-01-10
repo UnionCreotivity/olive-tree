@@ -1,0 +1,384 @@
+// .leaf-box {
+//     position: absolute;
+//     width: 100%;
+//     height: 100vh;
+//     top: 0px;
+//     left: 0px;
+//     z-index: 999;
+//     pointer-events: none;
+//     display: flex;
+//     overflow: hidden;
+//     opacity: 0;
+
+//     .left-leaf-box {
+//         width: 30%;
+//         height: 100vh;
+
+//         img {
+//             position: absolute;
+//         }
+
+//         #left-gray-leaf-1 {
+//             transform: rotate(40deg);
+//             width: 1.2vw;
+//             top: 5vw;
+//             left: 18vw;
+//             animation: deg40LeafAni calc(18s * var(--i)) linear infinite;
+//         }
+
+//         #left-gray-leaf-2 {
+//             transform: rotate(-35deg);
+//             width: 1.2vw;
+//             top: 10vw;
+//             left: 3vw;
+
+//             animation: degMinus35LeafAni calc(15s * var(--i)) linear infinite;
+//         }
+
+//         #left-gray-leaf-3 {
+//             transform: rotate(40deg);
+//             width: 1.3vw;
+//             bottom: 16vw;
+//             left: 12vw;
+//             animation: deg40LeafAni calc(18s * var(--i)) linear infinite;
+//         }
+
+//         #left-gray-leaf-4 {
+//             width: 1.2vw;
+//             bottom: 3vw;
+//             left: 17vw;
+//             animation: LeafAni calc(18s * var(--i)) linear infinite;
+//         }
+
+//         #left-green-leaf-1 {
+//             transform: rotate(60deg);
+//             width: 1.4vw;
+//             top: 15vw;
+//             left: 10vw;
+
+//             animation: deg50LeafAni calc(15s * var(--i)) linear infinite;
+//         }
+
+//         #left-green-leaf-2 {
+//             width: 2.1vw;
+//             bottom: 8vw;
+//             left: 7%;
+//             animation: LeafAni calc(18s * var(--i)) linear infinite;
+//         }
+
+//         #left-green-circle-1 {
+//             width: 0.9vw;
+//             top: 10vw;
+//             left: 13vw;
+//         }
+
+//         #left-green-circle-2 {
+//             width: 0.9vw;
+//             bottom: 19vw;
+//             left: 7%;
+//         }
+
+//         #left-green-circle-3 {
+//             width: 0.9vw;
+//             bottom: 15vw;
+//             left: 18vw;
+//         }
+
+//         #left-green-circle-4 {
+//             width: 0.9vw;
+//             bottom: 4vw;
+//             left: 23vw;
+//         }
+//     }
+
+//     .middle-leaf-box {
+//         width: 40%;
+//         height: 100vh;
+
+//         img {
+//             position: absolute;
+//         }
+
+//         #middle-white-left-1 {
+//             transform: rotate(-60deg);
+//             width: 1vw;
+//             top: 1.5vw;
+//             left: 33vw;
+
+//             animation: degMinus50LeafAni calc(15s * var(--i)) linear infinite;
+//         }
+
+//         #middle-white-left-2 {
+//             width: 1.4vw;
+//             top: 7vw;
+//             left: 33vw;
+//             animation: LeafAni calc(18s * var(--i)) linear infinite;
+//         }
+
+//         #middle-white-left-3 {
+//             transform: rotate(-50deg);
+//             width: 1.4vw;
+//             top: 7.5vw;
+//             right: 33vw;
+//             animation: degMinus50LeafAni calc(15s * var(--i)) linear infinite;
+
+//         }
+
+//         #middle-white-left-4 {
+//             bottom: 15vw;
+//             right: 25vw;
+//             width: 1.4vw;
+//             animation: LeafAni calc(18s * var(--i)) linear infinite;
+
+//         }
+
+//         #middle-green-leaf-1 {
+//             transform: rotate(50deg);
+//             width: 1.4vw;
+//             top: 2vw;
+//             left: 47vw;
+//             animation: deg50LeafAni calc(15s * var(--i)) linear infinite;
+//         }
+
+//         #middle-green-circle-1 {
+//             width: 0.9vw;
+//             left: 40vw;
+//             top: 2vw;
+//         }
+
+//         #middle-green-circle-2 {
+//             width: 0.9vw;
+//             left: 30vw;
+//             top: 6vw;
+//         }
+
+//         #middle-green-circle-3 {
+//             width: 0.9vw;
+//             right: 40vw;
+//             top: 3.5vw;
+//         }
+
+//         #middle-green-circle-4 {
+//             width: 0.9vw;
+//             right: 25vw;
+//             top: 12vw;
+//         }
+
+//         #middle-green-circle-5 {
+//             width: 0.9vw;
+//             right: 25vw;
+//             bottom: 22vw;
+//         }
+
+//         #middle-green-circle-6 {
+//             width: 0.9vw;
+//             left: 28vw;
+//             bottom: 20vw;
+//         }
+
+//         #middle-green-circle-7 {
+//             width: 0.9vw;
+//             left: 38vw;
+//             bottom: 17vw;
+//         }
+
+//         #middle-gray-leaf-1 {
+//             width: 0.8vw;
+//             right: 31vw;
+//             top: 2vw;
+//             animation: LeafAni calc(15s * var(--i)) linear infinite;
+//             // animation: LeafAni 20s linear infinite;
+//         }
+
+//         #middle-gray-leaf-2 {
+//             width: 0.9vw;
+//             right: 35vw;
+//             bottom: 5vw;
+//             animation: LeafAni calc(18s * var(--i)) linear infinite;
+//             // animation: LeafAni 20s linear infinite;
+//         }
+
+//         #middle-gray-leaf-3 {
+//             transform: rotate(-10deg);
+//             width: 0.9vw;
+//             left: 31vw;
+//             bottom: 15vw;
+//             animation: degMinus10LeafAni calc(18s * var(--i)) linear infinite;
+
+//         }
+//     }
+
+//     .right-leaf-box {
+//         width: 30%;
+//         height: 100vh;
+
+//         img {
+//             position: absolute;
+//         }
+
+//         #right-green-leaf-1 {
+//             width: 1.8vw;
+//             transform: rotate(60deg);
+//             right: 13vw;
+//             top: 7vw;
+//             animation: deg50LeafAni calc(18s * var(--i)) linear infinite;
+
+//         }
+
+//         #right-green-leaf-2 {
+//             width: 2.1vw;
+//             right: 5vw;
+//             bottom: 13vw;
+//             animation: LeafAni calc(15s * var(--i)) linear infinite;
+//         }
+
+//         #right-green-leaf-3 {
+//             transform: rotate(60deg);
+//             width: 1.3vw;
+//             right: 13vw;
+//             bottom: 3vw;
+//             animation: deg50LeafAni calc(18s * var(--i)) linear infinite;
+
+//         }
+
+//         #right-gray-leaf-1 {
+//             width: 0.9vw;
+//             right: 8vw;
+//             top: 11vw;
+//             animation: LeafAni calc(15s * var(--i)) linear infinite;
+//         }
+
+//         #right-gray-leaf-2 {
+//             width: 0.9vw;
+//             right: 12vw;
+//             bottom: 12vw;
+//             animation: LeafAni calc(18s * var(--i)) linear infinite;
+//         }
+
+//         #right-green-circle-1 {
+//             width: 0.9vw;
+//             right: 5vw;
+//             top: 3vw;
+//         }
+
+//         #right-green-circle-2 {
+//             width: 0.9vw;
+//             right: 10vw;
+//             top: 14vw;
+//         }
+
+//         #right-green-circle-3 {
+//             width: 0.9vw;
+//             right: 10vw;
+//             bottom: 20vw;
+//         }
+
+//         #right-green-circle-4 {
+//             width: 0.9vw;
+//             right: 17vw;
+//             bottom: 5vw;
+//         }
+
+//         #right-green-circle-5 {
+//             width: 0.9vw;
+//             right: 3vw;
+//             bottom: 7vw;
+//         }
+//     }
+// }
+
+
+.leaf1 {
+    position: absolute;
+    bottom: -15%;
+    left: 38vw;
+    z-index: 990;
+    width: 6%;
+    height: 20vh;
+    background: url('/src/assets/images/leaf/leaf_bg.svg') repeat;
+    background-size: 350%;
+    background-position: right 3em bottom 2em;
+    -webkit-mask: url('/src/assets/leaf/images/leaf.svg') no-repeat center center;
+    mask: url('/src/assets/images/leaf/leaf.svg') no-repeat center center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    animation: LeafAni 25s linear infinite;
+    animation-delay: 3s;
+    display: none;
+}
+
+.leaf2 {
+    position: absolute;
+    bottom: -13%;
+    left: 28vw;
+    z-index: 990;
+    width: 4%;
+    height: 13vh;
+    background: url('/src/assets/images/leaf/leaf_bg.svg') repeat;
+    background-size: 350%;
+    background-position: right 3em bottom 2em;
+    -webkit-mask: url('/src/assets/leaf/images/leaf2.svg') no-repeat center center;
+    mask: url('/src/assets/images/leaf/leaf2.svg') no-repeat center center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    animation: degMinus50LeafAni 20s linear infinite;
+    animation-delay: 0s;
+    display: none;
+}
+
+.leaf3 {
+    position: absolute;
+    bottom: -15%;
+    right: 28vw;
+    z-index: 990;
+    width: 4%;
+    height: 7vh;
+    background: url('/src/assets/images/leaf/leaf_bg.svg') repeat;
+    background-size: 350%;
+    background-position: right 3em bottom 2em;
+    -webkit-mask: url('/src/assets/leaf/images/leaf3.svg') no-repeat center center;
+    mask: url('/src/assets/images/leaf/leaf3.svg') no-repeat center center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    animation: degMinus35LeafAni 15s linear infinite;
+    animation-delay: 3.8s;
+    display: none;
+}
+
+.leaf4 {
+    position: absolute;
+    bottom: -14%;
+    right: 35vw;
+    z-index: 990;
+    width: 4%;
+    height: 20vh;
+    background: url('/src/assets/images/leaf/leaf_bg.svg') repeat;
+    background-size: 350%;
+    background-position: right 3em bottom 2em;
+    -webkit-mask: url('/src/assets/images/leaf/leaf4.svg') no-repeat center center;
+    mask: url('/src/assets/images/leaf/leaf4.svg') no-repeat center center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    animation: degMinus10LeafAni 22s linear infinite;
+    animation-delay: 4s;
+    display: none;
+}
+
+.leaf5 {
+    position: absolute;
+    bottom: -17%;
+    right: 50vw;
+    z-index: 990;
+    width: 4%;
+    height: 7vh;
+    background: url('/src/assets/images/leaf/leaf_bg.svg') repeat;
+    background-size: 350%;
+    background-position: right 3em bottom 2em;
+    -webkit-mask: url('/src/assets/images/leaf/leaf5.svg') no-repeat center center;
+    mask: url('/src/assets/images/leaf/leaf5.svg') no-repeat center center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    animation: deg40LeafAni 21s linear infinite;
+    animation-delay: 4.5s;
+    display: none;
+}
