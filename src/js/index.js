@@ -703,12 +703,32 @@ window.onload = function () {
         }
 
         function applyAnimation(width, translateX, translateY) {
-            tl.to(card, { y: -40, duration: 0.5, ease: "back.out(1.7)" })
+            tl
+                //加快版
+                // .to(card, { y: -50, duration: 0.3, ease: "back.out(3)" })
+                // .to(back, { duration: 0.8, rotationY: '0', ease: "power1.inOut", }, "<")
+                // .to(font, { duration: 0.8, rotationY: '-180', ease: "power1.inOut", }, "<")
+
+                //原版
+                // .to(card, { y: -40, duration: 0.5, ease: "back.out(1.7)" })
+                // .to(back, { duration: 0.8, rotationY: '0', ease: "power1.inOut", }, "<")
+                // .to(font, { duration: 0.8, rotationY: '-180', ease: "power1.inOut", }, "<")
+
+                //誇張版
+                .to(card, { y: -50, duration: 1.5, ease: "elastic.out(1.75,0.5)", })
+                // .to(card, { y: -50, duration: 1.5, ease: "elastic.inOut(1.75,0.5)", })
+                .to(back, { duration: 0.6, rotationY: '0', ease: "power1.inOut", }, "<0.2")
+                .to(font, { duration: 0.6, rotationY: '-180', ease: "power1.inOut", }, "<")
+
+                //承穎版
+                // .to(card, { y: -40, duration: 0.5, ease: "power4.out" })
+                // .to(back, { duration: 0.5, rotationY: '0', ease: "power1.out" }, "<")
+                // .to(font, { duration: 0.5, rotationY: '-180', ease: "power1.out" }, "<")
+
+
                 .to(shadow, { y: -40, duration: 0.5, ease: "back.out(1.7)" }, '<')
                 .to(shadow, { duration: 1.2, ease: "power1.out", opacity: 0 }, '<')
                 .to(envelope, { opacity: 0, y: 80, ease: "power1.out", duration: 0.5 }, "<0.2")
-                .to(back, { duration: 0.8, rotationY: '0', ease: "power1.out" }, "<")
-                .to(font, { duration: 0.8, rotationY: '-180', ease: "power1.out" }, "<")
                 .to(back_item_img, { width: width, translateX: translateX, translateY: translateY, ease: "power1.out", duration: 1 }, "<0.1")
                 .to(text_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
                 .to(back_item_title, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
@@ -1314,7 +1334,7 @@ window.onload = function () {
                 //     duration: 2, ease: 'power2.out' });
                 gsap.to('.contanier .scroll-card-box', { 
                     x:`${(windowX/300)}vw`, 
-                    y:`${(windowY/800)}vw`,
+                    // y:`${(windowY/800)}vw`,
                     duration: 5, ease: 'power2.out' });
                 gsap.to('.bg-shadow img', { 
                     x: `${0-(windowX/70)}vw`, 
@@ -1336,6 +1356,8 @@ window.onload = function () {
     });
     opentl.pause();
 
+
+    //-- 開頭影片 --
     let time_out = 6;
     let movieTimeOut = setTimeout(mvTime, 1000);
 
@@ -1352,33 +1374,67 @@ window.onload = function () {
         }
     }
 
-
     $('.skip_btn').click(function (e) {
         e.preventDefault();
         if (time_out > 0) {
             time_out = 0;
         }
     });
+    //-- 開頭影片 END --
 
 
         //-- 範例動態 --
-        let windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        let bgShadowX=windowWidth<550 ? 300 : 130;
-        let treeShadowX=windowWidth<550 ? -200 : -200;
+        // let windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        // let bgShadowX=windowWidth<550 ? 300 : 130;
+        // // let treeShadowX=windowWidth<550 ? -200 : -200;
         // let treeShadowX=windowWidth<550 ? -200 : -120;
 
-    opentl.from('.scroll-card-box .card-box', { x: '-400vw', duration: 3.3, stagger: 0.03, ease: 'power4.out' })
+        // opentl.from('.scroll-card-box .card-box', { x: '-400vw', duration: 3.3, stagger: 0.03, ease: 'power4.out' })
 
-    if (windowWidth < 550) {
-        opentl.to('.scroll-card-box', { x: '4vw', duration: 1 }, '<');
-    }
-    else if (windowWidth < 1024) {
-        opentl.to('.scroll-card-box', { x: '20vw', duration: 1 }, '<');
-    }
+        // if (windowWidth < 550) {
+        //     opentl.to('.scroll-card-box', { x: '4vw', duration: 1 }, '<');
+        // }
+        // else if (windowWidth < 1024) {
+        //     opentl.to('.scroll-card-box', { x: '20vw', duration: 1 }, '<');
+        // }
 
-        opentl.fromTo('.contanier .bg-shadow', {x:'-115vw'}, {x:`${bgShadowX}vw`, duration:3, ease:'power4.out'},'<')
-        opentl.from('.contanier .tree-shadow', {x:`${treeShadowX}vw`, rotate:'-3deg', duration:3, ease:'power4.out'},'<')
+        // opentl.fromTo('.contanier .bg-shadow', {x:'-115vw'}, {x:`${bgShadowX}vw`, duration:3, ease:'power4.out'},'<')
+        // opentl.from('.contanier .tree-shadow', {x:`${treeShadowX}vw`, rotate:'-3deg', duration:3, ease:'power4.out'},'<')
+        // opentl.fromTo('.contanier', {backgroundPosition:'100% 0%'},{backgroundPosition:'0% 0%', duration:3.5, ease:'power4.out'},'<')
+        //       .from('.scroll-card-box .card-box .card-page-name-box', {opacity:0, y:30, filter:'blur(10px)', duration:1, stagger:0.1, ease:'power1.out'}, '<1.5')
+        // opentl.from('.scroll-card-box .card-box .envelope', {
+        //         opacity:0, 
+        //         y:20,
+        //         duration:0.5,
+        //         onComplete(){
+        //             treeShadow();
+        //             bgShadow(bgShadowX);
+        //         }}, '<0.5');
+        //-- 範例動態 END --
+
+
+        //-- J哥想要的 --
+        let windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        let bgShadowX=windowWidth<550 ? 300 : 130;
+        // let treeShadowX=windowWidth<550 ? -200 : -200;
+        let treeShadowX=windowWidth<550 ? -200 : -120;
+
+        opentl.fromTo('.scroll-card-box .card-box', { x: '-400vw' }, { x: '50vw', duration: 3.3, stagger: 0.03, ease: 'power4.out' })
+              .addLabel('cardBack', '>')
+              
+        if (windowWidth < 550) {
+            opentl.to('.scroll-card-box', { x: '4vw', duration: 1 }, '<');
+        }
+        else if (windowWidth < 1024) {
+            opentl.to('.scroll-card-box', { x: '20vw', duration: 1 }, '<');
+        }
+
+        opentl.fromTo('.contanier .bg-shadow', {x:'-115vw'}, {x:`${bgShadowX+50}vw`, duration:3, ease:'power4.out'},'<')
+        opentl.fromTo('.contanier .tree-shadow', {x:`${treeShadowX}vw`, rotate:'-3deg'}, {x:`50vw`, rotate:'-3deg', duration:3, ease:'power4.out'},'<')
         opentl.fromTo('.contanier', {backgroundPosition:'100% 0%'},{backgroundPosition:'0% 0%', duration:3.5, ease:'power4.out'},'<')
+              .to('.scroll-card-box .card-box', { x: '0vw', duration: 1.5, stagger: 0.05, ease: 'power3.inOut' },'cardBack-=0.9')
+              .to('.contanier .bg-shadow', {x:`${bgShadowX}vw`, duration:1.5, ease:'power3.inOut'},'<')
+              .to('.contanier .tree-shadow', {x:`0vw`, rotate:'-3deg', duration:2, ease:'power3.inOut'},'<')
               .from('.scroll-card-box .card-box .card-page-name-box', {opacity:0, y:30, filter:'blur(10px)', duration:1, stagger:0.1, ease:'power1.out'}, '<1.5')
         opentl.from('.scroll-card-box .card-box .envelope', {
                 opacity:0, 
@@ -1388,6 +1444,7 @@ window.onload = function () {
                     treeShadow();
                     bgShadow(bgShadowX);
                 }}, '<0.5');
+        //-- J哥想要的 END --
 
 
 
