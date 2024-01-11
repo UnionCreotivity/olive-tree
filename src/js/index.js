@@ -9,7 +9,7 @@ import {
 
 function canvas() {
     const imageSrc =
-        '/src/assets/images/1x_olive.png';
+        '../assets/images/1x_olive.png';
 
     const vertex = `
         attribute vec2 uv;
@@ -436,12 +436,12 @@ window.onload = function () {
         var header_div =
             '<header class="header main-navigation">' +
             '<div class="logo-box">' +
-            '<a href="/src/pages/index.html" target="_self">' +
-            '<img src="/src/assets/images/header/logo.png" alt="logo" srcset="">' +
+            '<a href="../pages/index.html" target="_self">' +
+            '<img src="../assets/images/header/logo.png" alt="logo" srcset="">' +
             '</a>' +
             '</div>' +
             '<div class="menu-btn">' +
-            '<img src="/src/assets/images/header/menu_icon.svg" alt="menu_icon" srcset="">' +
+            '<img src="../assets/images/header/menu_icon.svg" alt="menu_icon" srcset="">' +
             '</div>' +
             '</header>';
 
@@ -457,11 +457,11 @@ window.onload = function () {
             '<div class="address">地址 ｜ 244新北市林口區忠孝路7號</div>' +
             '<div class="phone">TEL | (02) 2606 8068</div>' +
             '<div class="email-box">' +
-            '<img src="/src/assets/images/header/mail.png" alt="mail" srcset="">' +
+            '<img src="../assets/images/header/mail.png" alt="mail" srcset="">' +
             '</div>' +
             '</div>' +
             '<div class="line">' +
-            '<img src="/src/assets/images/header/line.png" alt="line" srcset="">' +
+            '<img src="../assets/images/header/line.png" alt="line" srcset="">' +
             '</div>'
 
         $('body').append(footer_div);
@@ -473,45 +473,45 @@ window.onload = function () {
         var menu_div =
             '<div class="menu-box">' +
             '<div class="menu-tree-shadow">' +
-            '<img src="/src/assets/images/tree_shadow.webp" alt="tree_shadow" srcset="">' +
+            '<img src="../assets/images/tree_shadow.webp" alt="tree_shadow" srcset="">' +
             '</div>' +
             '<div class="close">' +
-            '<img src="/src/assets/images/menu/close.svg" alt="close" srcset="">' +
+            '<img src="../assets/images/menu/close.svg" alt="close" srcset="">' +
             '</div>' +
             '<div class="menu">' +
             '<div class="item-box">' +
             '<div class="item btn-about">' +
             '<div class="about">' +
-            '<img src="/src/assets/images/menu/about.png" alt="about" srcset="">' +
+            '<img src="../assets/images/menu/about.png" alt="about" srcset="">' +
             '</div>' +
             '<div class="text">關於橄欖樹</div>' +
             '</div>' +
             '<div class="item btn-hot">' +
             '<div class="hot">' +
-            '<img src="/src/assets/images/menu/hot.png" alt="hot" srcset="">' +
+            '<img src="../assets/images/menu/hot.png" alt="hot" srcset="">' +
             '</div>' +
             '<div class="text">熱銷建案</div>' + '</div>' +
             '<div class="item btn-history">' +
             '<div class="history">' +
-            '<img src="/src/assets/images/menu/history.png" alt="history" srcset="">' +
+            '<img src="../assets/images/menu/history.png" alt="history" srcset="">' +
             '</div>' +
             '<div class="text">歷屆業績</div>' +
             '</div>' +
             '<div class="item btn-news">' +
             '<div class="news">' +
-            '<img src="/src/assets/images/menu/news.png" alt="news" srcset="">' +
+            '<img src="../assets/images/menu/news.png" alt="news" srcset="">' +
             '</div>' +
             '<div class="text">最新消息</div>' +
             '</div>' +
             '<div class="item btn-contact">' +
             '<div class="contact">' +
-            '<img src="/src/assets/images/menu/email.png" alt="email" srcset="">' +
+            '<img src="../assets/images/menu/email.png" alt="email" srcset="">' +
             '</div>' +
             '<div class="text">聯絡我們</div>' +
             '</div>' +
             '<div class="item btn-line">' +
             '<div class="menu-line">' +
-            '<img src="/src/assets/images/menu/line.png" alt="line" srcset="">' +
+            '<img src="../assets/images/menu/line.png" alt="line" srcset="">' +
             '</div>' +
             '<div class="text">LINE</div>' +
             '</div>' +
@@ -759,15 +759,15 @@ window.onload = function () {
                 case 'olive-tree':
                     cardObj = {
                         backImg: {
-                            src: '/src/assets/images/tree.svg',
+                            src: '../assets/images/tree.svg',
                             width: '250%',
                             top: '50%',
                             left: '-76%',
                         },
-                        marqueeImg: '/src/assets/images/case.png',
-                        blurImg1: '/src/assets/images/tree_blur_1.png',
-                        blurImg2: '/src/assets/images/tree_blur_2.png',
-                        blurImg3: '/src/assets/images/tree_blur_3_2.png',
+                        marqueeImg: '../assets/images/case.png',
+                        blurImg1: '../assets/images/tree_blur_1.png',
+                        blurImg2: '../assets/images/tree_blur_2.png',
+                        blurImg3: '../assets/images/tree_blur_3_2.png',
                         backChangeColor: 'linear-gradient(to bottom,  rgba(216,227,186,1) 35%,rgba(255,255,255,1) 100%)',
                     }
                     cardMv = {
@@ -792,15 +792,15 @@ window.onload = function () {
                 case 'lily':
                     cardObj = {
                         backImg: {
-                            src: '/src/assets/images/SVG/lily_svg.svg',
+                            src: '../assets/images/SVG/lily_svg.svg',
                             width: '156%',
                             top: '11%',
                             left: '-53%'
                         },
-                        marqueeImg: '/src/assets/images/case.png',
-                        blurImg1: '/src/assets/images/blue_blur_1.png',
-                        blurImg2: '/src/assets/images/blue_blur_2.png',
-                        blurImg3: '/src/assets/images/blue_blur_3.png',
+                        marqueeImg: '../assets/images/case.png',
+                        blurImg1: '../assets/images/blue_blur_1.png',
+                        blurImg2: '../assets/images/blue_blur_2.png',
+                        blurImg3: '../assets/images/blue_blur_3.png',
                         backChangeColor: 'linear-gradient(to bottom,  rgba(205,218,206,1) 25%,rgba(255,255,255,1) 100%)'
                     }
                     cardMv = {
@@ -825,15 +825,15 @@ window.onload = function () {
                 case 'cotton':
                     cardObj = {
                         backImg: {
-                            src: '/src/assets/images/SVG/cotton_svg.svg',
+                            src: '../assets/images/SVG/cotton_svg.svg',
                             width: '176%',
                             top: '2%',
                             left: '-57%',
                         },
-                        marqueeImg: '/src/assets/images/case.png',
-                        blurImg1: '/src/assets/images/tree_blur_1.png',
-                        blurImg2: '/src/assets/images/tree_blur_2.png',
-                        blurImg3: '/src/assets/images/tree_blur_3_2.png',
+                        marqueeImg: '../assets/images/case.png',
+                        blurImg1: '../assets/images/tree_blur_1.png',
+                        blurImg2: '../assets/images/tree_blur_2.png',
+                        blurImg3: '../assets/images/tree_blur_3_2.png',
                         backChangeColor: 'linear-gradient(to bottom,  rgba(216,227,186,1) 35%,rgba(255,255,255,1) 100%)',
                     }
                     cardMv = {
@@ -859,15 +859,15 @@ window.onload = function () {
                 case 'campanula':
                     cardObj = {
                         backImg: {
-                            src: '/src/assets/images/SVG/campanula_svg.svg',
+                            src: '../assets/images/SVG/campanula_svg.svg',
                             width: '295%',
                             top: '-23%',
                             left: '-4%',
                         },
-                        marqueeImg: '/src/assets/images/case.png',
-                        blurImg1: '/src/assets/images/blue_blur_1.png',
-                        blurImg2: '/src/assets/images/blue_blur_2.png',
-                        blurImg3: '/src/assets/images/blue_blur_3.png',
+                        marqueeImg: '../assets/images/case.png',
+                        blurImg1: '../assets/images/blue_blur_1.png',
+                        blurImg2: '../assets/images/blue_blur_2.png',
+                        blurImg3: '../assets/images/blue_blur_3.png',
                         backChangeColor: 'linear-gradient(to bottom,  rgba(205,218,206,1) 25%,rgba(255,255,255,1) 100%)'
                     }
                     cardMv = {
