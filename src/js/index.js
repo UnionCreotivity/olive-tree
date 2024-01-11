@@ -9,7 +9,7 @@ import {
 
 function canvas() {
     const imageSrc =
-        '../assets/images/1x_olive.png';
+        '/src/assets/images/1x_olive.png';
 
     const vertex = `
         attribute vec2 uv;
@@ -423,39 +423,25 @@ window.onload = function () {
 
     /* parallax */
 
-    // function getMousePos(event) {
-    //     // 获取鼠标在页面上的位置
-    //     const x = event.clientX;
-    //     const y = event.clientY;
 
-    //     gsap.to('.contanier', { backgroundPosition: `${bgX}vw 0`, duration: 1.3, ease: 'power2.out' });
-    //     gsap.to('.bg-shadow img', { x: `${bgX}vw`, duration: 2, ease: 'power2.out' });
-    //     gsap.to('.tree-shadow img', { x: `${bgX}vw`, duration: 2.2, ease: 'power2.out' });
-    //     console.log(x,y);
-    // }
-
-    // // 添加鼠标移动事件监听器
-    // document.addEventListener('mousemove', getMousePos);
-
-
-    $(".tree_shadow").attr("data-depth", "0.14");
-    let tree_Shadow = document.querySelector("#scene-tree-shadow");
-    let parallaxTree = new Parallax(tree_Shadow, {
-        relativeInput: true,
-    });
-    parallaxTree.friction(0.03, 0.03);
+    // $(".tree_shadow").attr("data-depth", "0.14");
+    // let tree_Shadow = document.querySelector("#scene-tree-shadow");
+    // let parallaxTree = new Parallax(tree_Shadow, {
+    //     relativeInput: true,
+    // });
+    // parallaxTree.friction(0.03, 0.03);
 
     /* header */
     function headerInsert() {
         var header_div =
             '<header class="header main-navigation">' +
             '<div class="logo-box">' +
-            '<a href="../pages/index.html" target="_self">' +
-            '<img src="../assets/images/header/logo.png" alt="logo" srcset="">' +
+            '<a href="/src/pages/index.html" target="_self">' +
+            '<img src="/src/assets/images/header/logo.png" alt="logo" srcset="">' +
             '</a>' +
             '</div>' +
             '<div class="menu-btn">' +
-            '<img src="../assets/images/header/menu_icon.svg" alt="menu_icon" srcset="">' +
+            '<img src="/src/assets/images/header/menu_icon.svg" alt="menu_icon" srcset="">' +
             '</div>' +
             '</header>';
 
@@ -471,11 +457,11 @@ window.onload = function () {
             '<div class="address">地址 ｜ 244新北市林口區忠孝路7號</div>' +
             '<div class="phone">TEL | (02) 2606 8068</div>' +
             '<div class="email-box">' +
-            '<img src="../assets/images/header/mail.png" alt="mail" srcset="">' +
+            '<img src="/src/assets/images/header/mail.png" alt="mail" srcset="">' +
             '</div>' +
             '</div>' +
             '<div class="line">' +
-            '<img src="../assets/images/header/line.png" alt="line" srcset="">' +
+            '<img src="/src/assets/images/header/line.png" alt="line" srcset="">' +
             '</div>'
 
         $('body').append(footer_div);
@@ -487,45 +473,45 @@ window.onload = function () {
         var menu_div =
             '<div class="menu-box">' +
             '<div class="menu-tree-shadow">' +
-            '<img src="../assets/images/tree_shadow.webp" alt="tree_shadow" srcset="">' +
+            '<img src="/src/assets/images/tree_shadow.webp" alt="tree_shadow" srcset="">' +
             '</div>' +
             '<div class="close">' +
-            '<img src="../assets/images/menu/close.svg" alt="close" srcset="">' +
+            '<img src="/src/assets/images/menu/close.svg" alt="close" srcset="">' +
             '</div>' +
             '<div class="menu">' +
             '<div class="item-box">' +
             '<div class="item btn-about">' +
             '<div class="about">' +
-            '<img src="../assets/images/menu/about.png" alt="about" srcset="">' +
+            '<img src="/src/assets/images/menu/about.png" alt="about" srcset="">' +
             '</div>' +
             '<div class="text">關於橄欖樹</div>' +
             '</div>' +
             '<div class="item btn-hot">' +
             '<div class="hot">' +
-            '<img src="../assets/images/menu/hot.png" alt="hot" srcset="">' +
+            '<img src="/src/assets/images/menu/hot.png" alt="hot" srcset="">' +
             '</div>' +
             '<div class="text">熱銷建案</div>' + '</div>' +
             '<div class="item btn-history">' +
             '<div class="history">' +
-            '<img src="../assets/images/menu/history.png" alt="history" srcset="">' +
+            '<img src="/src/assets/images/menu/history.png" alt="history" srcset="">' +
             '</div>' +
             '<div class="text">歷屆業績</div>' +
             '</div>' +
             '<div class="item btn-news">' +
             '<div class="news">' +
-            '<img src="../assets/images/menu/news.png" alt="news" srcset="">' +
+            '<img src="/src/assets/images/menu/news.png" alt="news" srcset="">' +
             '</div>' +
             '<div class="text">最新消息</div>' +
             '</div>' +
             '<div class="item btn-contact">' +
             '<div class="contact">' +
-            '<img src="../assets/images/menu/email.png" alt="email" srcset="">' +
+            '<img src="/src/assets/images/menu/email.png" alt="email" srcset="">' +
             '</div>' +
             '<div class="text">聯絡我們</div>' +
             '</div>' +
             '<div class="item btn-line">' +
             '<div class="menu-line">' +
-            '<img src="../assets/images/menu/line.png" alt="line" srcset="">' +
+            '<img src="/src/assets/images/menu/line.png" alt="line" srcset="">' +
             '</div>' +
             '<div class="text">LINE</div>' +
             '</div>' +
@@ -599,19 +585,6 @@ window.onload = function () {
 
     menuClick();
 
-
-    // function shadowRWD() {
-    //     let bg_shadow = document.querySelector('.bg-shadow');
-
-    //     if (window_width === 1920 && window_height === 1200) {
-    //         bg_shadow.style.top = '-4vw';
-    //     } else if (window_width === 1920 && window_height === 1090) {
-    //         bg_shadow.style.top = '-7vw';
-    //     }
-    // }
-    // shadowRWD();
-
-
     const card_boxes = gsap.utils.toArray(document.querySelectorAll(".card-box"));
     var isClicking = false;
     var isClickTimes = false;
@@ -666,137 +639,80 @@ window.onload = function () {
 
 
     function mouseenterCardAni(tl, card_box, card, envelope, back, font, back_item_img, text_content, back_item_title, back_item_content, shadow) {
-        if (window_width <= 1024) {
-
-
-            if (tl.reversed()) {
-                tl.play();
-            } else {
-
-                switch (card_box.id) {
-                    case 'olive-tree':
-                        tl.to(card, { y: -40, duration: 0.5, ease: "back.out(1.7)" })
-                            .to(shadow, { y: -40, duration: 0.5, ease: "back.out(1.7)" }, '<')
-                            .to(shadow, { duration: 1.2, ease: "power1.out", opacity: 0 }, '<')
-                            .to(envelope, { opacity: 0, y: 80, ease: "power1.out", duration: 0.5, }, "<0.2")
-                            .to(back, { duration: 0.8, rotationY: '0', ease: "power1.out", }, "<")
-                            .to(font, {
-                                duration: 0.8, rotationY: '-180', ease: "power1.out",
-                            }, "<")
-                            .to(back_item_img, { width: '125vw', translateY: '-20vw', translateX: '-36vw', ease: "power1.out", duration: 1 }, "<0.1")
-                            .to(text_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                            .to(back_item_title, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                            .to(back_item_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<")
-                        break;
-                    case 'lily':
-                        tl.to(card, { y: -40, duration: 0.5, ease: "back.out(1.7)" })
-                            .to(shadow, { y: -40, duration: 0.5, ease: "back.out(1.7)" }, '<')
-                            .to(shadow, { duration: 1.2, ease: "power1.out", opacity: 0 }, '<')
-                            .to(envelope, { opacity: 0, y: 80, ease: "power1.out", duration: 0.5, }, "<0.2")
-                            .to(back, { duration: 0.8, rotationY: '0', ease: "power1.out", }, "<")
-                            .to(font, {
-                                duration: 0.8, rotationY: '-180', ease: "power1.out",
-                            }, "<")
-                            .to(back_item_img, { width: '105vw', translateY: '2vw', translateX: '-51vw', ease: "power1.out", duration: 1 }, "<0.1")
-                            .to(text_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                            .to(back_item_title, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                            .to(back_item_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<")
-                        break;
-                    case 'cotton':
-                        tl.to(card, { y: -40, duration: 0.5, ease: "back.out(1.7)" })
-                            .to(shadow, { y: -40, duration: 0.5, ease: "back.out(1.7)" }, '<')
-                            .to(shadow, { duration: 1.2, ease: "power1.out", opacity: 0 }, '<')
-                            .to(envelope, { opacity: 0, y: 80, ease: "power1.out", duration: 0.5, }, "<0.2")
-                            .to(back, { duration: 0.8, rotationY: '0', ease: "power1.out", }, "<")
-                            .to(font, {
-                                duration: 0.8, rotationY: '-180', ease: "power1.out",
-                            }, "<")
-                            .to(back_item_img, { width: '85vw', translateY: '0vw', translateX: '-33vw', ease: "power1.out", duration: 1 }, "<0.1")
-                            .to(text_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                            .to(back_item_title, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                            .to(back_item_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<")
-                        break;
-                    case 'campanula':
-                        tl.to(card, { y: -40, duration: 0.5, ease: "back.out(1.7)" })
-                            .to(shadow, { y: -40, duration: 0.5, ease: "back.out(1.7)" }, '<')
-                            .to(shadow, { duration: 1.2, ease: "power1.out", opacity: 0 }, '<')
-                            .to(envelope, { opacity: 0, y: 80, ease: "power1.out", duration: 0.5, }, "<0.2")
-                            .to(back, { duration: 0.8, rotationY: '0', ease: "power1.out", }, "<")
-                            .to(font, {
-                                duration: 0.8, rotationY: '-180', ease: "power1.out",
-                            }, "<")
-                            .to(back_item_img, { width: '150vw', translateY: '-74vw', translateX: '-43vw', ease: "power1.out", duration: 1 }, "<0.1")
-                            .to(text_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                            .to(back_item_title, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                            .to(back_item_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<")
-
-                        break;
-                }
-            }
-        } else {
+        if (window_width <= 500) {
             if (tl.reversed()) {
                 tl.play();
             } else {
                 switch (card_box.id) {
                     case 'olive-tree':
-                        tl.to(card, { y: -40, duration: 0.5, ease: "back.out(1.7)" })
-                            .to(shadow, { y: -40, duration: 0.5, ease: "back.out(1.7)" }, '<')
-                            .to(shadow, { duration: 1.2, ease: "power1.out", opacity: 0 }, '<')
-                            .to(envelope, { opacity: 0, y: 80, ease: "power1.out", duration: 0.5, }, "<0.2")
-                            .to(back, { duration: 0.8, rotationY: '0', ease: "power1.out", }, "<")
-                            .to(font, {
-                                duration: 0.8, rotationY: '-180', ease: "power1.out",
-                            }, "<")
-                            .to(back_item_img, { width: '35vw', translateY: '-8vw', translateX: '-12vw', ease: "power1.out", duration: 1 }, "<0.1")
-                            .to(text_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                            .to(back_item_title, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                            .to(back_item_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<")
+                        applyAnimation('160vw', '-59vw', '-15vw');
                         break;
                     case 'lily':
-                        tl.to(card, { y: -40, duration: 0.5, ease: "back.out(1.7)" })
-                            .to(shadow, { y: -40, duration: 0.5, ease: "back.out(1.7)" }, '<')
-                            .to(shadow, { duration: 1.2, ease: "power1.out", opacity: 0 }, '<')
-                            .to(envelope, { opacity: 0, y: 80, ease: "power1.out", duration: 0.5, }, "<0.2")
-                            .to(back, { duration: 0.8, rotationY: '0', ease: "power1.out", }, "<")
-                            .to(font, {
-                                duration: 0.8, rotationY: '-180', ease: "power1.out",
-                            }, "<")
-                            .to(back_item_img, { width: '25vw', translateY: '-1vw', translateX: '-9vw', ease: "power1.out", duration: 1 }, "<0.1")
-                            .to(text_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                            .to(back_item_title, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                            .to(back_item_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<")
+                        applyAnimation('135vw', '-55vw', '2vw');
                         break;
                     case 'cotton':
-                        tl.to(card, { y: -40, duration: 0.5, ease: "back.out(1.7)" })
-                            .to(shadow, { y: -40, duration: 0.5, ease: "back.out(1.7)" }, '<')
-                            .to(shadow, { duration: 1.2, ease: "power1.out", opacity: 0 }, '<')
-                            .to(envelope, { opacity: 0, y: 80, ease: "power1.out", duration: 0.5, }, "<0.2")
-                            .to(back, { duration: 0.8, rotationY: '0', ease: "power1.out", }, "<")
-                            .to(font, {
-                                duration: 0.8, rotationY: '-180', ease: "power1.out",
-                            }, "<")
-                            .to(back_item_img, { width: '20vw', translateY: '2vw', translateX: '-7vw', ease: "power1.out", duration: 1 }, "<0.1")
-                            .to(text_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                            .to(back_item_title, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                            .to(back_item_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<")
+                        applyAnimation('120vw', '-37vw', '15vw');
                         break;
                     case 'campanula':
-                        tl.to(card, { y: -40, duration: 0.5, ease: "back.out(1.7)" })
-                            .to(shadow, { y: -40, duration: 0.5, ease: "back.out(1.7)" }, '<')
-                            .to(shadow, { duration: 1.2, ease: "power1.out", opacity: 0 }, '<')
-                            .to(envelope, { opacity: 0, y: 80, ease: "power1.out", duration: 0.5, }, "<0.2")
-                            .to(back, { duration: 0.8, rotationY: '0', ease: "power1.out", }, "<")
-                            .to(font, {
-                                duration: 0.8, rotationY: '-180', ease: "power1.out",
-                            }, "<")
-                            .to(back_item_img, { width: '45vw', translateY: '-19vw', translateX: '-12vw', ease: "power1.out", duration: 1 }, "<0.1")
-                            .to(text_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                            .to(back_item_title, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                            .to(back_item_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<")
-
+                        applyAnimation('200vw', '-51vw', '-90vw');
                         break;
                 }
             }
+        }
+
+        else if (window_width <= 1024) {
+            if (tl.reversed()) {
+                tl.play();
+            } else {
+                switch (card_box.id) {
+                    case 'olive-tree':
+                        applyAnimation('125vw', '-42vw', '-25vw');
+                        break;
+                    case 'lily':
+                        applyAnimation('97vw', '-52vw', '0vw');
+                        break;
+                    case 'cotton':
+                        applyAnimation('85vw', '-33vw', '0vw');
+                        break;
+                    case 'campanula':
+                        applyAnimation('150vw', '-43vw', '-74vw');
+                        break;
+                }
+            }
+        }
+
+        else {
+            if (tl.reversed()) {
+                tl.play();
+            } else {
+                switch (card_box.id) {
+                    case 'olive-tree':
+                        applyAnimation('35vw', '-12vw', '-8vw');
+                        break;
+                    case 'lily':
+                        applyAnimation('25vw', '-9vw', '-1vw');
+                        break;
+                    case 'cotton':
+                        applyAnimation('20vw', '-7vw', '2vw');
+                        break;
+                    case 'campanula':
+                        applyAnimation('45vw', '-12vw', '-19vw');
+                        break;
+                }
+            }
+        }
+
+        function applyAnimation(width, translateX, translateY) {
+            tl.to(card, { y: -40, duration: 0.5, ease: "back.out(1.7)" })
+                .to(shadow, { y: -40, duration: 0.5, ease: "back.out(1.7)" }, '<')
+                .to(shadow, { duration: 1.2, ease: "power1.out", opacity: 0 }, '<')
+                .to(envelope, { opacity: 0, y: 80, ease: "power1.out", duration: 0.5 }, "<0.2")
+                .to(back, { duration: 0.8, rotationY: '0', ease: "power1.out" }, "<")
+                .to(font, { duration: 0.8, rotationY: '-180', ease: "power1.out" }, "<")
+                .to(back_item_img, { width: width, translateX: translateX, translateY: translateY, ease: "power1.out", duration: 1 }, "<0.1")
+                .to(text_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
+                .to(back_item_title, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
+                .to(back_item_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<");
         }
     }
 
@@ -843,15 +759,15 @@ window.onload = function () {
                 case 'olive-tree':
                     cardObj = {
                         backImg: {
-                            src: '../assets/images/tree.svg',
+                            src: '/src/assets/images/tree.svg',
                             width: '250%',
                             top: '50%',
                             left: '-76%',
                         },
-                        marqueeImg: '../assets/images/case.png',
-                        blurImg1: '../assets/images/tree_blur_1.png',
-                        blurImg2: '../assets/images/tree_blur_2.png',
-                        blurImg3: '../assets/images/tree_blur_3_2.png',
+                        marqueeImg: '/src/assets/images/case.png',
+                        blurImg1: '/src/assets/images/tree_blur_1.png',
+                        blurImg2: '/src/assets/images/tree_blur_2.png',
+                        blurImg3: '/src/assets/images/tree_blur_3_2.png',
                         backChangeColor: 'linear-gradient(to bottom,  rgba(216,227,186,1) 35%,rgba(255,255,255,1) 100%)',
                     }
                     cardMv = {
@@ -876,15 +792,15 @@ window.onload = function () {
                 case 'lily':
                     cardObj = {
                         backImg: {
-                            src: '../assets/images/SVG/lily_svg.svg',
+                            src: '/src/assets/images/SVG/lily_svg.svg',
                             width: '156%',
                             top: '11%',
                             left: '-53%'
                         },
-                        marqueeImg: '../assets/images/case.png',
-                        blurImg1: '../assets/images/blue_blur_1.png',
-                        blurImg2: '../assets/images/blue_blur_2.png',
-                        blurImg3: '../assets/images/blue_blur_3.png',
+                        marqueeImg: '/src/assets/images/case.png',
+                        blurImg1: '/src/assets/images/blue_blur_1.png',
+                        blurImg2: '/src/assets/images/blue_blur_2.png',
+                        blurImg3: '/src/assets/images/blue_blur_3.png',
                         backChangeColor: 'linear-gradient(to bottom,  rgba(205,218,206,1) 25%,rgba(255,255,255,1) 100%)'
                     }
                     cardMv = {
@@ -909,15 +825,15 @@ window.onload = function () {
                 case 'cotton':
                     cardObj = {
                         backImg: {
-                            src: '../assets/images/SVG/cotton_svg.svg',
+                            src: '/src/assets/images/SVG/cotton_svg.svg',
                             width: '176%',
                             top: '2%',
                             left: '-57%',
                         },
-                        marqueeImg: '../assets/images/case.png',
-                        blurImg1: '../assets/images/tree_blur_1.png',
-                        blurImg2: '../assets/images/tree_blur_2.png',
-                        blurImg3: '../assets/images/tree_blur_3_2.png',
+                        marqueeImg: '/src/assets/images/case.png',
+                        blurImg1: '/src/assets/images/tree_blur_1.png',
+                        blurImg2: '/src/assets/images/tree_blur_2.png',
+                        blurImg3: '/src/assets/images/tree_blur_3_2.png',
                         backChangeColor: 'linear-gradient(to bottom,  rgba(216,227,186,1) 35%,rgba(255,255,255,1) 100%)',
                     }
                     cardMv = {
@@ -943,15 +859,15 @@ window.onload = function () {
                 case 'campanula':
                     cardObj = {
                         backImg: {
-                            src: '../assets/images/SVG/campanula_svg.svg',
+                            src: '/src/assets/images/SVG/campanula_svg.svg',
                             width: '295%',
                             top: '-23%',
                             left: '-4%',
                         },
-                        marqueeImg: '../assets/images/case.png',
-                        blurImg1: '../assets/images/blue_blur_1.png',
-                        blurImg2: '../assets/images/blue_blur_2.png',
-                        blurImg3: '../assets/images/blue_blur_3.png',
+                        marqueeImg: '/src/assets/images/case.png',
+                        blurImg1: '/src/assets/images/blue_blur_1.png',
+                        blurImg2: '/src/assets/images/blue_blur_2.png',
+                        blurImg3: '/src/assets/images/blue_blur_3.png',
                         backChangeColor: 'linear-gradient(to bottom,  rgba(205,218,206,1) 25%,rgba(255,255,255,1) 100%)'
                     }
                     cardMv = {
@@ -1126,7 +1042,7 @@ window.onload = function () {
         if (window_width <= 1024) {
 
             tl_bgshadow.to(".bg-shadow", {
-                x: `${parseInt(shadowX)-10}vw`,
+                x: `${parseInt(shadowX) - 10}vw`,
                 yoyo: true,
                 repeat: -1,
                 ease: "power1.inOut",
@@ -1246,15 +1162,6 @@ window.onload = function () {
                 delay: 0.5
             }, '<')
 
-            .to('#lily .card .font .item-img', {
-                rotate: '4deg',
-                yoyo: true,
-                translateX: '0.4vw',
-                repeat: -1,
-                ease: "power1.inOut",
-                duration: 2.5,
-            }, '<')
-
     }
     tree_sway();
 
@@ -1304,6 +1211,15 @@ window.onload = function () {
                 ease: "power1.inOut",
                 duration: 1.3,
             }, '<')
+
+            .to('#lily .card .font .item-img', {
+                rotate: '4deg',
+                yoyo: true,
+                translateX: '0.4vw',
+                repeat: -1,
+                ease: "power1.inOut",
+                duration: 2.5,
+            }, '<')
     }
     lily_sway();
 
@@ -1313,7 +1229,7 @@ window.onload = function () {
         });
 
         cotton.to(".cotton-component3 img,.cotton-component4 img", {
-            scale: 1.18,
+            scale: 1.3,
             yoyo: true,
             repeat: -1,
             ease: "power1.inOut",
@@ -1381,71 +1297,89 @@ window.onload = function () {
 
 
     //-- 進場動態 --
-    const opentl=gsap.timeline();
+    const opentl=gsap.timeline({
+        onComplete(){
+
+            function getMousePos(event) {
+                // 获取鼠标在页面上的位置
+                const x = event.clientX;
+                const y = event.clientY;
+                const windowXCenter=window_width/2;
+                const windowYCenter=window_height/2;
+                const windowX=x-windowXCenter;
+                const windowY=y-windowYCenter;
+                
+                // gsap.to('.contanier', { 
+                //     backgroundPosition: `0 ${0-(windowY/300)}vw`, 
+                //     duration: 2, ease: 'power2.out' });
+                gsap.to('.contanier .scroll-card-box', { 
+                    x:`${(windowX/300)}vw`, 
+                    y:`${(windowY/800)}vw`,
+                    duration: 5, ease: 'power2.out' });
+                gsap.to('.bg-shadow img', { 
+                    x: `${0-(windowX/70)}vw`, 
+                    // y:`${0-(windowY/200)}vw`, 
+                    duration: 4, ease: 'power2.out' });
+                gsap.to('.tree-shadow img', { 
+                    x: `${0-(windowX/120)}vw`,  
+                    // y:`${0-(windowY/300)}vw`, 
+                    duration: 4.4, ease: 'power2.out' });
+                // gsap.to('.card-box .card-shadow img', {x:`${0-(windowX/100)}px`});
+
+                // console.log(windowX/180);
+            }
+            // 添加鼠标移动事件监听器
+            if(window_width > 1024){
+                document.addEventListener('mousemove', getMousePos);
+            }
+        }
+    });
     opentl.pause();
 
-    let time_out=6;
-    let movieTimeOut=setTimeout(mvTime, 1000);
+    let time_out = 6;
+    let movieTimeOut = setTimeout(mvTime, 1000);
 
-    function mvTime () {
+    function mvTime() {
         time_out--;
 
         if (time_out <= 0) {
-            let tl=gsap.timeline();
-            tl.to('.movie_box', {opacity:0, filter:'blur(10px) brightness(3)', duration:1})
-              .to('.movie_box', {visibility:'hidden',},'>');
-              setTimeout(()=>{opentl.play()}, 550);
+            let tl = gsap.timeline();
+            tl.to('.movie_box', { opacity: 0, filter: 'blur(10px) brightness(3)', duration: 1 })
+                .to('.movie_box', { visibility: 'hidden', }, '>');
+            setTimeout(() => { opentl.play() }, 550);
         } else {
             setTimeout(mvTime, 1000);
         }
     }
 
 
-    $('.skip_btn').click(function (e) { 
+    $('.skip_btn').click(function (e) {
         e.preventDefault();
-        if(time_out>0){
-            time_out=0;
+        if (time_out > 0) {
+            time_out = 0;
         }
     });
 
-    
-
-    //-- 發卡片 --
-    // opentl
-    //     .from('.scroll-card-box .card-box', {x:'-100vw', duration:0.8, stagger:0.1, ease:'power1.out'})
-    //     .from('.contanier .bg-shadow', {x:'-25vw', duration:1, ease:'power1.out'},'<0.1')
-    //     .from('.contanier .tree-shadow', {x:'-10vw', duration:1, ease:'power1.out'},'<')
-    //     .from('.scroll-card-box .card-box .envelope', {opacity:0, y:20, duration:0.5})
-    //     .from('.scroll-card-box .card-box .card-page-name-box', {opacity:0, y:30, filter:'blur(10px)', duration:1.5, stagger:0.1, ease:'power1.out'});
-
-    //-- J哥的最愛 --
-    // opentl
-    //     .fromTo('.scroll-card-box .card-box', {x:'-100vw'}, {x:'100vw', duration:1, stagger:0.02, ease:'power1.out'})
-    //     .fromTo('.contanier .bg-shadow', {x:'-25vw'},{x:'15vw', duration:2, ease:'power4.out'},'<0.1')
-    //     .fromTo('.contanier .tree-shadow', {x:'-10vw'}, {x:'8vw', duration:2, ease:'power4.out'},'<')
-    //     .to('.scroll-card-box .card-box', {x:'0vw', duration:0.8, stagger:0.05, ease:'power2.out'}, '>-0.5')
-    //     .to('.contanier .bg-shadow', {x:'0vw', duration:1.5, ease:'power1.out'},'<0.1')
-    //     .to('.contanier .tree-shadow', {x:'0vw', duration:1.5, ease:'power1.out'},'<')
-    //     .from('.scroll-card-box .card-box .envelope', {opacity:0, y:20, duration:0.5})
-    //     .from('.scroll-card-box .card-box .card-page-name-box', {opacity:0, y:30, filter:'blur(10px)', duration:1.5, stagger:0.1, ease:'power1.out'});
 
         //-- 範例動態 --
         let windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         let bgShadowX=windowWidth<550 ? 300 : 130;
-        let treeShadowX=windowWidth<550 ? -400 : -150;
+        let treeShadowX=windowWidth<550 ? -200 : -200;
+        // let treeShadowX=windowWidth<550 ? -200 : -120;
 
-        opentl.from('.scroll-card-box .card-box', {x:'-400vw', duration:3.3, stagger:0.03, ease:'power4.out'})
+    opentl.from('.scroll-card-box .card-box', { x: '-400vw', duration: 3.3, stagger: 0.03, ease: 'power4.out' })
 
-        if(windowWidth<550){
-            opentl.to('.scroll-card-box', {x:'8vw', duration:1},'<');
-         }
-         else if(windowWidth<1024){
-             opentl.to('.scroll-card-box', {x:'20vw', duration:1},'<');
-         }
+    if (windowWidth < 550) {
+        opentl.to('.scroll-card-box', { x: '4vw', duration: 1 }, '<');
+    }
+    else if (windowWidth < 1024) {
+        opentl.to('.scroll-card-box', { x: '20vw', duration: 1 }, '<');
+    }
 
         opentl.fromTo('.contanier .bg-shadow', {x:'-115vw'}, {x:`${bgShadowX}vw`, duration:3, ease:'power4.out'},'<')
         opentl.from('.contanier .tree-shadow', {x:`${treeShadowX}vw`, rotate:'-3deg', duration:3, ease:'power4.out'},'<')
         opentl.fromTo('.contanier', {backgroundPosition:'100% 0%'},{backgroundPosition:'0% 0%', duration:3.5, ease:'power4.out'},'<')
+              .from('.scroll-card-box .card-box .card-page-name-box', {opacity:0, y:30, filter:'blur(10px)', duration:1, stagger:0.1, ease:'power1.out'}, '<1.5')
         opentl.from('.scroll-card-box .card-box .envelope', {
                 opacity:0, 
                 y:20,
@@ -1453,13 +1387,12 @@ window.onload = function () {
                 onComplete(){
                     treeShadow();
                     bgShadow(bgShadowX);
-                }}, '<1.5')
-              .from('.scroll-card-box .card-box .card-page-name-box', {opacity:0, y:30, filter:'blur(10px)', duration:1, stagger:0.1, ease:'power1.out'}, '<0.2');
+                }}, '<0.5');
 
 
 
     //-- 手機滑動卡片 --
-    function phoneCardMove () {
+    function phoneCardMove() {
         let startX, startY;
         let scrollX = 0;
         let bgX = 0;
@@ -1481,12 +1414,12 @@ window.onload = function () {
             if (Math.abs(deltaX) > Math.abs(deltaY)) {
                 // 右移
                 if (deltaX > 0) {
-                    let minScrollX = windowWidth < 550 ? 8 : 20;
+                    let minScrollX = windowWidth < 550 ? 4 : 20;
                     scrollX = scrollX >= minScrollX ? minScrollX : scrollX + (deltaX / 1.8);
                     bgX = bgX >= 0 ? 0 : bgX + (deltaX / 1.8);
                     // 左移
                 } else {
-                    let maxScrollX = windowWidth < 550 ? -203 : -160;
+                    let maxScrollX = windowWidth < 550 ? -233 : -160;
                     scrollX = scrollX <= maxScrollX ? maxScrollX : scrollX + (deltaX / 1.8);
                     bgX = bgX <= -170 ? -170 : bgX + (deltaX / 1.8);
                 }
@@ -1511,5 +1444,5 @@ window.onload = function () {
         });
     }
     phoneCardMove();
-    
+
 }

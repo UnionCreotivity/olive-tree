@@ -4,6 +4,7 @@
     .card {
         .font {
             background: linear-gradient(to bottom, rgba(208, 211, 196, 1) 2%, rgba(167, 173, 145, 1) 27%, rgba(145, 152, 110, 1) 60%, rgba(128, 141, 103, 1) 81%, rgba(101, 122, 92, 1) 100%);
+
             @include cardFontBackSet();
 
             .item-img {
@@ -22,7 +23,7 @@
                     }
 
                     @media all and (max-width:500px) {
-                        width: 26vw;
+                        width: 35vw;
                     }
                 }
             }
@@ -79,8 +80,8 @@
                 }
 
                 @media all and (max-width:500px) {
-                    left: 33vw;
-                    top: 26vw;
+                    left: 41vw;
+                    top: 30vw;
                 }
 
                 img {
@@ -95,7 +96,7 @@
                     }
 
                     @media all and (max-width:500px) {
-                        width: 11vw;
+                        width: 15vw;
                     }
                 }
             }
@@ -121,8 +122,8 @@
                 }
 
                 @media all and (max-width:500px) {
-                    top: 31.5vw;
-                    left: 32vw;
+                    top: 41.5vw;
+                    left: 41vw;
                 }
 
                 img {
@@ -141,7 +142,7 @@
                     }
 
                     @media all and (max-width:500px) {
-                        width: 17vw;
+                        width: 21vw;
                     }
                 }
             }
@@ -164,7 +165,7 @@
 
                 @media all and (max-width:500px) {
                     right: 1vw;
-                    top: 41vw;
+                    top: 52.5vw;
                 }
 
                 img {
@@ -179,7 +180,7 @@
                     }
 
                     @media all and (max-width:500px) {
-                        width: 15vw;
+                        width: 20vw;
                     }
                 }
             }
@@ -201,8 +202,8 @@
                 }
 
                 @media all and (max-width:500px) {
-                    top: 13vw;
-                    left: 2vw;
+                    top: 12vw;
+                    left: 1vw;
                 }
 
                 img {
@@ -217,7 +218,7 @@
                     }
 
                     @media all and (max-width:500px) {
-                        width: 7vw;
+                        width: 10vw;
                     }
                 }
             }
@@ -239,8 +240,8 @@
                 }
 
                 @media all and (max-width:500px) {
-                    top: 19vw;
-                    left: 8vw;
+                    top: 22vw;
+                    left: 9vw;
                 }
 
                 img {
@@ -255,7 +256,7 @@
                     }
 
                     @media all and (max-width:500px) {
-                        width: 7vw;
+                        width: 10vw;
                     }
                 }
             }
@@ -265,6 +266,7 @@
                 left: 2.6vw;
                 top: 6.4vw;
                 z-index: 4;
+                // display: none;
 
                 @media all and (max-width:1440px) {
                     left: 3.5vw;
@@ -277,8 +279,8 @@
                 }
 
                 @media all and (max-width:500px) {
-                    top: 26vw;
-                    left: 13vw;
+                    top: 31vw;
+                    left: 16vw;
                 }
 
                 img {
@@ -293,7 +295,7 @@
                     }
 
                     @media all and (max-width:500px) {
-                        width: 7vw;
+                        width: 10vw;
                     }
                 }
             }
@@ -303,6 +305,7 @@
                 left: 3.5vw;
                 top: 8.2vw;
                 z-index: 4;
+                // display: none;
 
                 @media all and (max-width:1440px) {
                     left: 4.6vw;
@@ -315,8 +318,8 @@
                 }
 
                 @media all and (max-width:500px) {
-                    top: 34vw;
-                    left: 17vw;
+                    top: 42vw;
+                    left: 21.5vw;
                 }
 
                 img {
@@ -331,7 +334,7 @@
                     }
 
                     @media all and (max-width:500px) {
-                        width: 7vw;
+                        width: 10vw;
                     }
                 }
             }
@@ -341,6 +344,7 @@
                 left: 4.3vw;
                 top: 10vw;
                 z-index: 4;
+                // display: none;
 
                 @media all and (max-width:1440px) {
                     left: 5.7vw;
@@ -353,8 +357,8 @@
                 }
 
                 @media all and (max-width:500px) {
-                    top: 42.5vw;
-                    left: 21vw;
+                    top: 54vw;
+                    left: 24.5vw;
                 }
 
                 img {
@@ -369,7 +373,7 @@
                     }
 
                     @media all and (max-width:500px) {
-                        width: 7vw;
+                        width: 10vw;
                     }
                 }
             }
@@ -394,11 +398,19 @@
                         top: 25vw;
                     }
 
+                    @media all and (max-width:500px) {
+                        top: 30vw;
+                    }
+
                     img {
                         width: 11.3vw;
 
                         @media all and (max-width:1024px) {
                             width: 13vw;
+                        }
+
+                        @media all and (max-width:500px) {
+                            width: 20vw;
                         }
                     }
                 }
@@ -437,7 +449,7 @@
             }
 
             @media all and (max-width:500px) {
-                top: 10.5vw;
+                top: 12vw;
                 right: 7vw;
             }
 
@@ -453,7 +465,7 @@
                 }
 
                 @media all and (max-width:500px) {
-                    width: 9.8vw;
+                    width: 13vw;
                 }
             }
         }

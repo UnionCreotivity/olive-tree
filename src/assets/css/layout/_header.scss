@@ -18,9 +18,7 @@
     }
 
     @media all and (max-width:500px) {
-
         padding: 5vw 7vw;
-
     }
 
     .logo-box {
@@ -33,6 +31,10 @@
 
             @media all and (max-width:1024px) {
                 width: 38vw;
+            }
+
+            @media all and (max-width:500px) {
+                width: 48vw;
             }
         }
     }

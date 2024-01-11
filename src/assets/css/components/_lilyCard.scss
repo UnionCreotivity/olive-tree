@@ -6,6 +6,8 @@
         .font {
             background: linear-gradient(to bottom, rgba(208, 211, 196, 1) 2%, rgba(167, 173, 145, 1) 27%, rgba(145, 152, 110, 1) 60%, rgba(128, 141, 103, 1) 81%, rgba(101, 122, 92, 1) 100%);
 
+            
+
             @include cardFontBackSet();
 
             .item-img {
@@ -40,7 +42,7 @@
                     }
 
                     @media all and (max-width:500px) {
-                        width: 45vw;
+                        width: 57vw;
                     }
                 }
 
@@ -62,8 +64,8 @@
                     }
 
                     @media all and (max-width:500px) {
-                        right: 12vw;
-                        top: 11.5vw;
+                        right: 14vw;
+                        top: 14.7vw;
                     }
 
                     img {
@@ -78,7 +80,7 @@
                         }
 
                         @media all and (max-width:500px) {
-                            width: 7vw;
+                            width: 9.7vw;
                         }
                     }
                 }
@@ -101,8 +103,8 @@
                     }
 
                     @media all and (max-width:500px) {
-                        top: 10vw;
-                        right: 14vw;
+                        top: 12.5vw;
+                        right: 17vw;
                     }
 
                     img {
@@ -117,7 +119,7 @@
                         }
 
                         @media all and (max-width:500px) {
-                            width: 5vw;
+                            width: 7vw;
                         }
                     }
                 }
@@ -140,8 +142,8 @@
                     }
 
                     @media all and (max-width:500px) {
-                        top: 8.3vw;
-                        right: 14.7vw;
+                        top: 10.2vw;
+                        right: 16.7vw;
                     }
 
                     img {
@@ -156,7 +158,7 @@
                         }
 
                         @media all and (max-width:500px) {
-                            width: 4.5vw;
+                            width: 6.5vw;
                             // display: none;
                         }
                     }
@@ -169,6 +171,7 @@
                     z-index: 2;
                     opacity: 0.8;
                     z-index: 23;
+                    // mix-blend-mode: difference;
 
                     @media all and (max-width:1440px) {
                         top: 1.6vw;
@@ -181,8 +184,8 @@
                     }
 
                     @media all and (max-width:500px) {
-                        top: 6.8vw;
-                        right: 16.3vw;
+                        top: 9.5vw;
+                        right: 20.3vw;
                     }
 
                     img {
@@ -197,7 +200,7 @@
                         }
 
                         @media all and (max-width:500px) {
-                            width: 4vw;
+                            width: 5vw;
                             // display: none;
                         }
                     }
@@ -210,6 +213,7 @@
                     opacity: 0.8;
                     z-index: 21;
 
+
                     @media all and (max-width:1440px) {
                         top: 2vw;
                         right: 4.7vw;
@@ -221,8 +225,8 @@
                     }
 
                     @media all and (max-width:500px) {
-                        top: 8.5vw;
-                        right: 17.5vw;
+                        top: 11vw;
+                        right: 22.5vw;
                     }
 
                     img {
@@ -237,7 +241,7 @@
                         }
 
                         @media all and (max-width:500px) {
-                            width: 4vw;
+                            width: 5vw;
                             // display: none;
                         }
                     }
@@ -249,6 +253,7 @@
                     right: 4.3vw;
                     opacity: 0.8;
                     z-index: 1;
+                    // mix-blend-mode: difference;
 
                     @media all and (max-width:1440px) {
                         top: 2.7vw;
@@ -261,8 +266,8 @@
                     }
 
                     @media all and (max-width:500px) {
-                        top: 11.3vw;
-                        right: 18.5vw;
+                        top: 13vw;
+                        right: 23vw;
                     }
 
                     img {
@@ -277,7 +282,7 @@
                         }
 
                         @media all and (max-width:500px) {
-                            width: 3.7vw;
+                            width: 5.5vw;
                             // display: none;
                         }
 
@@ -311,8 +316,18 @@
                         top: 10vw;
                     }
 
+                    @media all and (max-width:500px) {
+                        left: 7vw;
+                        top: 17vw;
+                    }
+
                     img {
                         width: 10vw;
+
+
+                        @media all and (max-width:500px) {
+                            width: 48vw;
+                        }
                     }
                 }
             }
@@ -351,7 +366,7 @@
             }
 
             @media all and (max-width:500px) {
-                top: 10.5vw;
+                top: 12vw;
                 right: 7vw;
             }
 
@@ -367,7 +382,7 @@
                 }
 
                 @media all and (max-width:500px) {
-                    width: 8.8vw;
+                    width: 12vw;
                 }
             }
         }
