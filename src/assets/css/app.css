@@ -1031,13 +1031,13 @@ body {
 }
 
 .case-body {
-  background-image: url(/src/assets/images/page_case/bg.png);
+  background-image: url(../images/page_case/bg.png);
   width: 100%;
   background-size: cover;
 }
 @media all and (max-width: 1024px) {
   .case-body {
-    background-image: url(/src/assets/images/page_case/bg_moblie.png);
+    background-image: url(../images/page_case/bg_moblie.png);
   }
 }
 .case-body .case-main {
@@ -2728,7 +2728,7 @@ body {
 
 .history-body {
   background-color: white;
-  background-image: url(/src/assets/images/page_history/bg.png);
+  background-image: url(../images/page_history/bg.png);
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -3230,6 +3230,12 @@ body {
   left: -40vw;
   bottom: 0px;
   mix-blend-mode: difference;
+  display: none;
+}
+@media all and (max-width: 1024px) {
+  .history-body .case-main .page-contaniner .tree-shadow-moblie {
+    display: block;
+  }
 }
 
 .olive-tree-box {
