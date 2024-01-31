@@ -1,11 +1,11 @@
 .case-body {
-    background-image: url(../assets/images/page_case/bg.png);
+    background-image: url(../images/page_case/bg.png);
     width: 100%;
     background-size: cover;
 
     // overflow: hidden;
     @media all and (max-width:1024px) {
-        background-image: url(../assets/images/page_case/bg_moblie.png);
+        background-image: url(../images/page_case/bg_moblie.png);
     }
 
     .case-main {
