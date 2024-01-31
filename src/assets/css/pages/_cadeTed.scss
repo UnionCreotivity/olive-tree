@@ -283,9 +283,9 @@
                     width: 100%;
                     opacity: 0;
 
-                    @media all and (max-width:1024px) {
-                        opacity: 1;
-                    }
+                    // @media all and (max-width:1024px) {
+                    //     opacity: 1;
+                    // }
 
                     .swiper-wrapper {
 
@@ -377,7 +377,7 @@
 
                     @media all and (max-width:1024px) {
                         height: 26%;
-                        opacity: 1;
+                        // opacity: 1;
                     }
 
                     .swiper-wrapper {
@@ -424,7 +424,7 @@
                     border: 1px solid #b7c497;
                     border-radius: 55px;
                     height: 39vw;
-                    padding: 2vw 2vw;
+                    padding: 2vw 2vw 2.7vw 2vw;
                     justify-content: space-between;
 
                     @media all and (max-width:1920px) {
@@ -535,7 +535,7 @@
                 .moblie-case-content {
                     display: flex;
                     justify-content: center;
-                    line-height: 7vw;
+                    line-height: 6.5vw;
                 }
 
                 .line-box {
@@ -779,7 +779,7 @@
                             border-bottom: 2.5px solid #c1bfc0;
 
                             @media all and (max-width:1440px) {
-                                border-bottom: 1px solid #595959;
+                                border-bottom: 1px solid #c1bfc0;
                             }
 
                             @media all and (max-width:1024px) {

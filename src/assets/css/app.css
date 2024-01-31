@@ -1219,7 +1219,7 @@ body {
   writing-mode: vertical-rl;
   text-orientation: upright;
   top: 12vw;
-  left: 9vw;
+  left: 11vw;
 }
 .case-body .case-main .page-contaniner .swiper .case-title-box .case-name {
   font-size: 1vw;
@@ -1290,7 +1290,7 @@ body {
 .case-body .case-main .page-contaniner .swiper .case-sign-box {
   position: absolute;
   bottom: 6vw;
-  right: 12vw;
+  right: 8vw;
 }
 .case-body .case-main .page-contaniner .swiper .case-sign-box .case-sign {
   width: 10vw;
@@ -1673,11 +1673,6 @@ body {
   width: 100%;
   opacity: 0;
 }
-@media all and (max-width: 1024px) {
-  .case-ted-body .case-ted-contanier .card1 .main-banner-box .gallery-top {
-    opacity: 1;
-  }
-}
 .case-ted-body .case-ted-contanier .card1 .main-banner-box .gallery-top .swiper-wrapper .swiper-slide img {
   width: 100%;
   height: 29vw;
@@ -1763,7 +1758,6 @@ body {
 @media all and (max-width: 1024px) {
   .case-ted-body .case-ted-contanier .card1 .main-banner-box .gallery-thumbs {
     height: 26%;
-    opacity: 1;
   }
 }
 .case-ted-body .case-ted-contanier .card1 .main-banner-box .gallery-thumbs .swiper-wrapper {
@@ -1804,7 +1798,7 @@ body {
   border: 1px solid #b7c497;
   border-radius: 55px;
   height: 39vw;
-  padding: 2vw 2vw;
+  padding: 2vw 2vw 2.7vw 2vw;
   justify-content: space-between;
 }
 @media all and (max-width: 1920px) {
@@ -1941,7 +1935,7 @@ body {
 .case-ted-body .case-ted-contanier .card1 .moblie-case-content-box .moblie-case-content {
   display: flex;
   justify-content: center;
-  line-height: 7vw;
+  line-height: 6.5vw;
 }
 .case-ted-body .case-ted-contanier .card1 .moblie-case-content-box .line-box {
   margin-bottom: 5vw;
@@ -2100,7 +2094,7 @@ body {
 @media all and (max-width: 1024px) {
   .case-ted-body .case-ted-contanier .banner-box .banner-content .content {
     font-size: 3.7vw;
-    line-height: 8vw;
+    line-height: 6.5vw;
     word-break: normal;
     text-align: justify;
   }
@@ -2216,7 +2210,7 @@ body {
 }
 @media all and (max-width: 1440px) {
   .case-ted-body .case-ted-contanier .reserve-box .form-box .form-content form .input-box {
-    border-bottom: 1px solid #595959;
+    border-bottom: 1px solid #c1bfc0;
   }
 }
 @media all and (max-width: 1024px) {
@@ -2381,7 +2375,12 @@ body {
   justify-content: center;
   width: 100%;
   height: 100vh;
-  padding-top: 10vw;
+  padding-top: 9vw;
+}
+@media all and (max-width: 1920px) {
+  .contact-body .contact-contanier {
+    padding-top: 8vw;
+  }
 }
 @media all and (max-width: 1440px) {
   .contact-body .contact-contanier {
@@ -2415,7 +2414,7 @@ body {
   text-align: center;
 }
 .contact-body .contact-contanier .left-box .title-box .title-img img {
-  height: 5vw;
+  height: 4vw;
 }
 @media all and (max-width: 1024px) {
   .contact-body .contact-contanier .left-box .title-box .title-img img {
@@ -2442,7 +2441,7 @@ body {
 }
 .contact-body .contact-contanier .left-box .map-img {
   text-align: center;
-  margin-top: 3vw;
+  margin-top: 2vw;
 }
 @media all and (max-width: 1024px) {
   .contact-body .contact-contanier .left-box .map-img {
@@ -2692,17 +2691,15 @@ body {
     line-height: 5.5vw;
     padding: 0 0vw;
     width: 25vw;
-    background: #4f563f;
-    border: none;
     margin: 0 auto;
     margin-top: 4.5vw;
   }
 }
 @media all and (max-width: 500px) {
   .contact-body .contact-contanier .right-box .contact-send-box #contact-send {
-    line-height: 8vw;
-    width: 27vw;
-    border-radius: 5px;
+    line-height: 7vw;
+    width: 28vw;
+    border-radius: 9px;
     margin-top: 6vw;
   }
 }
@@ -2831,6 +2828,7 @@ body {
 .history-body .case-main .page-contaniner .main-container {
   display: flex;
   width: 100%;
+  position: relative;
 }
 .history-body .case-main .page-contaniner .main-container .card-box {
   display: flex;
@@ -2838,17 +2836,19 @@ body {
   justify-content: center;
   padding-top: 10vw;
   padding-bottom: 10vw;
+  position: relative;
 }
 @media all and (max-width: 1024px) {
   .history-body .case-main .page-contaniner .main-container .card-box {
     height: 100vw;
-    margin-bottom: 10vw;
+    margin-bottom: 14vw;
   }
 }
 @media all and (max-width: 500px) {
   .history-body .case-main .page-contaniner .main-container .card-box {
     margin-bottom: 35vw;
     padding-top: 12vw;
+    height: 115vw;
   }
 }
 @media all and (max-width: 1024px) {
@@ -2901,11 +2901,6 @@ body {
   height: 25.5vw;
   border-radius: 17px;
   overflow: hidden;
-}
-@media all and (max-width: 1024px) {
-  .history-body .case-main .page-contaniner .main-container .card-box .history-card .history-card-font {
-    transform: rotateY(180deg);
-  }
 }
 @media all and (max-width: 1920px) {
   .history-body .case-main .page-contaniner .main-container .card-box .history-card .history-card-font {
@@ -3014,14 +3009,13 @@ body {
 @media all and (max-width: 1024px) {
   .history-body .case-main .page-contaniner .main-container .card-box .history-card .history-card-font .case-content .case-year {
     font-size: 14vw;
-    margin-top: 5vw;
-    margin-left: 2vw;
+    margin-top: 8vw;
+    margin-left: 4vw;
   }
 }
 @media all and (max-width: 500px) {
   .history-body .case-main .page-contaniner .main-container .card-box .history-card .history-card-font .case-content .case-year {
     margin-top: 13vw;
-    margin-left: 4vw;
   }
 }
 .history-body .case-main .page-contaniner .main-container .card-box .history-card .history-card-font .case-content .case-year .slash-box {
@@ -3050,7 +3044,6 @@ body {
 }
 @media all and (max-width: 1024px) {
   .history-body .case-main .page-contaniner .main-container .card-box .history-card .history-card-back {
-    transform: rotateY(0deg);
     width: 41.5vw;
     height: 68vw;
   }
@@ -3223,6 +3216,45 @@ body {
 }
 .history-body .case-main .page-contaniner .main-container .card-box .history-card:nth-child(4n+4) .history-card-font .case-content .case-year .slash-box #slash {
   stroke: #b8c598;
+}
+.history-body .case-main .page-contaniner .main-container .prev {
+  z-index: 10;
+  cursor: pointer;
+  position: absolute;
+  bottom: 12vw;
+  right: 4vw;
+}
+@media all and (max-width: 1920px) {
+  .history-body .case-main .page-contaniner .main-container .prev {
+    right: 5vw;
+  }
+}
+@media all and (max-width: 1680px) {
+  .history-body .case-main .page-contaniner .main-container .prev {
+    right: 6vw;
+  }
+}
+@media all and (max-width: 1024px) {
+  .history-body .case-main .page-contaniner .main-container .prev {
+    left: 1vw;
+  }
+}
+@media all and (max-width: 500px) {
+  .history-body .case-main .page-contaniner .main-container .prev {
+    bottom: 5vw;
+  }
+}
+.history-body .case-main .page-contaniner .main-container .next {
+  z-index: 10;
+  cursor: pointer;
+  position: absolute;
+  bottom: 12vw;
+  right: 1vw;
+}
+@media all and (max-width: 500px) {
+  .history-body .case-main .page-contaniner .main-container .next {
+    bottom: 5vw;
+  }
 }
 .history-body .case-main .page-contaniner .tree-shadow-moblie {
   position: absolute;

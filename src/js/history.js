@@ -122,7 +122,10 @@ window.onload = function () {
             slidesPerView: 2,
             centeredSlides: true,
             spaceBetween: 80,
-
+            navigation: {
+                prevEl: ".prev",
+                nextEl: ".next"
+            },
         })
     } else if (window_width <= 1024) {
         const swiper = new Swiper('.swiper', {
@@ -130,7 +133,10 @@ window.onload = function () {
             slidesPerView: 2,
             centeredSlides: true,
             // spaceBetween: 150,
-
+            navigation: {
+                prevEl: ".prev",
+                nextEl: ".next"
+            },
         })
     } else if (window_width <= 1920) {
         const swiper = new Swiper('.swiper', {
@@ -147,7 +153,10 @@ window.onload = function () {
                 },
                 limitProgress: 4,
             },
-
+            navigation: {
+                prevEl: ".prev",
+                nextEl: ".next"
+            },
         })
     } else {
         const swiper = new Swiper('.swiper', {
@@ -164,7 +173,10 @@ window.onload = function () {
                 },
                 limitProgress: 4,
             },
-
+            navigation: {
+                prevEl: ".prev",
+                nextEl: ".next"
+            },
         })
     }
 }

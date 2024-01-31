@@ -99,6 +99,7 @@
             .main-container {
                 display: flex;
                 width: 100%;
+                position: relative;
 
                 .card-box {
                     display: flex;
@@ -106,15 +107,17 @@
                     justify-content: center;
                     padding-top: 10vw;
                     padding-bottom: 10vw;
+                    position: relative;
 
                     @media all and (max-width:1024px) {
                         height: 100vw;
-                        margin-bottom: 10vw;
+                        margin-bottom: 14vw;
                     }
 
                     @media all and (max-width:500px) {
                         margin-bottom: 35vw;
                         padding-top: 12vw;
+                        height: 115vw;
                     }
 
                     .swiper-wrapper {
@@ -172,7 +175,7 @@
                             overflow: hidden;
 
                             @media all and (max-width:1024px) {
-                                transform: rotateY(180deg);
+                                // transform: rotateY(180deg);
                             }
 
                             @media all and (max-width:1920px) {
@@ -263,13 +266,13 @@
 
                                     @media all and (max-width:1024px) {
                                         font-size: 14vw;
-                                        margin-top: 5vw;
-                                        margin-left: 2vw;
+                                        margin-top: 8vw;
+                                        margin-left: 4vw;
                                     }
 
                                     @media all and (max-width:500px) {
                                         margin-top: 13vw;
-                                        margin-left: 4vw;
+
                                     }
 
                                     .slash-box {
@@ -300,7 +303,7 @@
                             background-repeat: no-repeat;
 
                             @media all and (max-width:1024px) {
-                                transform: rotateY(0deg);
+
                                 width: 41.5vw;
                                 height: 68vw;
                             }
@@ -509,6 +512,45 @@
                         }
                     }
                 }
+
+
+                .prev {
+
+                    z-index: 10;
+                    cursor: pointer;
+                    position: absolute;
+                    bottom: 12vw;
+                    right: 4vw;
+
+                    @media all and (max-width:1920px) {
+                        right: 5vw;
+                    }
+
+                    @media all and (max-width:1680px) {
+                        right: 6vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        left: 1vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        bottom: 5vw;
+                    }
+                }
+
+                .next {
+                    z-index: 10;
+                    cursor: pointer;
+                    position: absolute;
+                    bottom: 12vw;
+                    right: 1vw;
+
+                    @media all and (max-width:500px) {
+                        bottom: 5vw;
+                    }
+                }
+
             }
 
             .tree-shadow-moblie {
