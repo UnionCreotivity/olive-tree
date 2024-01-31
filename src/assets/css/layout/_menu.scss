@@ -2,16 +2,12 @@
     max-width: 1024px;
     background-color: white;
     height: 0vh;
-    // z-index: 9999;
     position: fixed;
     top: 0px;
     left: 0px;
     width: 100vw;
     overflow: hidden;
     opacity: 0;
-
-    // display: none;
-    // height: calc(var(--vh, 2.8vh) * 100);
 
     .menu-tree-shadow {
         position: absolute;
@@ -35,9 +31,12 @@
         width: 50px;
         height: 50px;
 
-        // border: 1px solid red;
         @media all and (max-width:1024px) {
             right: 1.5vw;
+        }
+
+        @media all and (max-width:500px) {
+            right: -2vw;
         }
 
         img {
@@ -54,15 +53,12 @@
         flex-direction: column;
         width: 100%;
         height: calc(var(--vh, 2.8vh) * 100);
-
         margin: 0 auto;
         justify-content: center;
 
         @media all and (max-width:430px) {
             justify-content: center;
-            // padding-bottom: 12vw;
 
-            // padding-bottom: calc(var(--vh, 2.8vh) * 12)
         }
 
         .item-box {
@@ -71,8 +67,6 @@
             width: 100%;
             justify-content: center;
             z-index: 2;
-
-
         }
 
 
@@ -100,7 +94,7 @@
             }
 
             .text {
-                // font-size: 3vw;
+
                 font-size: 4vw;
                 font-family: 'Noto Serif TC', serif;
                 text-align: center;

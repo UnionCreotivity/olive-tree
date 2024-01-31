@@ -1,6 +1,8 @@
 //Utils
 @import 'utils/mixin';
 @import 'utils/keyframes';
+@import 'utils/variables';
+@import 'utils/basic';
 
 //layout
 @import 'layout/header';
@@ -10,6 +12,10 @@
 //Pages
 @import 'pages/index';
 @import 'pages/case';
+@import 'pages/test';
+@import 'pages/cadeTed';
+@import 'pages/contact';
+@import 'pages/history';
 
 //components
 @import 'components/oliveCard';

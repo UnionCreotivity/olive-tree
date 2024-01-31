@@ -405,7 +405,8 @@ function canvas() {
     }
 }
 
-window.onload = function () {
+
+export default function indexJS() {
 
     // canvSas();
 
@@ -445,7 +446,7 @@ window.onload = function () {
             '</div>' +
             '</header>';
 
-        $('body').append(header_div);
+        $('.contanier').append(header_div);
     }
     headerInsert();
 
@@ -471,53 +472,76 @@ window.onload = function () {
     /* menu */
     function menuInsert() {
         var menu_div =
-            '<div class="menu-box">' +
-            '<div class="menu-tree-shadow">' +
-            '<img src="../assets/images/tree_shadow.webp" alt="tree_shadow" srcset="">' +
-            '</div>' +
-            '<div class="close">' +
-            '<img src="../assets/images/menu/close.svg" alt="close" srcset="">' +
-            '</div>' +
-            '<div class="menu">' +
-            '<div class="item-box">' +
-            '<div class="item btn-about">' +
-            '<div class="about">' +
-            '<img src="../assets/images/menu/about.png" alt="about" srcset="">' +
-            '</div>' +
-            '<div class="text">關於橄欖樹</div>' +
-            '</div>' +
-            '<div class="item btn-hot">' +
-            '<div class="hot">' +
-            '<img src="../assets/images/menu/hot.png" alt="hot" srcset="">' +
-            '</div>' +
-            '<div class="text">熱銷建案</div>' + '</div>' +
-            '<div class="item btn-history">' +
-            '<div class="history">' +
-            '<img src="../assets/images/menu/history.png" alt="history" srcset="">' +
-            '</div>' +
-            '<div class="text">歷屆業績</div>' +
-            '</div>' +
-            '<div class="item btn-news">' +
-            '<div class="news">' +
-            '<img src="../assets/images/menu/news.png" alt="news" srcset="">' +
-            '</div>' +
-            '<div class="text">最新消息</div>' +
-            '</div>' +
-            '<div class="item btn-contact">' +
-            '<div class="contact">' +
-            '<img src="../assets/images/menu/email.png" alt="email" srcset="">' +
-            '</div>' +
-            '<div class="text">聯絡我們</div>' +
-            '</div>' +
-            '<div class="item btn-line">' +
-            '<div class="menu-line">' +
-            '<img src="../assets/images/menu/line.png" alt="line" srcset="">' +
-            '</div>' +
-            '<div class="text">LINE</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            ' </div>';
+            ` <div class="menu-box">
+           <div class="menu-tree-shadow">
+               <img src="../assets/images/tree_shadow.webp" alt="tree_shadow" srcset="">
+           </div>
+           <div class="close">
+               <img src="../assets/images/menu/close.svg" alt="close" srcset="">
+           </div>
+           <div class="menu">
+               <div class="item-box">
+                   <div class="item btn-about">
+                       <a href="./index.html">
+                           <div class="about">
+                               <img src="../assets/images/menu/about.png" alt="about" srcset="">
+                           </div>
+                           <div class="text">
+                               關於橄欖樹
+                           </div>
+                       </a>
+                   </div>
+                   <div class="item btn-hot">
+                       <a href="./case.html">
+                           <div class="hot">
+                               <img src="../assets/images/menu/hot.png" alt="hot" srcset="">
+                           </div>
+                           <div class="text">
+                               熱銷建案
+                           </div>
+                       </a>
+                   </div>
+                   <div class="item btn-history">
+                       <a href="./history.html">
+                           <div class="history">
+                               <img src="../assets/images/menu/history.png" alt="history" srcset="">
+                           </div>
+                           <div class="text">
+                               歷屆業績
+                           </div>
+                       </a>
+                   </div>
+                   <div class="item btn-news">
+                       <a href="./index.html">
+                           <div class="news">
+                               <img src="../assets/images/menu/news.png" alt="news" srcset="">
+                           </div>
+                           <div class="text">
+                               最新消息
+                           </div>
+                       </a>
+                   </div>
+                   <div class="item btn-contact">
+                       <a href="./contact.html">
+                           <div class="contact">
+                               <img src="../assets/images/menu/email.png" alt="email" srcset="">
+                           </div>
+                           <div class="text">
+                               聯絡我們
+                           </div>
+                       </a>
+                   </div>
+                   <div class="item btn-line">
+                       <div class="menu-line">
+                           <img src="../assets/images/menu/line.png" alt="line" srcset="">
+                       </div>
+                       <div class="text">
+                           LINE
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>`
         $('body').append(menu_div);
     }
     menuInsert();
@@ -540,7 +564,7 @@ window.onload = function () {
                     duration: 1,
                     opacity: 1,
                     zIndex: 9999,
-                    height: 'calc(var(--vh, 2.8vh) * 100)',
+                    height: '100vh',
                     ease: "power1.inOut"
                 }
             )
@@ -564,9 +588,11 @@ window.onload = function () {
 
         menu_btn.addEventListener('click', () => {
             menu_tl.play(0);
+            $('body').css('overflow', 'hidden');
         });
 
         menu_close.addEventListener('click', () => {
+            $('body').css('overflow', 'visible');
             menu_close_tl
                 .to('.menu .item',
                     { duration: 1, opacity: 0, stagger: 0.2, ease: "power1.inOut", })
@@ -582,7 +608,6 @@ window.onload = function () {
                     , '<0.3')
         });
     };
-
     menuClick();
 
     const card_boxes = gsap.utils.toArray(document.querySelectorAll(".card-box"));
@@ -610,29 +635,34 @@ window.onload = function () {
             if (isClicking !== true) {
                 mouseenterCardAni(tl, card_box, card, envelope, back, font, back_item_img, text_content, back_item_title, back_item_content, shadow);
             }
-
         });
 
         card_box.addEventListener('mouseleave', () => {
-
             if (isClicking !== true) {
                 mouseleaveCardAni(tl);
             }
-
         });
 
         card_box.addEventListener('click', (e) => {
-            // if (isClickTimes !== true) {
-            //     e.stopPropagation();
-            //     isClicking = true;
-            //     clickedCardBoxes.push(card_box);
 
-            //     // 取得沒有被點擊過的 card_box
-            //     notClickedCardBoxes = card_boxes.filter(box => !clickedCardBoxes.includes(box));
-            //     clickCardAni(tl, card_box, scroll_card_box, card);
-            // }
+            if (isClickTimes !== true) {
 
-            mouseenterCardAni(tl, card_box, card, envelope, back, font, back_item_img, text_content, back_item_title, back_item_content, shadow);
+                e.stopPropagation();
+                isClicking = true;
+                clickedCardBoxes.push(card_box);
+
+                card_box.classList.add('checkCard');
+
+                //-- 取消滑鼠滑動視差監聽 --
+                // window.removeEventListener('mousemove', getMousePos);
+
+                // 取得沒有被點擊過的 card_box
+                // notClickedCardBoxes = card_boxes.filter(box => !clickedCardBoxes.includes(box));
+                // clickCardAni(tl, card_box, scroll_card_box, card);
+                barba.go('test.html');
+
+                sessionStorage['card_box'] = card_box.id;
+            }
 
         });
     });
@@ -645,16 +675,16 @@ window.onload = function () {
             } else {
                 switch (card_box.id) {
                     case 'olive-tree':
-                        applyAnimation('160vw', '-59vw', '-15vw');
+                        applyAnimation('160vw', '-59vw', '-15vw', '-30');
                         break;
                     case 'lily':
-                        applyAnimation('135vw', '-55vw', '2vw');
+                        applyAnimation('135vw', '-55vw', '2vw', '-30');
                         break;
                     case 'cotton':
-                        applyAnimation('120vw', '-37vw', '15vw');
+                        applyAnimation('120vw', '-37vw', '15vw', '-30');
                         break;
                     case 'campanula':
-                        applyAnimation('200vw', '-51vw', '-90vw');
+                        applyAnimation('200vw', '-51vw', '-90vw', '-30');
                         break;
                 }
             }
@@ -666,16 +696,16 @@ window.onload = function () {
             } else {
                 switch (card_box.id) {
                     case 'olive-tree':
-                        applyAnimation('125vw', '-42vw', '-25vw');
+                        applyAnimation('125vw', '-42vw', '-25vw', '-30');
                         break;
                     case 'lily':
-                        applyAnimation('97vw', '-52vw', '0vw');
+                        applyAnimation('97vw', '-52vw', '0vw', '-30');
                         break;
                     case 'cotton':
-                        applyAnimation('85vw', '-33vw', '0vw');
+                        applyAnimation('85vw', '-33vw', '0vw', '-30');
                         break;
                     case 'campanula':
-                        applyAnimation('150vw', '-43vw', '-74vw');
+                        applyAnimation('150vw', '-43vw', '-74vw', '-30');
                         break;
                 }
             }
@@ -687,54 +717,130 @@ window.onload = function () {
             } else {
                 switch (card_box.id) {
                     case 'olive-tree':
-                        applyAnimation('35vw', '-12vw', '-8vw');
+                        applyAnimation('35vw', '-12vw', '-8vw', '-50');
                         break;
                     case 'lily':
-                        applyAnimation('25vw', '-9vw', '-1vw');
+                        applyAnimation('25vw', '-9vw', '-1vw', '-50');
                         break;
                     case 'cotton':
-                        applyAnimation('20vw', '-7vw', '2vw');
+                        applyAnimation('20vw', '-7vw', '-5vw', '-50');
                         break;
                     case 'campanula':
-                        applyAnimation('45vw', '-12vw', '-19vw');
+                        applyAnimation('45vw', '-12vw', '-19vw', '-50');
                         break;
                 }
             }
         }
 
-        function applyAnimation(width, translateX, translateY) {
+        function applyAnimation(width, translateX, translateY, cardY) {
             tl
-                //加快版
-                // .to(card, { y: -50, duration: 0.3, ease: "back.out(3)" })
-                // .to(back, { duration: 0.8, rotationY: '0', ease: "power1.inOut", }, "<")
-                // .to(font, { duration: 0.8, rotationY: '-180', ease: "power1.inOut", }, "<")
-
                 //原版
                 // .to(card, { y: -40, duration: 0.5, ease: "back.out(1.7)" })
                 // .to(back, { duration: 0.8, rotationY: '0', ease: "power1.inOut", }, "<")
                 // .to(font, { duration: 0.8, rotationY: '-180', ease: "power1.inOut", }, "<")
 
                 //誇張版
-                .to(card, { y: -50, duration: 1.5, ease: "elastic.out(1.75,0.5)", })
-                // .to(card, { y: -50, duration: 1.5, ease: "elastic.inOut(1.75,0.5)", })
-                .to(back, { duration: 0.6, rotationY: '0', ease: "power1.inOut", }, "<0.2")
-                .to(font, { duration: 0.6, rotationY: '-180', ease: "power1.inOut", }, "<")
-
-                //承穎版
-                // .to(card, { y: -40, duration: 0.5, ease: "power4.out" })
-                // .to(back, { duration: 0.5, rotationY: '0', ease: "power1.out" }, "<")
-                // .to(font, { duration: 0.5, rotationY: '-180', ease: "power1.out" }, "<")
-
-
-                .to(shadow, { y: -40, duration: 0.5, ease: "back.out(1.7)" }, '<')
+                .to(card, { y: cardY, duration: 1.5, ease: "elastic.out(1.75,0.5)", })
+                .to(back, { duration: 0.5, rotationY: '0', ease: "power1.inOut", }, "<")
+                .to(font, { duration: 0.5, rotationY: '-180', ease: "power1.inOut", }, "<")
+                .to(shadow, { y: cardY, duration: 0.6, ease: "elastic.out(1.75,0.5)" }, '<')
                 .to(shadow, { duration: 1.2, ease: "power1.out", opacity: 0 }, '<')
-                .to(envelope, { opacity: 0, y: 80, ease: "power1.out", duration: 0.5 }, "<0.2")
+                .to(envelope, { opacity: 0, y: 80, ease: "power1.out", duration: 0.5 }, "<0.1")
                 .to(back_item_img, { width: width, translateX: translateX, translateY: translateY, ease: "power1.out", duration: 1 }, "<0.1")
-                .to(text_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                .to(back_item_title, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
-                .to(back_item_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<");
+                .to(text_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.1")
+                .from(back_item_title, { opacity: 0, ease: "power1.out", duration: 1 }, "<0.1")
+                .from(back_item_title.querySelector('h2'), { y: -30, ease: "power2.out", duration: 1 }, "<")
+                .from(card.querySelector('.subTitle'), { opacity: 0, y: 6, ease: "power2.out", duration: 1 }, "<")
+                .from(back_item_content, { opacity: 0, y: 6, ease: "power2.out", duration: 1 }, "<0.1");
         }
     }
+
+    // function touchstartCardAni(tl, card_box, card, envelope, back, font, back_item_img, text_content, back_item_title, back_item_content, shadow) {
+
+    //     if (window_width <= 500) {
+    //         if (tl.reversed()) {
+    //             tl.play();
+    //         } else {
+    //             switch (card_box.id) {
+    //                 case 'olive-tree':
+    //                     applyMoblieAnimation('160vw', '-59vw', '-15vw', '-30');
+    //                     break;
+    //                 case 'lily':
+    //                     applyMoblieAnimation('135vw', '-55vw', '2vw', '-30');
+    //                     break;
+    //                 case 'cotton':
+    //                     applyMoblieAnimation('120vw', '-37vw', '15vw', '-30');
+    //                     break;
+    //                 case 'campanula':
+    //                     applyMoblieAnimation('200vw', '-51vw', '-90vw', '-30');
+    //                     break;
+    //             }
+    //         }
+    //     }
+
+    //     else if (window_width <= 1024) {
+    //         if (tl.reversed()) {
+    //             tl.play();
+    //         } else {
+    //             switch (card_box.id) {
+    //                 case 'olive-tree':
+    //                     applyMoblieAnimation('160vw', '-59vw', '-15vw', '-30');
+    //                     break;
+    //                 case 'lily':
+    //                     applyMoblieAnimation('135vw', '-55vw', '2vw', '-30');
+    //                     break;
+    //                 case 'cotton':
+    //                     applyMoblieAnimation('120vw', '-37vw', '15vw', '-30');
+    //                     break;
+    //                 case 'campanula':
+    //                     applyMoblieAnimation('200vw', '-51vw', '-90vw', '-30');
+    //                     break;
+    //             }
+    //         }
+    //     }
+
+    //     function applyMoblieAnimation(width, translateX, translateY, cardY) {
+    //         let scroll_card_box = document.querySelector('.scroll-card-box');
+    //         const MobliescrollCardBoxRect = scroll_card_box.getBoundingClientRect();
+    //         const MobliecardBoxRect = card_box.getBoundingClientRect();
+    //         var MobliedeltaX;
+    //         if (windowWidth <= 550) {
+    //             MobliedeltaX = (MobliescrollCardBoxRect.width - MobliecardBoxRect.width) / 15 - (MobliecardBoxRect.left - MobliescrollCardBoxRect.left);
+
+    //         }
+    //         else if (windowWidth <= 1024) {
+    //             MobliedeltaX = (MobliescrollCardBoxRect.width - MobliecardBoxRect.width) / 7 - (MobliecardBoxRect.left - MobliescrollCardBoxRect.left);
+
+    //         }
+
+    //         tl
+
+    //             .to(scroll_card_box, {
+    //                 x: MobliedeltaX,
+    //                 ease: "power1.inOut",
+    //                 duration: 1,
+    //                 onComplete() {
+    //                     //-- 卡片定位 --
+    //                     const cardRect = card.getBoundingClientRect();
+    //                     const cardInnerCard = document.querySelector('.cardInner .card');
+    //                     cardInnerCard.style.top = `${cardRect.top}px`;
+    //                     cardInnerCard.style.left = `${cardRect.left}px`;
+
+    //                 }
+    //             })
+    //             .to(card, { y: cardY, duration: 1.5, ease: "elastic.out(1.75,0.5)", })
+    //             .to(back, { duration: 0.5, rotationY: '0', ease: "power1.inOut", }, "<")
+    //             .to(font, { duration: 0.5, rotationY: '-180', ease: "power1.inOut", }, "<")
+    //             .to(shadow, { y: cardY, duration: 0.6, ease: "elastic.out(1.75,0.5)" }, '<')
+    //             .to(shadow, { duration: 1.2, ease: "power1.out", opacity: 0 }, '<')
+    //             .to(envelope, { opacity: 0, y: 80, ease: "power1.out", duration: 0.5 }, "<0.2")
+    //             .to(back_item_img, { width: width, translateX: translateX, translateY: translateY, ease: "power1.out", duration: 1 }, "<0.1")
+    //             .to(text_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
+    //             .to(back_item_title, { opacity: 1, ease: "power1.out", duration: 1 }, "<0.3")
+    //             .to(back_item_content, { opacity: 1, ease: "power1.out", duration: 1 }, "<");
+    //     }
+
+    // }
 
     function mouseleaveCardAni(tl) {
         tl.reverse();
@@ -745,298 +851,310 @@ window.onload = function () {
 
     function clickCardAni(tl, card_box, scroll_card_box, card) {
         // isClickTimes = true;
-        tl.then(() => {
 
-            const scrollCardBoxRect = scroll_card_box.getBoundingClientRect();
-            const cardBoxRect = card_box.getBoundingClientRect();
-            const deltaX = (scrollCardBoxRect.width - cardBoxRect.width) / 2 - (cardBoxRect.left - scrollCardBoxRect.left);
+        const scrollCardBoxRect = scroll_card_box.getBoundingClientRect();
+        const cardBoxRect = card_box.getBoundingClientRect();
 
-            //-- 更換卡片內容 --
+        var deltaX;
+        if (window_width <= 550) {
+            deltaX = (scrollCardBoxRect.width - cardBoxRect.width) / 15 - (cardBoxRect.left - scrollCardBoxRect.left);
 
-            let cardObj = {
-                backImg: {
-                    src: '',
+        }
+        else if (window_width <= 1024) {
+            deltaX = (scrollCardBoxRect.width - cardBoxRect.width) / 7 - (cardBoxRect.left - scrollCardBoxRect.left);
+
+        } else {
+
+            deltaX = (scrollCardBoxRect.width - cardBoxRect.width) / 2 - (cardBoxRect.left - scrollCardBoxRect.left);
+
+        }
+
+        //-- 更換卡片內容 --
+
+        let cardObj = {
+            backImg: {
+                src: '',
+                width: '',
+                top: '',
+                left: ''
+            },
+            marqueeImg: '',
+            backBg: '',
+        }
+
+        let cardMv = {
+            backImg: {
+                big: {
                     width: '',
                     top: '',
-                    left: ''
-                },
-                marqueeImg: '',
-                backBg: '',
-            }
-
-            let cardMv = {
-                backImg: {
-                    big: {
-                        width: '',
-                        top: '',
-                        left: '',
-                    }
+                    left: '',
                 }
             }
+        }
 
 
-            switch (card_box.id) {
-                case 'olive-tree':
-                    cardObj = {
-                        backImg: {
-                            src: '../assets/images/tree.svg',
-                            width: '250%',
-                            top: '50%',
-                            left: '-76%',
-                        },
-                        marqueeImg: '../assets/images/case.png',
-                        blurImg1: '../assets/images/tree_blur_1.png',
-                        blurImg2: '../assets/images/tree_blur_2.png',
-                        blurImg3: '../assets/images/tree_blur_3_2.png',
-                        backChangeColor: 'linear-gradient(to bottom,  rgba(216,227,186,1) 35%,rgba(255,255,255,1) 100%)',
-                    }
-                    cardMv = {
-                        backImg: {
-                            big: {
-                                width: '107%',
-                                top: '28%',
-                                left: '-5%',
-                            },
-                            small: {
-                                // width: '56%',
-                                // top: '37.5%',
-                                // left: '20%',
-                                bottom: '0',
-                                top: 'inherit',
-                                width: '55%',
-                                left: '23%',
-                            }
-                        }
-                    }
-                    break;
-                case 'lily':
-                    cardObj = {
-                        backImg: {
-                            src: '../assets/images/SVG/lily_svg.svg',
-                            width: '156%',
-                            top: '11%',
-                            left: '-53%'
-                        },
-                        marqueeImg: '../assets/images/case.png',
-                        blurImg1: '../assets/images/blue_blur_1.png',
-                        blurImg2: '../assets/images/blue_blur_2.png',
-                        blurImg3: '../assets/images/blue_blur_3.png',
-                        backChangeColor: 'linear-gradient(to bottom,  rgba(205,218,206,1) 25%,rgba(255,255,255,1) 100%)'
-                    }
-                    cardMv = {
-                        backImg: {
-                            big: {
-                                width: '84%',
-                                top: '28%',
-                                left: '2%',
-                            },
-                            small: {
-                                // width: '33%',
-                                // top: '35%',
-                                // left: '34%',
-                                bottom: '0',
-                                top: 'inherit',
-                                width: '37%',
-                                left: '33%',
-                            }
-                        }
-                    }
-                    break;
-                case 'cotton':
-                    cardObj = {
-                        backImg: {
-                            src: '../assets/images/SVG/cotton_svg.svg',
-                            width: '176%',
-                            top: '2%',
-                            left: '-57%',
-                        },
-                        marqueeImg: '../assets/images/case.png',
-                        blurImg1: '../assets/images/tree_blur_1.png',
-                        blurImg2: '../assets/images/tree_blur_2.png',
-                        blurImg3: '../assets/images/tree_blur_3_2.png',
-                        backChangeColor: 'linear-gradient(to bottom,  rgba(216,227,186,1) 35%,rgba(255,255,255,1) 100%)',
-                    }
-                    cardMv = {
-                        backImg: {
-                            big: {
-                                width: '80%',
-                                top: '14%',
-                                left: '4%',
-                            },
-                            small: {
-                                // width: '30%',
-                                // top: '34%',
-                                // left: '35%',
-
-                                bottom: '0',
-                                top: 'inherit',
-                                width: '32%',
-                                left: '33%',
-                            }
-                        }
-                    }
-                    break;
-                case 'campanula':
-                    cardObj = {
-                        backImg: {
-                            src: '../assets/images/SVG/campanula_svg.svg',
-                            width: '295%',
-                            top: '-23%',
-                            left: '-4%',
-                        },
-                        marqueeImg: '../assets/images/case.png',
-                        blurImg1: '../assets/images/blue_blur_1.png',
-                        blurImg2: '../assets/images/blue_blur_2.png',
-                        blurImg3: '../assets/images/blue_blur_3.png',
-                        backChangeColor: 'linear-gradient(to bottom,  rgba(205,218,206,1) 25%,rgba(255,255,255,1) 100%)'
-                    }
-                    cardMv = {
-                        backImg: {
-                            big: {
-                                width: '95%',
-                                top: '26%',
-                                left: '11%',
-                            },
-                            small: {
-                                // width: '42%',
-                                // top: '36%',
-                                // left: '31%',
-
-                                bottom: '-1.5vw',
-                                top: 'inherit',
-                                width: '48%',
-                                left: '26%',
-                            }
-                        }
-                    }
-
-                    break;
-            }
-
-            const cardInner = document.querySelector('.cardInner');
-            cardInner.querySelector('.back-item-img').src = cardObj.backImg.src;
-            cardInner.querySelectorAll('.lily-case-bg img').src = cardObj.marqueeImg;
-            // cardInner.querySelector('.back').style.backgroundImage = `url(${cardObj.backBg})`;
-            cardInner.querySelector('.back').style.background = 'linear-gradient(to bottom, rgb(208, 211, 196) 2%, rgb(167, 173, 145) 27%, rgb(145, 152, 110) 60%, rgb(128, 141, 103) 81%, rgb(101, 122, 92) 100%)';
-            // cardInner.querySelector('.back-color').style.background = cardObj.backChangeColor;
-            cardInner.querySelector('.back-item-img').style.width = cardObj.backImg?.width;
-            cardInner.querySelector('.back-item-img').style.top = cardObj.backImg?.top;
-            cardInner.querySelector('.back-item-img').style.left = cardObj.backImg?.left;
-
-            cardInner.querySelector('.blur-img1').src = cardObj.blurImg1;
-            cardInner.querySelector('.blur-img2').src = cardObj.blurImg2;
-            cardInner.querySelector('.blur-img3').src = cardObj.blurImg3;
-
-            cardInner.querySelector('.back-item-img').classList.add(card_box.id);
-
-
-
-            //-- 卡片位移到中間 --
-            tl.to(scroll_card_box, {
-                x: deltaX,
-                ease: "power1.inOut",
-                duration: 1,
-                onComplete() {
-                    //-- 卡片定位 --
-                    const cardRect = card.getBoundingClientRect();
-                    const cardInnerCard = document.querySelector('.cardInner .card');
-                    cardInnerCard.style.top = `${cardRect.top}px`;
-                    cardInnerCard.style.left = `${cardRect.left}px`;
+        switch (card_box.id) {
+            case 'olive-tree':
+                cardObj = {
+                    backImg: {
+                        src: '../assets/images/tree.svg',
+                        width: '250%',
+                        top: '50%',
+                        left: '-76%',
+                    },
+                    marqueeImg: '../assets/images/case.png',
+                    blurImg1: '../assets/images/tree_blur_1.png',
+                    blurImg2: '../assets/images/tree_blur_2.png',
+                    blurImg3: '../assets/images/tree_blur_3_2.png',
+                    backChangeColor: 'linear-gradient(to bottom,  rgba(216,227,186,1) 35%,rgba(255,255,255,1) 100%)',
                 }
-            })
-                //-- 卡片展開至滿版 --
-                .to('.cardInner', {
-                    opacity: 1,
-                    duration: 0.5,
-                    ease: "power1.out",
-                    pointerEvents: 'initial'
-                })
-
-                .to('.cardInner .card .back .back-content .back-item-img', {
-                    opacity: 0,
-                    ease: "power1.inOut",
-                    duration: 0.1,
-                }, '<')
-
-                .to('.olive-tree-box', {
-                    opacity: 0
-                }, '<')
-
-                .to('.cardInner .card', {
-                    width: '120%',
-                    height: '230%',
-                    top: '-70%',
-                    left: '-8%',
-                    ease: "power1.inOut",
-                    duration: 0.8,
-                }, '<')
-
-                .to('.cardInner .card .back', {
-                    border: '0px solid white',
-                    borderRadius: '100%',
-                    ease: "power1.out",
-                    duration: 0.8,
-                }, '<')
-
-                .to('.cardInner .card .back .back-content .back-item-img', {
-                    width: cardMv.backImg.small.width,
-                    top: cardMv.backImg.small.top,
-                    left: cardMv.backImg.small.left,
-                    bottom: cardMv.backImg.small.bottom,
-                    position: 'fixed',
-                    // filter: 'blur(10px)',
-                    ease: "power1.inOut",
-                    // duration: 2,
-                    duration: 1,
-                }, '<')
-                .to('.cardInner .card .back', {
-                    background: '#fff',
-                    ease: "power1.inOut",
-                    duration: 0.5,
-                }, '<')
-                .to('.cardInner .blur-1', {
-                    opacity: 1,
-                    scale: '1',
-                    ease: "power1.inOut",
-                    duration: 0.8,
-                }, "<0.3")
-                .to('.cardInner .blur-3', {
-                    opacity: 1,
-                    ease: "power1.inOut",
-                    duration: 0.8,
-                }, '<0.3')
-                .to('.cardInner  .blur-2', {
-                    opacity: 1,
-                    ease: "power1.inOut",
-                    duration: 0.8,
-                }, "<0.3")
-
-                .to('.cardInner .card .back .back-content .back-item-img', {
-
-                    opacity: 1,
-                    ease: "power1.inOut",
-                }, '<')
-
-
-                .to('.cardInner .leaf1,.cardInner .leaf2,.cardInner .leaf3,.cardInner .leaf4,.cardInner .leaf5', {
-                    display: 'flex',
-                    ease: "power1.in",
-                })
-                .to('.cardInner .leaf1,.cardInner .leaf2,.cardInner .leaf3,.cardInner .leaf4,.cardInner .leaf5', {
-                    duration: 65,
-                    backgroundPosition: 'right 102em bottom 100em', repeat: -1
-                }, '<')
-
-                .to('.cardInner .card .back .back-content .lily-case-bg-box', {
-                    opacity: 1,
-                    ease: "power1.in",
-                    duration: 1,
-                    onComplete() {
-                        const lilyBox = document.querySelector('.cardInner .card .back .back-content .lily-case-bg-box .lily-case-bg');
-                        lilyBox.classList.add('marquee');
+                cardMv = {
+                    backImg: {
+                        big: {
+                            width: '107%',
+                            top: '28%',
+                            left: '-5%',
+                        },
+                        small: {
+                            // width: '56%',
+                            // top: '37.5%',
+                            // left: '20%',
+                            bottom: '0',
+                            top: 'inherit',
+                            width: '55%',
+                            left: '23%',
+                        }
                     }
-                }, "<")
-        });
+                }
+                break;
+            case 'lily':
+                cardObj = {
+                    backImg: {
+                        src: '../assets/images/SVG/lily_svg.svg',
+                        width: '156%',
+                        top: '11%',
+                        left: '-53%'
+                    },
+                    marqueeImg: '../assets/images/case.png',
+                    blurImg1: '../assets/images/blue_blur_1.png',
+                    blurImg2: '../assets/images/blue_blur_2.png',
+                    blurImg3: '../assets/images/blue_blur_3.png',
+                    backChangeColor: 'linear-gradient(to bottom,  rgba(205,218,206,1) 25%,rgba(255,255,255,1) 100%)'
+                }
+                cardMv = {
+                    backImg: {
+                        big: {
+                            width: '84%',
+                            top: '28%',
+                            left: '2%',
+                        },
+                        small: {
+                            // width: '33%',
+                            // top: '35%',
+                            // left: '34%',
+                            bottom: '0',
+                            top: 'inherit',
+                            width: '37%',
+                            left: '33%',
+                        }
+                    }
+                }
+                break;
+            case 'cotton':
+                cardObj = {
+                    backImg: {
+                        src: '../assets/images/SVG/cotton_svg.svg',
+                        width: '176%',
+                        top: '2%',
+                        left: '-57%',
+                    },
+                    marqueeImg: '../assets/images/case.png',
+                    blurImg1: '../assets/images/tree_blur_1.png',
+                    blurImg2: '../assets/images/tree_blur_2.png',
+                    blurImg3: '../assets/images/tree_blur_3_2.png',
+                    backChangeColor: 'linear-gradient(to bottom,  rgba(216,227,186,1) 35%,rgba(255,255,255,1) 100%)',
+                }
+                cardMv = {
+                    backImg: {
+                        big: {
+                            width: '80%',
+                            top: '14%',
+                            left: '4%',
+                        },
+                        small: {
+                            // width: '30%',
+                            // top: '34%',
+                            // left: '35%',
+
+                            bottom: '0',
+                            top: 'inherit',
+                            width: '32%',
+                            left: '33%',
+                        }
+                    }
+                }
+                break;
+            case 'campanula':
+                cardObj = {
+                    backImg: {
+                        src: '../assets/images/SVG/campanula_svg.svg',
+                        width: '295%',
+                        top: '-23%',
+                        left: '-4%',
+                    },
+                    marqueeImg: '../assets/images/case.png',
+                    blurImg1: '../assets/images/blue_blur_1.png',
+                    blurImg2: '../assets/images/blue_blur_2.png',
+                    blurImg3: '../assets/images/blue_blur_3.png',
+                    backChangeColor: 'linear-gradient(to bottom,  rgba(205,218,206,1) 25%,rgba(255,255,255,1) 100%)'
+                }
+                cardMv = {
+                    backImg: {
+                        big: {
+                            width: '95%',
+                            top: '26%',
+                            left: '11%',
+                        },
+                        small: {
+                            // width: '42%',
+                            // top: '36%',
+                            // left: '31%',
+
+                            bottom: '-1.5vw',
+                            top: 'inherit',
+                            width: '48%',
+                            left: '26%',
+                        }
+                    }
+                }
+
+                break;
+        }
+
+        const cardInner = document.querySelector('.cardInner');
+        cardInner.querySelector('.back-item-img').src = cardObj.backImg.src;
+        cardInner.querySelectorAll('.lily-case-bg img').src = cardObj.marqueeImg;
+        // cardInner.querySelector('.back').style.backgroundImage = `url(${cardObj.backBg})`;
+        cardInner.querySelector('.back').style.background = 'linear-gradient(to bottom, rgb(208, 211, 196) 2%, rgb(167, 173, 145) 27%, rgb(145, 152, 110) 60%, rgb(128, 141, 103) 81%, rgb(101, 122, 92) 100%)';
+        // cardInner.querySelector('.back-color').style.background = cardObj.backChangeColor;
+        cardInner.querySelector('.back-item-img').style.width = cardObj.backImg?.width;
+        cardInner.querySelector('.back-item-img').style.top = cardObj.backImg?.top;
+        cardInner.querySelector('.back-item-img').style.left = cardObj.backImg?.left;
+
+        cardInner.querySelector('.blur-img1').src = cardObj.blurImg1;
+        cardInner.querySelector('.blur-img2').src = cardObj.blurImg2;
+        cardInner.querySelector('.blur-img3').src = cardObj.blurImg3;
+
+        cardInner.querySelector('.back-item-img').classList.add(card_box.id);
+
+
+        //-- 卡片位移到中間 --
+        tl.to(scroll_card_box, {
+            x: deltaX,
+            ease: "power1.inOut",
+            duration: 1,
+            onComplete() {
+                //-- 卡片定位 --
+                const cardRect = card.getBoundingClientRect();
+                const cardInnerCard = document.querySelector('.cardInner .card');
+                cardInnerCard.style.top = `${cardRect.top}px`;
+                cardInnerCard.style.left = `${cardRect.left}px`;
+                barba.go('test.html');
+            }
+        })
+
+        //-- 卡片展開至滿版 --
+        // .to('.cardInner', {
+        //     opacity: 1,
+        //     duration: 0.5,
+        //     ease: "power1.out",
+        //     pointerEvents: 'initial'
+        // })
+
+        // .to('.cardInner .card .back .back-content .back-item-img', {
+        //     opacity: 0,
+        //     ease: "power1.inOut",
+        //     duration: 0.1,
+        // }, '<')
+
+        // .to('.olive-tree-box', {
+        //     opacity: 0
+        // }, '<')
+
+        // .to('.cardInner .card', {
+        //     width: '120%',
+        //     height: '230%',
+        //     top: '-70%',
+        //     left: '-8%',
+        //     ease: "power1.inOut",
+        //     duration: 0.8,
+        // }, '<')
+
+        // .to('.cardInner .card .back', {
+        //     border: '0px solid white',
+        //     borderRadius: '100%',
+        //     ease: "power1.out",
+        //     duration: 0.8,
+        // }, '<')
+
+        // .to('.cardInner .card .back .back-content .back-item-img', {
+        //     width: cardMv.backImg.small.width,
+        //     top: cardMv.backImg.small.top,
+        //     left: cardMv.backImg.small.left,
+        //     bottom: cardMv.backImg.small.bottom,
+        //     position: 'fixed',
+        //     // filter: 'blur(10px)',
+        //     ease: "power1.inOut",
+        //     // duration: 2,
+        //     duration: 1,
+        // }, '<')
+        // .to('.cardInner .card .back', {
+        //     background: '#fff',
+        //     ease: "power1.inOut",
+        //     duration: 0.5,
+        // }, '<')
+        // .to('.cardInner .blur-1', {
+        //     opacity: 1,
+        //     scale: '1',
+        //     ease: "power1.inOut",
+        //     duration: 0.8,
+        // }, "<0.3")
+        // .to('.cardInner .blur-3', {
+        //     opacity: 1,
+        //     ease: "power1.inOut",
+        //     duration: 0.8,
+        // }, '<0.3')
+        // .to('.cardInner  .blur-2', {
+        //     opacity: 1,
+        //     ease: "power1.inOut",
+        //     duration: 0.8,
+        // }, "<0.3")
+
+        // .to('.cardInner .card .back .back-content .back-item-img', {
+        //     opacity: 1,
+        //     ease: "power1.inOut",
+        // }, '<')
+
+        // .to('.cardInner .leaf1,.cardInner .leaf2,.cardInner .leaf3,.cardInner .leaf4,.cardInner .leaf5', {
+        //     display: 'flex',
+        //     ease: "power1.in",
+        // })
+        // .to('.cardInner .leaf1,.cardInner .leaf2,.cardInner .leaf3,.cardInner .leaf4,.cardInner .leaf5', {
+        //     duration: 65,
+        //     backgroundPosition: 'right 102em bottom 100em', repeat: -1
+        // }, '<')
+
+        // .to('.cardInner .card .back .back-content .lily-case-bg-box', {
+        //     opacity: 1,
+        //     ease: "power1.in",
+        //     duration: 1,
+        //     onComplete() {
+        //         const lilyBox = document.querySelector('.cardInner .card .back .back-content .lily-case-bg-box .lily-case-bg');
+        //         lilyBox.classList.add('marquee');
+        //     }
+        // }, "<")
+        // .to('.cardInner.mask_div', {maskSize:'10vw 10vw', duration:3, ease:'power4.out'})
+
     };
 
     function treeShadow() {
@@ -1316,135 +1434,40 @@ window.onload = function () {
 
 
 
-    //-- 進場動態 --
-    const opentl=gsap.timeline({
-        onComplete(){
-
-            function getMousePos(event) {
-                // 获取鼠标在页面上的位置
-                const x = event.clientX;
-                const y = event.clientY;
-                const windowXCenter=window_width/2;
-                const windowYCenter=window_height/2;
-                const windowX=x-windowXCenter;
-                const windowY=y-windowYCenter;
-                
-                // gsap.to('.contanier', { 
-                //     backgroundPosition: `0 ${0-(windowY/300)}vw`, 
-                //     duration: 2, ease: 'power2.out' });
-                gsap.to('.contanier .scroll-card-box', { 
-                    x:`${(windowX/300)}vw`, 
-                    // y:`${(windowY/800)}vw`,
-                    duration: 5, ease: 'power2.out' });
-                gsap.to('.bg-shadow img', { 
-                    x: `${0-(windowX/70)}vw`, 
-                    // y:`${0-(windowY/200)}vw`, 
-                    duration: 4, ease: 'power2.out' });
-                gsap.to('.tree-shadow img', { 
-                    x: `${0-(windowX/120)}vw`,  
-                    // y:`${0-(windowY/300)}vw`, 
-                    duration: 4.4, ease: 'power2.out' });
-                // gsap.to('.card-box .card-shadow img', {x:`${0-(windowX/100)}px`});
-
-                // console.log(windowX/180);
-            }
-            // 添加鼠标移动事件监听器
-            if(window_width > 1024){
-                document.addEventListener('mousemove', getMousePos);
-            }
-        }
-    });
-    opentl.pause();
 
 
-    //-- 開頭影片 --
-    let time_out = 6;
-    let movieTimeOut = setTimeout(mvTime, 1000);
+    //-- 滑鼠滑動 --
+    function getMousePos(event) {
+        // 获取鼠标在页面上的位置
+        const x = event.clientX;
+        const y = event.clientY;
+        const windowXCenter = window_width / 2;
+        const windowYCenter = window_height / 2;
+        const windowX = x - windowXCenter;
+        const windowY = y - windowYCenter;
 
-    function mvTime() {
-        time_out--;
+        // gsap.to('.contanier', { 
+        //     backgroundPosition: `0 ${0-(windowY/300)}vw`, 
+        //     duration: 2, ease: 'power2.out' });
+        gsap.to('.contanier .scroll-card-box', {
+            x: `${(windowX / 300)}vw`,
+            // y:`${(windowY/800)}vw`,
+            duration: 1, ease: 'power3.out'
+        });
+        gsap.to('.bg-shadow img', {
+            x: `${0 - (windowX / 70)}vw`,
+            // y:`${0-(windowY/200)}vw`, 
+            duration: 4, ease: 'power3.out'
+        });
+        gsap.to('.tree-shadow img', {
+            x: `${0 - (windowX / 120)}vw`,
+            // y:`${0-(windowY/300)}vw`, 
+            duration: 4.4, ease: 'power3.out'
+        });
+        // gsap.to('.card-box .card-shadow img', {x:`${0-(windowX/100)}px`});
 
-        if (time_out <= 0) {
-            let tl = gsap.timeline();
-            tl.to('.movie_box', { opacity: 0, filter: 'blur(10px) brightness(3)', duration: 1 })
-                .to('.movie_box', { visibility: 'hidden', }, '>');
-            setTimeout(() => { opentl.play() }, 550);
-        } else {
-            setTimeout(mvTime, 1000);
-        }
+        // console.log(windowX/180);
     }
-
-    $('.skip_btn').click(function (e) {
-        e.preventDefault();
-        if (time_out > 0) {
-            time_out = 0;
-        }
-    });
-    //-- 開頭影片 END --
-
-
-        //-- 範例動態 --
-        // let windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        // let bgShadowX=windowWidth<550 ? 300 : 130;
-        // // let treeShadowX=windowWidth<550 ? -200 : -200;
-        // let treeShadowX=windowWidth<550 ? -200 : -120;
-
-        // opentl.from('.scroll-card-box .card-box', { x: '-400vw', duration: 3.3, stagger: 0.03, ease: 'power4.out' })
-
-        // if (windowWidth < 550) {
-        //     opentl.to('.scroll-card-box', { x: '4vw', duration: 1 }, '<');
-        // }
-        // else if (windowWidth < 1024) {
-        //     opentl.to('.scroll-card-box', { x: '20vw', duration: 1 }, '<');
-        // }
-
-        // opentl.fromTo('.contanier .bg-shadow', {x:'-115vw'}, {x:`${bgShadowX}vw`, duration:3, ease:'power4.out'},'<')
-        // opentl.from('.contanier .tree-shadow', {x:`${treeShadowX}vw`, rotate:'-3deg', duration:3, ease:'power4.out'},'<')
-        // opentl.fromTo('.contanier', {backgroundPosition:'100% 0%'},{backgroundPosition:'0% 0%', duration:3.5, ease:'power4.out'},'<')
-        //       .from('.scroll-card-box .card-box .card-page-name-box', {opacity:0, y:30, filter:'blur(10px)', duration:1, stagger:0.1, ease:'power1.out'}, '<1.5')
-        // opentl.from('.scroll-card-box .card-box .envelope', {
-        //         opacity:0, 
-        //         y:20,
-        //         duration:0.5,
-        //         onComplete(){
-        //             treeShadow();
-        //             bgShadow(bgShadowX);
-        //         }}, '<0.5');
-        //-- 範例動態 END --
-
-
-        //-- J哥想要的 --
-        let windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        let bgShadowX=windowWidth<550 ? 300 : 130;
-        // let treeShadowX=windowWidth<550 ? -200 : -200;
-        let treeShadowX=windowWidth<550 ? -200 : -120;
-
-        opentl.fromTo('.scroll-card-box .card-box', { x: '-400vw' }, { x: '50vw', duration: 3.3, stagger: 0.03, ease: 'power4.out' })
-              .addLabel('cardBack', '>')
-              
-        if (windowWidth < 550) {
-            opentl.to('.scroll-card-box', { x: '4vw', duration: 1 }, '<');
-        }
-        else if (windowWidth < 1024) {
-            opentl.to('.scroll-card-box', { x: '20vw', duration: 1 }, '<');
-        }
-
-        opentl.fromTo('.contanier .bg-shadow', {x:'-115vw'}, {x:`${bgShadowX+50}vw`, duration:3, ease:'power4.out'},'<')
-        opentl.fromTo('.contanier .tree-shadow', {x:`${treeShadowX}vw`, rotate:'-3deg'}, {x:`50vw`, rotate:'-3deg', duration:3, ease:'power4.out'},'<')
-        opentl.fromTo('.contanier', {backgroundPosition:'100% 0%'},{backgroundPosition:'0% 0%', duration:3.5, ease:'power4.out'},'<')
-              .to('.scroll-card-box .card-box', { x: '0vw', duration: 1.5, stagger: 0.05, ease: 'power3.inOut' },'cardBack-=0.9')
-              .to('.contanier .bg-shadow', {x:`${bgShadowX}vw`, duration:1.5, ease:'power3.inOut'},'<')
-              .to('.contanier .tree-shadow', {x:`0vw`, rotate:'-3deg', duration:2, ease:'power3.inOut'},'<')
-              .from('.scroll-card-box .card-box .card-page-name-box', {opacity:0, y:30, filter:'blur(10px)', duration:1, stagger:0.1, ease:'power1.out'}, '<1.5')
-        opentl.from('.scroll-card-box .card-box .envelope', {
-                opacity:0, 
-                y:20,
-                duration:0.5,
-                onComplete(){
-                    treeShadow();
-                    bgShadow(bgShadowX);
-                }}, '<0.5');
-        //-- J哥想要的 END --
 
 
 
@@ -1473,7 +1496,7 @@ window.onload = function () {
                 if (deltaX > 0) {
                     let minScrollX = windowWidth < 550 ? 4 : 20;
                     scrollX = scrollX >= minScrollX ? minScrollX : scrollX + (deltaX / 1.8);
-                    bgX = bgX >= 0 ? 0 : bgX + (deltaX / 1.8);
+                    bgX = bgX >= 0 ? -20 : bgX + (deltaX / 1.8);
                     // 左移
                 } else {
                     let maxScrollX = windowWidth < 550 ? -233 : -160;
@@ -1483,8 +1506,8 @@ window.onload = function () {
 
                 gsap.to('.scroll-card-box', { x: `${scrollX}vw`, duration: 1, ease: 'power2.out' });
                 gsap.to('.contanier', { backgroundPosition: `${bgX}vw 0`, duration: 1.3, ease: 'power2.out' });
-                gsap.to('.bg-shadow img', { x: `${bgX}vw`, duration: 2, ease: 'power2.out' });
-                gsap.to('.tree-shadow img', { x: `${bgX}vw`, duration: 2.2, ease: 'power2.out' });
+                // gsap.to('.bg-shadow img', { x: `${bgX}vw`, duration: 2, ease: 'power2.out' });
+                // gsap.to('.tree-shadow img', { x: `${bgX}vw`, duration: 2.2, ease: 'power2.out' });
             } else {
                 // 垂直移动
                 // if (deltaY > 0) {
@@ -1500,6 +1523,7 @@ window.onload = function () {
             // console.log('觸控移動中');
         });
     }
-    phoneCardMove();
+
+
 
 }
