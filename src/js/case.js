@@ -110,13 +110,23 @@ window.onload = function () {
         on: {
 
             slideChange: function () {
-
                 const index_currentSlide = this.realIndex;
                 const banner_text = document.querySelectorAll('.swiper .case-title-box');
-
+                const banner_year = document.querySelectorAll('.swiper .case-sign-box .case-sign');
                 banner_text.forEach((text, index) => {
-                    text.style.display = index === index_currentSlide ? 'flex' : 'none';
+
+                    let tl = gsap.timeline({});
+                    tl.to(text, { duration: 0.8, opacity: index === index_currentSlide ? 1 : 0, ease: "power1.inOut" });
+
                 });
+
+                banner_year.forEach((year, index) => {
+
+                    let tl = gsap.timeline({});
+                    tl.to(year, { duration: 0.8, opacity: index === index_currentSlide ? 1 : 0, ease: "power1.inOut" });
+
+                });
+
             },
 
         },
@@ -237,8 +247,38 @@ window.onload = function () {
                     , '<0.3')
         });
     };
-
     menuClick();
 
+    function caseNameAni() {
+        if (window_width <= 1024) {
 
+            const boxes = gsap.utils.toArray('.case-box');
+
+            boxes.forEach(box => {
+                const img = box.querySelectorAll('.case-img')
+                // const text = box.querySelectorAll('.case-title-box div')
+                const name = box.querySelectorAll('.case-title-box .case-name')
+                const title = box.querySelectorAll('.case-title-box .case-title')
+                const more = box.querySelectorAll('.case-title-box .more-box')
+                const sign = box.querySelectorAll('.case-sign-box')
+                let tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: box,
+                        start: "top 90%",
+                    },
+                });
+                tl.fromTo(img, { y: 50, opacity: 0 }, { duration: 1, y: 0, ease: "power1.inOut", opacity: 1 })
+                    // .fromTo(text, { y: 50, opacity: 0 }, { duration: 1, y: 0, ease: "power1.inOut", stagger: 0.2, opacity: 1 }, '<0.3')
+                    .fromTo(name, { y: 50, opacity: 0 }, { duration: 1, y: 0, ease: "power1.inOut", opacity: 1 }, '<0.3')
+                    .fromTo(title, { y: 50, opacity: 0 }, { duration: 1, y: 0, ease: "power1.inOut", opacity: 1 }, '<0.3')
+                    .fromTo(more, { y: 50, opacity: 0 }, { duration: 1, y: 0, ease: "power1.inOut", opacity: 1 }, '<0.3')
+                    .fromTo(sign, { y: 50, opacity: 0 }, { duration: 1, y: 0, ease: "power1.inOut", stagger: 0.2, opacity: 1 }, '<')
+
+            });
+
+
+
+        }
+    }
+    caseNameAni();
 }

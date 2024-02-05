@@ -216,6 +216,7 @@
                     text-orientation: upright;
                     top: 12vw;
                     left: 11vw;
+                    opacity: 0;
 
                     .case-name {
                         font-size: 1vw;
@@ -247,7 +248,7 @@
                             padding-right: 0.2vw;
 
                             @media all and (max-width:1440px) {
-                                padding-right: 0vw;
+                                padding-right: 0.5vw;
                             }
 
                             .more-line {
@@ -268,9 +269,18 @@
                             background: none;
                             border: none;
                             color: #595959;
+                            list-style: none;
+                            // writing-mode: vertical-lr;
+                            -webkit-text-orientation: mixed;
+                            text-orientation: mixed;
+                            writing-mode: vertical-rl;
 
                             a {
                                 color: #595959;
+                                list-style: none;
+                                -webkit-text-orientation: mixed;
+                                text-orientation: mixed;
+                                writing-mode: vertical-rl;
                             }
                         }
 

@@ -203,6 +203,7 @@
                     display: flex;
                     justify-content: center;
                     margin-bottom: 8vw;
+
                 }
 
                 .title-box {
@@ -218,7 +219,7 @@
                         margin-bottom: 1vw;
                         letter-spacing: 0.1em;
                         text-align: center;
-
+                        opacity: 0;
                     }
 
                     .case-title {
@@ -228,6 +229,7 @@
                         margin-bottom: 1vw;
                         letter-spacing: 0.1em;
                         text-align: center;
+                        opacity: 0;
 
                         @media all and (max-width:500px) {
 
@@ -411,7 +413,6 @@
                 display: flex;
                 width: 50%;
                 justify-content: right;
-                opacity: 0;
 
                 @media all and (max-width:1024px) {
                     display: none;
@@ -426,6 +427,7 @@
                     height: 39vw;
                     padding: 2vw 2vw 2.7vw 2vw;
                     justify-content: space-between;
+                    opacity: 0;
 
                     @media all and (max-width:1920px) {
                         border-radius: 4.5%;
@@ -443,7 +445,7 @@
                                 font-family: 'Noto Serif TC', serif;
                                 margin-bottom: 1vw;
                                 letter-spacing: 0.1em;
-
+                                opacity: 0;
                             }
 
                             .case-title {
@@ -452,6 +454,7 @@
                                 font-family: 'Noto Serif TC', serif;
                                 margin-bottom: 1vw;
                                 letter-spacing: 0.1em;
+                                opacity: 0;
                             }
 
                         }
@@ -459,6 +462,7 @@
                         .line-box {
                             display: flex;
                             margin-bottom: 1.5vw;
+                            opacity: 0;
 
                             img {
                                 width: 28%;
@@ -476,6 +480,7 @@
                             font-family: '微軟正黑體';
                             line-height: 1.3vw;
                             letter-spacing: 0.1em;
+                            opacity: 0;
 
                             @media all and (max-width:1440px) {
                                 line-height: 2vw;
@@ -493,9 +498,10 @@
                             display: flex;
                             padding: 0.7vw 0vw;
                             border-bottom: 2.5px solid #c1bfc0;
+                            opacity: 0;
 
                             @media all and (max-width:1440px) {
-                                border-bottom: 1px solid #595959;
+                                border-bottom: 1px solid #c1bfc0;
                             }
 
                             .title {
@@ -507,7 +513,7 @@
                                     display: flex;
                                     width: 0.05vw;
                                     height: 0.75vw;
-                                    background: #c1bfc0;
+                                    background: #595959;
                                     margin-left: 1vw;
                                     transform: translateY(3px);
                                 }
@@ -536,13 +542,15 @@
                     display: flex;
                     justify-content: center;
                     line-height: 6.5vw;
+                    opacity: 0;
                 }
 
                 .line-box {
                     margin-bottom: 5vw;
+                    opacity: 0;
 
                     img {
-                        width: 100%;
+                        width: 39%;
                         height: 1vw;
                     }
                 }
@@ -553,7 +561,8 @@
                     .text-box {
                         display: flex;
                         padding: 2vw 0vw;
-                        border-bottom: 1px solid #595959;
+                        border-bottom: 1px solid #c1bfc0;
+                        opacity: 0;
 
                         .title {
                             display: flex;
@@ -623,6 +632,11 @@
                     display: flex;
                     justify-content: left;
                     overflow: hidden;
+                    border-radius: 40px;
+
+                    @media all and (max-width:500px) {
+                        border-radius: 17px;
+                    }
 
                     .swiper-wrapper {
 
@@ -636,6 +650,7 @@
 
                             img {
                                 width: 100%;
+
                             }
                         }
                     }

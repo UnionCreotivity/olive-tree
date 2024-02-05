@@ -1220,6 +1220,7 @@ body {
   text-orientation: upright;
   top: 12vw;
   left: 11vw;
+  opacity: 0;
 }
 .case-body .case-main .page-contaniner .swiper .case-title-box .case-name {
   font-size: 1vw;
@@ -1263,7 +1264,7 @@ body {
 }
 @media all and (max-width: 1440px) {
   .case-body .case-main .page-contaniner .swiper .case-title-box .more-box .more-line-box {
-    padding-right: 0vw;
+    padding-right: 0.5vw;
   }
 }
 .case-body .case-main .page-contaniner .swiper .case-title-box .more-box .more-line-box .more-line {
@@ -1283,9 +1284,15 @@ body {
   background: none;
   border: none;
   color: #595959;
+  list-style: none;
+  text-orientation: mixed;
+  writing-mode: vertical-rl;
 }
 .case-body .case-main .page-contaniner .swiper .case-title-box .more-box button a {
   color: #595959;
+  list-style: none;
+  text-orientation: mixed;
+  writing-mode: vertical-rl;
 }
 .case-body .case-main .page-contaniner .swiper .case-sign-box {
   position: absolute;
@@ -1620,6 +1627,7 @@ body {
   margin-bottom: 1vw;
   letter-spacing: 0.1em;
   text-align: center;
+  opacity: 0;
 }
 .case-ted-body .case-ted-contanier .card1 .moblie-title .title-box .case-title {
   font-size: 3.9vw;
@@ -1628,6 +1636,7 @@ body {
   margin-bottom: 1vw;
   letter-spacing: 0.1em;
   text-align: center;
+  opacity: 0;
 }
 .case-ted-body .case-ted-contanier .card1 .main-banner-box {
   width: 57%;
@@ -1784,7 +1793,6 @@ body {
   display: flex;
   width: 50%;
   justify-content: right;
-  opacity: 0;
 }
 @media all and (max-width: 1024px) {
   .case-ted-body .case-ted-contanier .card1 .right-box {
@@ -1800,6 +1808,7 @@ body {
   height: 39vw;
   padding: 2vw 2vw 2.7vw 2vw;
   justify-content: space-between;
+  opacity: 0;
 }
 @media all and (max-width: 1920px) {
   .case-ted-body .case-ted-contanier .card1 .right-box .case-name-box {
@@ -1819,6 +1828,7 @@ body {
   font-family: "Noto Serif TC", serif;
   margin-bottom: 1vw;
   letter-spacing: 0.1em;
+  opacity: 0;
 }
 @media all and (max-width: 1440px) {
   .case-ted-body .case-ted-contanier .card1 .right-box .case-name-box .top-box .title-box .case-name {
@@ -1833,6 +1843,7 @@ body {
   font-family: "Noto Serif TC", serif;
   margin-bottom: 1vw;
   letter-spacing: 0.1em;
+  opacity: 0;
 }
 @media all and (max-width: 1440px) {
   .case-ted-body .case-ted-contanier .card1 .right-box .case-name-box .top-box .title-box .case-title {
@@ -1842,6 +1853,7 @@ body {
 .case-ted-body .case-ted-contanier .card1 .right-box .case-name-box .top-box .line-box {
   display: flex;
   margin-bottom: 1.5vw;
+  opacity: 0;
 }
 .case-ted-body .case-ted-contanier .card1 .right-box .case-name-box .top-box .line-box img {
   width: 28%;
@@ -1860,6 +1872,7 @@ body {
   font-family: "微軟正黑體";
   line-height: 1.3vw;
   letter-spacing: 0.1em;
+  opacity: 0;
 }
 @media all and (max-width: 1920px) {
   .case-ted-body .case-ted-contanier .card1 .right-box .case-name-box .top-box .case-content {
@@ -1898,10 +1911,11 @@ body {
   display: flex;
   padding: 0.7vw 0vw;
   border-bottom: 2.5px solid #c1bfc0;
+  opacity: 0;
 }
 @media all and (max-width: 1440px) {
   .case-ted-body .case-ted-contanier .card1 .right-box .case-name-box .bottom-box .text-box {
-    border-bottom: 1px solid #595959;
+    border-bottom: 1px solid #c1bfc0;
   }
 }
 .case-ted-body .case-ted-contanier .card1 .right-box .case-name-box .bottom-box .text-box .title {
@@ -1913,7 +1927,7 @@ body {
   display: flex;
   width: 0.05vw;
   height: 0.75vw;
-  background: #c1bfc0;
+  background: #595959;
   margin-left: 1vw;
   transform: translateY(3px);
 }
@@ -1936,18 +1950,21 @@ body {
   display: flex;
   justify-content: center;
   line-height: 6.5vw;
+  opacity: 0;
 }
 .case-ted-body .case-ted-contanier .card1 .moblie-case-content-box .line-box {
   margin-bottom: 5vw;
+  opacity: 0;
 }
 .case-ted-body .case-ted-contanier .card1 .moblie-case-content-box .line-box img {
-  width: 100%;
+  width: 39%;
   height: 1vw;
 }
 .case-ted-body .case-ted-contanier .card1 .moblie-case-content-box .bottom-box .text-box {
   display: flex;
   padding: 2vw 0vw;
-  border-bottom: 1px solid #595959;
+  border-bottom: 1px solid #c1bfc0;
+  opacity: 0;
 }
 .case-ted-body .case-ted-contanier .card1 .moblie-case-content-box .bottom-box .text-box .title {
   display: flex;
@@ -2011,6 +2028,12 @@ body {
   display: flex;
   justify-content: left;
   overflow: hidden;
+  border-radius: 40px;
+}
+@media all and (max-width: 500px) {
+  .case-ted-body .case-ted-contanier .banner-box .banner .swiper {
+    border-radius: 17px;
+  }
 }
 .case-ted-body .case-ted-contanier .banner-box .banner .swiper .swiper-wrapper {
   display: flex;
@@ -2384,7 +2407,7 @@ body {
 }
 @media all and (max-width: 1440px) {
   .contact-body .contact-contanier {
-    padding-top: 11vw;
+    padding-top: 12vw;
   }
 }
 @media all and (max-width: 1024px) {
@@ -2632,6 +2655,11 @@ body {
 @media all and (max-width: 1920px) {
   .contact-body .contact-contanier .right-box .contact-send-box .check-box #contact-checkbox {
     transform: scale(1) translateY(2px);
+  }
+}
+@media all and (max-width: 1440px) {
+  .contact-body .contact-contanier .right-box .contact-send-box .check-box #contact-checkbox {
+    transform: scale(1) translateY(0px);
   }
 }
 @media all and (max-width: 1024px) {
@@ -3242,6 +3270,13 @@ body {
 @media all and (max-width: 500px) {
   .history-body .case-main .page-contaniner .main-container .prev {
     bottom: 5vw;
+    right: 0vw;
+    left: 2vw;
+  }
+}
+@media all and (max-width: 500px) {
+  .history-body .case-main .page-contaniner .main-container .prev img {
+    width: 35px;
   }
 }
 .history-body .case-main .page-contaniner .main-container .next {
@@ -3254,6 +3289,12 @@ body {
 @media all and (max-width: 500px) {
   .history-body .case-main .page-contaniner .main-container .next {
     bottom: 5vw;
+    right: 2vw;
+  }
+}
+@media all and (max-width: 500px) {
+  .history-body .case-main .page-contaniner .main-container .next img {
+    width: 35px;
   }
 }
 .history-body .case-main .page-contaniner .tree-shadow-moblie {

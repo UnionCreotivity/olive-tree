@@ -113,6 +113,7 @@ window.onload = function () {
             .to(history_card_font, { duration: 0.5, rotationY: '-180', ease: "power1.inOut", }, "<")
 
     }
+
     function leaveHistoryCardAni(tl, history_card_font, history_card_back) {
         tl.reverse();
     }
@@ -179,4 +180,18 @@ window.onload = function () {
             },
         })
     }
+    gsap.registerPlugin(ScrollTrigger);
+
+    function cardAni() {
+
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.main-container',
+                start: "top 60%",
+            },
+        });
+
+        tl.from('.card-box .swiper-wrapper', { duration: 1, y: 150, ease: "power1.inOut", })
+    }
+    cardAni();
 }

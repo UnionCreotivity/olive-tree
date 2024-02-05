@@ -43,7 +43,7 @@
         }
 
         @media all and (max-width:1440px) {
-            padding-top: 11vw;
+            padding-top: 12vw;
         }
 
         @media all and (max-width:1024px) {
@@ -237,6 +237,10 @@
 
                         @media all and (max-width:1920px) {
                             transform: scale(1) translateY(2px);
+                        }
+
+                        @media all and (max-width:1440px) {
+                            transform: scale(1) translateY(0px);
                         }
 
                         @media all and (max-width:1024px) {

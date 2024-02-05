@@ -109,6 +109,7 @@
                     padding-bottom: 10vw;
                     position: relative;
 
+
                     @media all and (max-width:1024px) {
                         height: 100vw;
                         margin-bottom: 14vw;
@@ -142,6 +143,7 @@
                         height: 25.5vw;
                         position: relative;
                         cursor: pointer;
+
 
                         @media all and (max-width:1920px) {
                             width: 17.5vw;
@@ -536,6 +538,14 @@
 
                     @media all and (max-width:500px) {
                         bottom: 5vw;
+                        right: 0vw;
+                        left: 2vw;
+                    }
+
+                    img {
+                        @media all and (max-width:500px) {
+                            width: 35px;
+                        }
                     }
                 }
 
@@ -548,6 +558,13 @@
 
                     @media all and (max-width:500px) {
                         bottom: 5vw;
+                        right: 2vw;
+                    }
+
+                    img {
+                        @media all and (max-width:500px) {
+                            width: 35px;
+                        }
                     }
                 }
 

@@ -140,16 +140,14 @@
                 <div class="swiper video-swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <iframe src="https://www.youtube.com/embed/TRJ4qPu01_4?si=FquG_lLA83FaHGPL"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
+                            <iframe id="youtube_player" class="yt_player_iframe" width="640" height="360"
+                                src="https://www.youtube.com/embed/TRJ4qPu01_4?si=FquG_lLA83FaHGPL"
+                                allowfullscreen="true" allowscriptaccess="always" frameborder="0"></iframe>
                         </div>
                         <div class="swiper-slide">
-                            <iframe src="https://www.youtube.com/embed/TRJ4qPu01_4?si=FquG_lLA83FaHGPL"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
+                            <iframe id="youtube_player" class="yt_player_iframe" width="640" height="360"
+                                src="https://www.youtube.com/embed/TRJ4qPu01_4?si=FquG_lLA83FaHGPL"
+                                allowfullscreen="true" allowscriptaccess="always" frameborder="0"></iframe>
                         </div>
                     </div>
                     <div class="swiper-pagination-video"></div>
@@ -328,7 +326,7 @@
             </div>
         </div>
 
-        <div class="banner-box banner-left">
+        <div class="banner-box banner-left banner-box1">
             <div class="tree-shadow">
                 <img src="../assets/images/page_case_ted/tree-shadow.png" alt="tree-shadow" srcset="">
             </div>
@@ -354,7 +352,7 @@
             </div>
         </div>
 
-        <div class="banner-box banner-right">
+        <div class="banner-box banner-right banner-box2">
             <div class="banner-content">
                 <div class="title">低密度 森森不息</div>
                 <div class="content">
@@ -378,7 +376,7 @@
             </div>
         </div>
 
-        <div class="banner-box banner-left">
+        <div class="banner-box banner-left banner-box3">
             <div class="banner">
                 <div class="swiper swiper3">
                     <div class="swiper-wrapper">
@@ -401,7 +399,7 @@
             </div>
         </div>
 
-        <div class="banner-box banner-right">
+        <div class="banner-box banner-right banner-box4">
             <div class="banner-content">
                 <div class="title">仰星空 浪漫滿屋</div>
                 <div class="content">
@@ -424,7 +422,7 @@
             </div>
         </div>
 
-        <div class="banner-box banner-left">
+        <div class="banner-box banner-left banner-box5">
             <div class="banner">
                 <div class="swiper swiper5">
                     <div class="swiper-wrapper">
@@ -497,6 +495,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenLite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TimelineMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script src="../assets/minified/ScrollTrigger.min.js"></script>
+    <script src="../assets/minified/ScrollToPlugin.min.js"></script>
     <!-- <script type="module" src="../js/case.js"></script> -->
     <script src="../js/case_ted.js" async></script>
 </body>
