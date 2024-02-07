@@ -1,0 +1,456 @@
+.news-body {
+    // background-image: url(/src/assets/images/page_case/bg.png);
+    background-image: url(../images/page_news/news_bg.png);
+    width: 100%;
+    background-size: cover;
+    position: relative;
+
+    @media all and (max-width:1024px) {
+        background-image: url(../images/page_news/news_bg_moblie.png);
+        background-size: cover;
+    }
+
+    .news-main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .top-container {
+            width: 100%;
+            padding-top: 5vw;
+            display: flex;
+            justify-content: center;
+
+            // height: calc(var(--vh, 2.8vh) *100);
+            @media all and (max-width:1920px) {
+                padding-top: 8vw;
+            }
+
+            @media all and (max-width:1024px) {
+                height: auto;
+                padding-top: 20vw;
+            }
+
+            .transitions-item {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+
+                img {
+                    width: 45%;
+
+                    @media all and (max-width:1024px) {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+
+        .page-contaniner {
+            display: flex;
+            width: 100%;
+            padding-top: 5vw;
+            padding-bottom: 4vw;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+
+            @media all and (max-width:1024px) {
+                padding-bottom: 23vw;
+                padding-top: 10vw;
+            }
+
+            .top-tree-shadow {
+                position: absolute;
+                top: 20vw;
+                right: -15vw;
+                width: 35vw;
+                z-index: 0;
+                filter: drop-shadow(2px 9px 9px rgb(148, 148, 148));
+
+                @media all and (max-width:1024px) {
+                    top: 105vw;
+                    width: 100vw;
+                }
+            }
+
+            .page-title-box {
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+
+                @media all and (max-width:500px) {
+                    margin-bottom: 3vw;
+                }
+
+
+                .page-title-img {
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                    padding-right: 0.5vw;
+
+                    // img {
+                    //     height: 5vw;
+
+                    //     @media all and (max-width:1024px) {
+                    //         height: 15vw;
+                    //         padding-right: 2vw;
+                    //     }
+
+                    //     @media all and (max-width:500px) {
+                    //         // width: 39%;
+                    //         padding-right: 1.5vw;
+                    //     }
+                    // }
+
+                    #page-title-img-svg {
+                        height: 5vw;
+
+                        @media all and (max-width:1024px) {
+                            height: 15vw;
+                            padding-right: 2vw;
+                        }
+
+                        @media all and (max-width:500px) {
+                            // width: 39%;
+                            padding-right: 1.5vw;
+                        }
+                    }
+                }
+
+                .page-title {
+                    margin-top: 2vw;
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                    color: #595959;
+                    font-family: 'Noto Serif TC', serif;
+                    font-size: 1.4vw;
+                    letter-spacing: 0.45em;
+                    font-weight: 600;
+
+                    @media all and (max-width:1024px) {
+                        font-size: $big-title;
+                    }
+                }
+
+            }
+
+            .page-content {
+                padding-bottom: 10vw;
+                padding-top: 13vw;
+
+                .content {
+                    display: flex;
+                    width: 100%;
+                    flex-wrap: wrap;
+
+                    @media all and (max-width:1024px) {
+                        flex-direction: column;
+                    }
+
+                    .item {
+                        width: 30%;
+                        position: relative;
+                        height: 20vw;
+                        z-index: 5;
+
+                        @media all and (max-width:1024px) {
+                            width: 90%;
+                            height: 60vw;
+                        }
+
+                        @media all and (max-width:500px) {
+                            width: 90%;
+                            height: 70vw;
+                        }
+
+                        .more-moblie {
+                            display: none;
+
+                            @media all and (max-width:1024px) {
+                                display: flex;
+                                position: absolute;
+                                top: 20.5vw;
+                                left: 20vw;
+                            }
+
+                            @media all and (max-width:500px) {
+                                top: 23vw;
+                                left: 21.6vw;
+                            }
+
+                            .more-btn {
+                                color: #454c32;
+                                font-family: 'Cormorant Garamond';
+                                font-style: italic;
+                                background-color: #ffffff5e;
+                                font-weight: 500;
+                                text-align: start;
+                                border: none;
+                                border-radius: 50%;
+                                // padding: 32px 18px;
+                                padding: 2.5vw 1vw;
+                                letter-spacing: 0.1em;
+                                cursor: pointer;
+                                @include fontSize24pt();
+
+                                @media all and (max-width:1024px) {
+                                    font-size: $content;
+                                }
+
+                                @media all and (max-width:500px) {
+                                    padding: 4vw 2.1vw;
+                                    font-size: 4.5vw;
+                                }
+                            }
+                        }
+
+                        .item-img {
+                            position: absolute;
+                            bottom: 4vw;
+                            left: 9vw;
+                            width: 55%;
+                            cursor: pointer;
+
+                            @media all and (max-width:1024px) {
+                                bottom: 11vw;
+                                left: 24vw;
+                            }
+
+                            @media all and (max-width:500px) {
+                                width: 65%;
+                                bottom: 13vw;
+                            }
+
+                            .item-back-img {
+                                position: absolute;
+                                left: 0px;
+                                top: 0px;
+                                opacity: 0;
+
+                                @media all and (max-width:1024px) {
+                                    display: none;
+                                }
+                            }
+
+
+                            .back-content {
+                                display: flex;
+                                flex-direction: column;
+                                width: 100%;
+                                position: absolute;
+                                text-align: center;
+                                top: 3.5vw;
+                                z-index: 9;
+                                opacity: 0;
+
+                                @media all and (max-width:1440px) {
+                                    top: 2.5vw;
+                                }
+
+                                @media all and (max-width:1024px) {
+                                    display: none;
+                                }
+
+                                .date {
+                                    color: #a6a6a6;
+                                    font-family: 'Cormorant Garamond';
+                                    font-size: 1.2vw;
+                                    font-style: italic;
+                                    letter-spacing: 0.1em;
+                                    margin-bottom: 2.5vw;
+
+                                }
+
+                                .title {
+                                    color: white;
+                                    font-family: 'Noto Serif TC', serif;
+                                    margin-bottom: 2.5vw;
+                                    letter-spacing: 0.1em;
+
+                                    @include fontSize24pt();
+
+                                    @media all and (max-width:1024px) {
+                                        font-size: $content;
+                                    }
+                                }
+
+                                .more {
+                                    display: flex;
+                                    justify-content: center;
+
+                                    .more-btn {
+                                        color: white;
+                                        font-family: 'Cormorant Garamond';
+                                        font-style: italic;
+                                        background-color: #454c32;
+                                        text-align: start;
+                                        border: none;
+                                        border-radius: 50%;
+                                        // padding: 32px 18px;
+                                        padding: 1vw 0.6vw;
+                                        letter-spacing: 0.1em;
+                                        cursor: pointer;
+
+                                        @include fontSize24pt();
+
+                                        @media all and (max-width:1440px) {
+                                            padding: 1vw 0.4vw;
+                                        }
+
+                                        @media all and (max-width:1024px) {
+                                            font-size: $content;
+                                        }
+
+                                    }
+                                }
+
+                            }
+                        }
+
+                        img {
+                            width: 100%;
+                            z-index: 1;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .circle-box {
+                        position: absolute;
+                        bottom: 0px;
+                        left: -1.2vw;
+
+                        @media all and (max-width:1024px) {
+                            left: -1.2vw;
+                        }
+
+                        @media all and (max-width:500px) {
+                            left: -9vw;
+
+                        }
+
+                        .circle-svg {
+                            width: 37vw;
+                            cursor: pointer;
+
+                            @media all and (max-width:1024px) {
+                                width: 100vw;
+                            }
+
+                            @media all and (max-width:500px) {
+                                width: 125vw;
+                            }
+
+                            text {
+                                fill: #595959;
+                                font-family: 'Noto Serif TC';
+                                font-weight: 600;
+                                letter-spacing: 0.15em;
+
+                                @media all and (max-width:1024px) {
+                                    // font-size: $content;
+                                }
+
+                            }
+                        }
+
+                    }
+
+                }
+
+                .item:nth-child(6n+1) {
+                    margin-top: 3vw;
+
+                    @media all and (max-width:1024px) {
+                        margin-top: 0vw;
+                    }
+                }
+
+                .item:nth-child(6n+2) {
+                    margin-top: -7vw;
+
+                    @media all and (max-width:1024px) {
+                        margin-top: 0vw;
+                    }
+                }
+
+                .item:nth-child(6n+3) {
+                    margin-top: 5vw;
+
+                    @media all and (max-width:1024px) {
+                        margin-top: 0vw;
+                    }
+                }
+
+                .item:nth-child(6n+4) {
+                    margin-top: 5vw;
+                    margin-left: 6vw;
+
+                    @media all and (max-width:1024px) {
+                        margin-top: 0vw;
+                        margin-left: 0vw;
+                    }
+                }
+
+                .item:nth-child(6n+5) {
+                    margin-top: -6vw;
+                    margin-left: -2vw;
+
+                    @media all and (max-width:1024px) {
+                        margin-top: 0vw;
+                        margin-left: 0vw;
+                    }
+                }
+
+                .item:nth-child(6n+6) {
+                    margin-top: 10vw;
+                    margin-left: 3vw;
+
+                    @media all and (max-width:1024px) {
+                        margin-top: 0vw;
+                        margin-left: 0vw;
+                    }
+                }
+
+
+                .item:nth-child(2n+1) {
+
+                    @media all and (max-width:1024px) {
+                        margin-left: 12vw;
+                    }
+
+                }
+
+                .item:nth-child(2n+2) {
+
+                    @media all and (max-width:1024px) {
+                        margin-top: 5vw;
+                        margin-bottom: 5vw;
+                        margin-left: -12vw;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .bottom-tree-shadow {
+        position: absolute;
+        bottom: 12vw;
+        left: 0px;
+        width: 35vw;
+        z-index: 0;
+        filter: drop-shadow(2px 9px 9px rgb(109, 109, 109));
+
+        @media all and (max-width:1024px) {
+            bottom: 29vw;
+            left: -22vw;
+            width: 95vw;
+        }
+    }
+}

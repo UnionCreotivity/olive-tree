@@ -63,6 +63,9 @@
 
             @media all and (max-width:500px) {
                 padding-bottom: 35vw;
+
+                padding-top: 10vw;
+
             }
 
             .page-title-box {
@@ -79,8 +82,21 @@
                     width: 100%;
                     justify-content: center;
                     padding-right: 0.5vw;
+                    // img {
+                    //     height: 5vw;
 
-                    img {
+                    //     @media all and (max-width:1024px) {
+                    //         height: 15vw;
+                    //         padding-right: 2vw;
+                    //     }
+
+                    //     @media all and (max-width:500px) {
+                    //         // width: 39%;
+                    //         padding-right: 1.5vw;
+                    //     }
+                    // }
+
+                    #page-title-img-svg {
                         height: 5vw;
 
                         @media all and (max-width:1024px) {
@@ -292,15 +308,31 @@
                     bottom: 6vw;
                     right: 8vw;
 
-                    .case-sign {
-                        width: 10vw;
+                    .year-text-box {
+                        position: relative;
+
+                        img.case-sign {
+                            width: 10vw;
+                        }
+
+                        .year {
+                            position: absolute;
+                            top: 3vw;
+                            left: 3vw;
+                            z-index: 5;
+                            color: #4e5e2c;
+                            font-family: 'Cormorant Garamond';
+                            font-style: italic;
+                            font-size: 2vw;
+                            letter-spacing: 0.1em;
+                        }
                     }
+
                 }
 
             }
 
             .case-box {
-
                 width: 100%;
                 flex-direction: column;
                 display: none;
@@ -383,10 +415,28 @@
                         width: 27%;
                         align-self: flex-end;
 
-                        img {
-                            width: 100%;
+                        .year-text {
+                            position: relative;
+
+                            img.case-sign {
+                                width: 100%;
+                            }
+
+                            .text {
+                                position: absolute;
+                                top: 5.5vw;
+                                left: 6.7vw;
+                                z-index: 5;
+                                color: #4e5e2c;
+                                font-family: 'Cormorant Garamond';
+                                font-style: italic;
+                                font-size: 5.5vw;
+                                letter-spacing: 0.1em;
+                            }
                         }
                     }
+
+
                 }
             }
 

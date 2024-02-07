@@ -49,7 +49,7 @@
             position: relative;
 
             @media all and (max-width:500px) {
-                padding-top: 9vw;
+                padding-top: 10vw;
             }
 
             .page-title-box {
@@ -62,17 +62,30 @@
                     width: 100%;
                     justify-content: center;
                     padding-right: 0.5vw;
+                    // img {
+                    //     height: 5vw;
 
-                    img {
+                    //     @media all and (max-width:1024px) {
+                    //         height: 15vw;
+                    //         padding-right: 1vw;
+                    //     }
+
+                    //     @media all and (max-width:500px) {
+
+                    //         padding-right: 1.5vw;
+                    //     }
+                    // }
+
+                    #page-title-img-svg {
                         height: 5vw;
 
                         @media all and (max-width:1024px) {
                             height: 15vw;
-                            padding-right: 1vw;
+                            padding-right: 2vw;
                         }
 
                         @media all and (max-width:500px) {
-
+                            // width: 39%;
                             padding-right: 1.5vw;
                         }
                     }

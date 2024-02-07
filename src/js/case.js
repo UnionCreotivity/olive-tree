@@ -6,7 +6,7 @@ window.onload = function () {
     let vh = window.innerHeight * 0.01;
 
     document.documentElement.style.setProperty("--vh", `${vh}px`);
-
+    gsap.registerPlugin(SplitText);
     /* menu click */
     function menuClick() {
         let menu_btn = document.querySelector('.menu-btn');
@@ -86,7 +86,12 @@ window.onload = function () {
     const swiper = new Swiper(".swiper", {
         slidesPerView: 2.5,
         // spaceBetween: 50,
+        speed: 800,
         centeredSlides: true,
+        autoplay: {
+            delay: 3000
+        },
+
         loop: true,
         effect: "creative",
         navigation: {
@@ -112,7 +117,7 @@ window.onload = function () {
             slideChange: function () {
                 const index_currentSlide = this.realIndex;
                 const banner_text = document.querySelectorAll('.swiper .case-title-box');
-                const banner_year = document.querySelectorAll('.swiper .case-sign-box .case-sign');
+                const banner_year = document.querySelectorAll('.swiper .case-sign-box .year-text-box .year');
                 banner_text.forEach((text, index) => {
 
                     let tl = gsap.timeline({});
@@ -132,60 +137,6 @@ window.onload = function () {
         },
 
     });
-
-    /* menu */
-    function menuInsert() {
-        var menu_div =
-            '<div class="menu-box">' +
-            '<div class="menu-tree-shadow">' +
-            '<img src="../assets/images/tree_shadow.webp" alt="tree_shadow" srcset="">' +
-            '</div>' +
-            '<div class="close">' +
-            '<img src="../assets/images/menu/close.svg" alt="close" srcset="">' +
-            '</div>' +
-            '<div class="menu">' +
-            '<div class="item-box">' +
-            '<div class="item btn-about">' +
-            '<div class="about">' +
-            '<img src="../assets/images/menu/about.png" alt="about" srcset="">' +
-            '</div>' +
-            '<div class="text">關於橄欖樹</div>' +
-            '</div>' +
-            '<div class="item btn-hot">' +
-            '<div class="hot">' +
-            '<img src="../assets/images/menu/hot.png" alt="hot" srcset="">' +
-            '</div>' +
-            '<div class="text">熱銷建案</div>' + '</div>' +
-            '<div class="item btn-history">' +
-            '<div class="history">' +
-            '<img src="../assets/images/menu/history.png" alt="history" srcset="">' +
-            '</div>' +
-            '<div class="text">歷屆業績</div>' +
-            '</div>' +
-            '<div class="item btn-news">' +
-            '<div class="news">' +
-            '<img src="../assets/images/menu/news.png" alt="news" srcset="">' +
-            '</div>' +
-            '<div class="text">最新消息</div>' +
-            '</div>' +
-            '<div class="item btn-contact">' +
-            '<div class="contact">' +
-            '<img src="../assets/images/menu/email.png" alt="email" srcset="">' +
-            '</div>' +
-            '<div class="text">聯絡我們</div>' +
-            '</div>' +
-            '<div class="item btn-line">' +
-            '<div class="menu-line">' +
-            '<img src="../assets/images/menu/line.png" alt="line" srcset="">' +
-            '</div>' +
-            '<div class="text">LINE</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            ' </div>';
-        $('body').append(menu_div);
-    }
-    menuInsert();
 
     /* menu click */
     function menuClick() {
@@ -276,9 +227,65 @@ window.onload = function () {
 
             });
 
+        } else {
 
-
+            let tl = gsap.timeline({
+                delay: 0.5,
+                scrollTrigger: {
+                    trigger: '.case-body .case-main .page-contaniner',
+                    start: "top 70%",
+                }
+            });
+            tl.from('.swiper', { duration: 1, y: 150, ease: "power1.inOut", })
         }
     }
     caseNameAni();
+
+    function caseTitleAni() {
+        let text = document.querySelectorAll('.case-title-svg');
+        let zhTitle = gsap.utils.toArray(".page-title");
+        let splitZhTitle = zhTitle.map(heading => new SplitText(heading, {
+            type: "chars,words,lines", linesClass: "clip-text"
+        }));
+        console.log(splitZhTitle)
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: text,
+                start: "top 80%",
+            }
+        });
+        // tl.from(text, { y: -200, stagger: 0.1, duration: 0.8, })
+        // tl.from(text, { y: gsap.utils.wrap([100, 100, 200, 300, 400, 500]), stagger: 0.1 })
+        tl.from(text, {
+            x: gsap.utils.wrap([-100, 100]),
+            filter: 'blur(5px)',
+            opacity: 0,
+            duration: 1,
+            // rotation: gsap.utils.wrap([-100, 100]),
+            stagger: { each: 0.05, from: "start", },
+
+        })
+            .from(splitZhTitle[0].chars,
+                {
+                    y: -100,
+                    stagger: { each: 0.05, from: 'start', },
+                    opacity: 0,
+                    duration: 1,
+
+                }, '<0.3')
+
+        // tl.from(text, {
+        //     z: gsap.utils.wrap([-100, 100]),
+        //     filter: 'blur(5px)',
+        //     opacity: 0,
+        // duration: 1,
+        //     stagger: { each: 0.1, from: "start",  } // try center ;)
+        // })
+
+
+
+    }
+    caseTitleAni();
+
+
 }

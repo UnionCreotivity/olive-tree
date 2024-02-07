@@ -3,6 +3,7 @@ window.onload = function () {
     var window_height = window.innerHeight;
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
+    gsap.registerPlugin(ScrollTrigger);
 
     /* menu click */
     function menuClick() {
@@ -84,8 +85,6 @@ window.onload = function () {
         const history_cards = document.querySelectorAll('.history-card');
 
         if (window_width > 1024) {
-
-
             history_cards.forEach((history_card) => {
 
                 const history_card_font = history_card.querySelector('.history-card-font');
@@ -119,8 +118,11 @@ window.onload = function () {
     }
     if (window_width <= 500) {
         const swiper = new Swiper('.swiper', {
-            loop: true,
+            speed: 800, loop: true,
             slidesPerView: 2,
+            autoplay: {
+                delay: 3000
+            },
             centeredSlides: true,
             spaceBetween: 80,
             navigation: {
@@ -130,10 +132,13 @@ window.onload = function () {
         })
     } else if (window_width <= 1024) {
         const swiper = new Swiper('.swiper', {
+            speed: 800,
             loop: true,
+            autoplay: {
+                delay: 3000
+            },
             slidesPerView: 2,
             centeredSlides: true,
-            // spaceBetween: 150,
             navigation: {
                 prevEl: ".prev",
                 nextEl: ".next"
@@ -143,6 +148,11 @@ window.onload = function () {
         const swiper = new Swiper('.swiper', {
             slidesPerView: 4,
             spaceBetween: 0,
+            speed: 800,
+            spaceBetween: 0,
+            autoplay: {
+                delay: 3000
+            },
             effect: "creative",
             creativeEffect: {
 
@@ -162,7 +172,11 @@ window.onload = function () {
     } else {
         const swiper = new Swiper('.swiper', {
             slidesPerView: 4,
+            speed: 1000,
             spaceBetween: 0,
+            autoplay: {
+                delay: 3000
+            },
             effect: "creative",
             creativeEffect: {
 
@@ -179,19 +193,53 @@ window.onload = function () {
                 nextEl: ".next"
             },
         })
-    }
-    gsap.registerPlugin(ScrollTrigger);
+    };
+
 
     function cardAni() {
 
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '.main-container',
-                start: "top 60%",
+                start: "top 70%",
             },
         });
 
         tl.from('.card-box .swiper-wrapper', { duration: 1, y: 150, ease: "power1.inOut", })
     }
     cardAni();
+
+    function historyTitleAni() {
+        let text = document.querySelectorAll('.history-title-svg');
+        let zhTitle = gsap.utils.toArray(".page-title");
+        let splitZhTitle = zhTitle.map(heading => new SplitText(heading, {
+            type: "chars,words,lines", linesClass: "clip-text"
+        }));
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: text,
+                start: "top 80%",
+            }
+        });
+
+        tl.from(text, {
+            x: gsap.utils.wrap([-100, 100]),
+            filter: 'blur(5px)',
+            opacity: 0,
+            duration: 1,
+            stagger: { each: 0.05, from: "start", }
+        })
+            .from(splitZhTitle[0].chars,
+                {
+                    y: -100,
+                    stagger: { each: 0.05, from: 'start', },
+                    opacity: 0,
+                    duration: 1,
+
+                }, '<0.3')
+
+
+
+    }
+    historyTitleAni();
 }
