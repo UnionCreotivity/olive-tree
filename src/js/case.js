@@ -4,6 +4,9 @@ import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs
 import {gsap} from './gsap/esm/index.js'
 import {SplitText} from './gsap/esm/SplitText.js'
 
+    var window_width = window.screen.width;
+    var window_height = window.innerHeight;
+    let vh = window.innerHeight * 0.01;
 
 export default function caseJS(){
     

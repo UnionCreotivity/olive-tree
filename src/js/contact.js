@@ -6,7 +6,6 @@ export default  function contactJS () {
 
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 
-
     /* menu click */
     function menuClick() {
         let menu_btn = document.querySelector('.menu-btn');
@@ -70,5 +69,4 @@ export default  function contactJS () {
         });
     };
     menuClick();
-
 }
