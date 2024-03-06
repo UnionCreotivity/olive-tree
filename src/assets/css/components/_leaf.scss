@@ -286,7 +286,9 @@
 //         }
 //     }
 // }
-
+[class^="leaf"]{
+    display: none !important;
+}
 
 .leaf1 {
     position: absolute;

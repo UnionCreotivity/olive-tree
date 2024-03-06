@@ -1,15 +1,24 @@
 //Utils
 @import 'utils/mixin';
 @import 'utils/keyframes';
+@import 'utils/variables';
+@import 'utils/basic';
 
 //layout
 @import 'layout/header';
 @import 'layout/footer';
 @import 'layout/menu';
 
-//Pages
+//Pages1
 @import 'pages/index';
 @import 'pages/case';
+@import 'pages/test';
+@import 'pages/cadeTed';
+@import 'pages/contact';
+@import 'pages/history';
+@import 'pages/news';
+@import 'pages/newsContent';
+@import 'pages/about';
 
 //components
 @import 'components/oliveCard';

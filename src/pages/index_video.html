@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+TC:wght@400;500;600;700&family=Junge:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/app.css">
+
+</head>
+
+<body class="index-body" >
+
+    
+    <div data-barba="wrapper">
+        <div class="contanier" data-barba="container" data-barba-namespace="index">
+
+            <div class="light-video">
+                <video
+                    src="../assets/video/bg.mp4"
+                    loop autoplay muted playsinline></video>
+            </div>
+
+            <div class="movie_box">
+                <video src="../assets/images/openMv.mp4" poster="../assets/images/openMvImg.jpg" autoplay muted
+                    playsinline></video>
+                <div class="skip_div">
+                    <a href="javascript:;" class="skip_btn">SKIP</a>
+                </div>
+            </div>
+
+<!-- 
+            <div class="light-video">
+                <video src="../assets/images/lightMV3.mp4" poster="../assets/images/openMvImg.jpg" autoplay muted loop playsinline></video>
+            </div> -->
+
+            <!-- bg shadow-->
+            <div id="scene-tree-shadow" class="tree-shadow" data-relative-input="true">
+                <img class="tree_shadow" src="../assets/images/tree_shadow.webp" alt="tree_shadow" srcset="">
+            </div>
+    
+            <!-- bg shadow-->
+            <div id="scene-bg-shadow" class="bg-shadow" data-relative-input="true">
+                <picture>
+                    <source srcset="../assets/images/light_shadow.webp" media="(max-width: 1024px)">
+                    <img class="light_shadow" src="../assets/images/light_shadowNEW.webp" alt="light_shadow" srcset="">
+                </picture>
+            </div>
+    
+            <!-- main -->
+            <div class="scroll-card-box">
+    
+                <div class='card-box olive-tree-box' id="olive-tree" data-href="test_video.html">
+                    <div class='card'>
+                        <div class="font">
+                            <div class="item-img">
+                                <img class="test-olive" src="../assets/images/tree.png" alt="tree" srcset="">
+                                <div class="tree-component1">
+                                    <img src="../assets/images/tree_component/tree_component1.png" alt="tree_component1"
+                                        srcset="">
+                                </div>
+                                <div class="tree-component2">
+                                    <img src="../assets/images/tree_component/tree_component2.png" alt="tree_component2"
+                                        srcset="">
+                                </div>
+                                <div class="tree-component3">
+                                    <img src="../assets/images/tree_component/tree_component3.png" alt="tree_component3"
+                                        srcset="">
+                                </div>
+                                <div class="tree-component4">
+                                    <img src="../assets/images/tree_component/tree_component4.png" alt="tree_component4"
+                                        srcset="">
+                                </div>
+                                <div class="tree-component5">
+                                    <img src="../assets/images/tree_component/tree_component5.png" alt="tree_component5"
+                                        srcset="">
+                                </div>
+                                <div class="tree-component6">
+                                    <img src="../assets/images/tree_component/tree_component6.png" alt="tree_component6"
+                                        srcset="">
+                                </div>
+                                <div class="tree-component7">
+                                    <img src="../assets/images/tree_component/tree_component7.png" alt="tree_component7"
+                                        srcset="">
+                                </div>
+                                <div class="tree-component-light8">
+                                    <img src="../assets/images/tree_component/tree_light.png" alt="tree_light" srcset="">
+                                </div>
+                                <div class="tree-component-light9">
+                                    <img src="../assets/images/tree_component/tree_light.png" alt="tree_light" srcset="">
+                                </div>
+                                <div class="tree-component-light10">
+                                    <img src="../assets/images/tree_component/tree_light.png" alt="tree_light" srcset="">
+                                </div>
+                                <div class="tree-component-light11">
+                                    <img src="../assets/images/tree_component/tree_light.png" alt="tree_light" srcset="">
+                                </div>
+                                <div class="tree-component-light12">
+                                    <img src="../assets/images/tree_component/tree_light.png" alt="tree_light" srcset="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="back back-color">
+                            <div class="back-content">
+                                <div class="item-img back-item-img">
+                                    <img src="../assets/images/tree_complete.svg" alt="tree_complete" srcset="">
+                                </div>
+                                <div class="text-content">
+                                    <div class="title">
+                                        <h2>OLIVE TREE</h2>
+                                        橄欖樹
+                                    </div>
+                                    <div class="subTitle">橄欖樹象徵生命力</div>
+                                    <div class="content">
+                                        全面行銷策略<br>
+                                        伴客戶走過四季美景<br>
+                                        完美達成理想目標<br>
+                                    </div>
+                                    <div class="cardFooter"><span class="cardLine"></span><span class="cardText">OLIVE TREE</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="envelope">
+                        <img src="../assets/images/envelope.svg" alt="envelope" srcset="">
+                        <div class="envelope-text-svg">
+                            <img src="../assets/images/env_olivetree.svg" alt="env_olivetree" srcset="">
+                        </div>
+                    </div>
+                    <div class="card-shadow">
+                        <img src="../assets/images/card_shadow.png" alt="card_shadow" srcset="">
+                    </div>
+                    <div class="card-page-name-box">
+                        <div class="icon">
+                            <img src="../assets/images/title_icon.svg" alt="title_icon" srcset="">
+                        </div>
+                        <div class="page-name">
+                            關於橄欖樹
+                        </div>
+                    </div>
+                </div>
+    
+                <div class='card-box lily-box' id="lily" data-href="test_video.html">
+                    <div class='card'>
+                        <div class="font">
+                            <div class="item-img">
+                                <img src="../assets/images/lily.png" alt="lily" srcset="">
+                                <div class="lily-component1">
+                                    <img src="../assets/images/lily_component/lily_component1.png" alt="lily_component1"
+                                        srcset="">
+                                </div>
+                                <div class="lily-component2">
+                                    <img src="../assets/images/lily_component/lily_component2.png" alt="lily_component2"
+                                        srcset="">
+                                </div>
+                                <div class="lily-component3">
+                                    <img src="../assets/images/lily_component/lily_component3.png" alt="lily_component3"
+                                        srcset="">
+                                </div>
+                                <div class="lily-component4">
+                                    <img src="../assets/images/lily_component/lily_component4.png" alt="lily_component4"
+                                        srcset="">
+                                </div>
+                                <div class="lily-component5">
+                                    <img src="../assets/images/lily_component/lily_component5.png" alt="lily_component5"
+                                        srcset="">
+                                </div>
+                                <div class="lily-component6">
+                                    <img src="../assets/images/lily_component/lily_component6.png" alt="lily_component6"
+                                        srcset="">
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                        <div class="back back-color">
+                            <!-- <div class="blur-2">
+                                <img src="../assets/images/blur_2.png" alt="blur_2" srcset="">
+                            </div>
+                            <div class="blur-1">
+                                <img src="../assets/images/blur_1.png" alt="blur_1" srcset="">
+                            </div>
+                            <div class="blur">
+                                <img src="../assets/images/blur_all.png" alt="" srcset="">
+                            </div> -->
+                            <div class="back-content">
+                                <div class="item-img back-item-img">
+                                    <img src="../assets/images/lily_complete.svg" alt="lily_complete" srcset="">
+                                </div>
+                                <!-- <div class="lily-case-bg-box marquee-box">
+                                    <div class="lily-case-bg">
+                                        <img src="src/assets/images/case.png" alt="" srcset="">
+                                        <img src="src/assets/images/case.png" alt="" srcset="">
+                                        <img src="src/assets/images/case.png" alt="" srcset="">
+                                    </div>
+                                </div> -->
+                                <div class="text-content">
+                                    <div class="title">
+                                        <h2>LILY</h2>
+                                        百合花
+                                    </div>
+                                    <div class="subTitle">百合花綻放祝福</div>
+                                    <div class="content">
+                                        攜手創造雙贏<br>
+                                        致力於建築銷售服務<br>
+                                        追尋恣意生活<br>
+                                    </div>
+                                    <div class="cardFooter"><span class="cardLine"></span><span class="cardText">CASE</span></div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="envelope">
+                        <img src="../assets/images/envelope.svg" alt="" srcset="">
+                        <div class="envelope-text-svg">
+                            <img src="../assets/images/env_case.svg" alt="env_case" srcset="">
+                        </div>
+                    </div>
+                    <div class="card-shadow">
+                        <img src="../assets/images/card_shadow.png" alt="card_shadow" srcset="">
+                    </div>
+                    <div class="card-page-name-box">
+                        <div class="icon">
+                            <img src="../assets/images/title_icon.svg" alt="title_icon" srcset="">
+                        </div>
+                        <div class="page-name">
+                            熱銷建案
+                        </div>
+                    </div>
+                </div>
+    
+                <div class='card-box cotton-box' id="cotton" data-href="test_video.html">
+                    <div class='card'>
+                        <div class="font">
+                            <div class="item-img">
+                                <img src="../assets/images/cotton_sway2.png" alt="cotton_sway2" srcset="">
+    
+                                <div class="cotton-component3">
+                                    <img src="../assets/images/cotton_component/cotton-component3.png"
+                                        alt="cotton-component3" srcset="">
+                                </div>
+                                <div class="cotton-component4">
+                                    <img src="../assets/images/cotton_component/cotton-component4.png"
+                                        alt="cotton-component4" srcset="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="back back-color">
+                            <div class="back-content">
+                                <div class="item-img back-item-img">
+                                    <img src="../assets/images/cotton_complete.svg" alt="cotton_complete" srcset="">
+    
+                                </div>
+                                <div class="text-content">
+                                    <div class="title">
+                                        <h2>COTTON</h2>
+                                        棉花
+                                    </div>
+                                    <div class="subTitle">棉花代表珍惜</div>
+                                    <div class="content">
+                                        所有努力都綻放花朵，<br>
+                                        收穫豐碩成果，<br>
+                                        留下美好回憶。<br>
+                                    </div>
+                                    <div class="cardFooter"><span class="cardLine"></span><span class="cardText">HISTORY</span></div>
+    
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="envelope">
+                        <img src="../assets/images/envelope.svg" alt="" srcset="">
+                        <div class="envelope-text-svg">
+                            <img src="../assets/images/env_history.svg" alt="env_history" srcset="">
+                        </div>
+                    </div>
+                    <div class="card-shadow">
+                        <img src="../assets/images/card_shadow.png" alt="card_shadow" srcset="">
+                    </div>
+                    <div class="card-page-name-box">
+                        <div class="icon">
+                            <img src="../assets/images/title_icon.svg" alt="title_icon" srcset="">
+                        </div>
+                        <div class="page-name">
+                            歷屆業績
+                        </div>
+                    </div>
+                </div>
+    
+                <div class='card-box campanula-box' id="campanula" data-href="test_video.html">
+                    <div class='card'>
+                        <div class="font">
+                            <div class="item-img">
+                                <div class="campanula">
+                                    <img src="../assets/images/campanula_component/campanula_component5.png"
+                                        alt="campanula_component5" srcset="">
+                                </div>
+                                <div class="campanula-component1">
+                                    <img src="../assets/images/campanula_component/campanula_component1.png"
+                                        alt="campanula_component1" srcset="">
+                                </div>
+                                <div class="campanula-component2">
+                                    <img src="../assets/images/campanula_component/campanula_component2.png"
+                                        alt="campanula_component2" srcset="">
+                                </div>
+                                <div class="campanula-component3">
+                                    <img src="../assets/images/campanula_component/campanula_component3.png"
+                                        alt="campanula_component3" srcset="">
+                                </div>
+                                <div class="campanula-component4">
+                                    <img src="../assets/images/campanula_component/campanula_component4.png"
+                                        alt="campanula_component4" srcset="">
+                                </div>
+                                <div class="campanula-component5">
+                                    <img src="../assets/images/campanula_component/campanula_component4.png"
+                                        alt="campanula_component4" srcset="">
+                                </div>
+    
+                                <div class="campanula-component6">
+                                    <img src="../assets/images/campanula_component/campanula_component4.png"
+                                        alt="campanula_component4" srcset="">
+                                </div>
+                                <div class="campanula-component7">
+                                    <img src="../assets/images/campanula_component/campanula_component4.png"
+                                        alt="campanula_component4" srcset="">
+                                </div>
+                                <div class="campanula-component8">
+                                    <img src="../assets/images/campanula_component/campanula_component4.png"
+                                        alt="campanula_component4" srcset="">
+                                </div>
+                            </div>
+    
+                        </div>
+                        <div class="back back-color">
+                            <div class="back-content">
+                                <div class="item-img back-item-img">
+                                    <img src="../assets/images/campanula_complete.svg" alt="campanula_complete" srcset="">
+                                </div>
+                                <div class="text-content">
+                                    <div class="title">
+                                        <h2>BLUEBELL</h2>
+                                        風鈴草
+                                    </div>
+                                    <div class="subTitle">搖曳的風鈴草</div>
+                                    <div class="content">
+                                        感謝所有美好事物，<br>
+                                        用心經營客戶關係，<br>
+                                        提供行銷的新選擇。<br>
+                                    </div>
+                                    <div class="cardFooter"><span class="cardLine"></span><span class="cardText">NEWS</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="envelope">
+                        <img src="../assets/images/envelope.svg" alt="" srcset="">
+                        <div class="envelope-text-svg">
+                            <img src="../assets/images/env_news.svg" alt="env_news" srcset="">
+                        </div>
+                    </div>
+                    <div class="card-shadow">
+                        <img src="../assets/images/card_shadow.png" alt="card_shadow" srcset="">
+                    </div>
+                    <div class="card-page-name-box">
+                        <div class="icon">
+                            <img src="../assets/images/title_icon.svg" alt="title_icon" srcset="">
+                        </div>
+                        <div class="page-name">
+                            最新消息
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
+    
+
+    <!-- card enlarge-->
+    <div class="cardInner mask_div mask_s">
+
+        <!-- <div class="mask_div">
+            
+        </div> -->
+
+        <div class="video_box">
+            <video src="../assets/video/About_test_01.mp4"></video>
+        </div>
+
+        <div class="leaf1"></div>
+        <div class="leaf2"></div>
+        <div class="leaf3"></div>
+        <div class="leaf4"></div>
+        <div class="leaf5"></div>
+
+        <div class="card">
+            <div class="bulge">
+                <canvas class="bulge_canvas"></canvas>
+            </div>
+            <div class="back">
+
+                <div class="back-content">
+                    
+
+                    <img class="back-item-img" src="../assets/images/SVG/tree_svg.svg" alt="" srcset="">
+                    <!-- <div class="blur-1">
+                        <img class="blur-img1" src="../assets/images/tree_blur_1.png" alt="tree_blur_1" srcset="">
+                    </div>
+                    <div class="blur-2">
+                        <img class="blur-img2" src="../assets/images/tree_blur_2.png" alt="tree_blur_2" srcset="">
+                    </div>
+                    <div class="blur-3">
+                        <img class="blur-img3" src="../assets/images/tree_blur_3_2.png" alt="tree_blur_3_2"
+                            srcset="">
+                    </div> -->
+                    <div class="chapter-title">
+                        <img class="chapter-title-img" src="../assets/images/olivetree_text.png"
+                            alt="olivetree_text" srcset="">
+                    </div>
+                    <div class="lily-case-bg-box marquee-box">
+                        <div class="lily-case-bg marquee">
+                            <img src="../assets/images/case_txt.png" alt="" srcset="">
+                            <img src="../assets/images/case_txt.png" alt="" srcset="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="blur-1">
+            <img class="blur-img1" src="../assets/images/tree_blur_1.png" alt="tree_blur_1" srcset="">
+        </div>
+        <div class="blur-2">
+            <img class="blur-img2" src="../assets/images/tree_blur_2.png" alt="tree_blur_2" srcset="">
+        </div>
+        <div class="blur-3">
+            <img class="blur-img3" src="../assets/images/tree_blur_3_2.png" alt="tree_blur_3_2" srcset="">
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="../assets/minified/gsap.min.js"></script>
+    <script src="../assets/minified/CSSRulePlugin.min.js"></script>
+    <script src="../assets/minified/ScrollToPlugin.min.js"></script>
+    <script src="../js/vanilla-tilt.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TimelineMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+    <!-- <script type="module" src="../js/index.js"></script> -->
+    <script type="module" src="../js/barba_video_main.js"></script>
+    <!-- <script src="../js/case.js" async></script> -->
+</body>
+
+</html>

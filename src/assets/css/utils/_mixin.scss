@@ -1,3 +1,79 @@
+@mixin tablet{
+    @media(max-width:900px){
+      @content;
+    }
+}
+
+@mixin mobile{
+    @media(max-width:500px){
+      @content;
+    }
+}
+
+@mixin fontSize40pt() {
+    font-size: 40pt;
+    font-size: 50px;
+    // font-size: 5vw;
+}
+
+@mixin fontSize28pt() {
+    font-size: 28pt;
+    font-size: 37px;
+    font-size: 16px;
+    // font-size: 3.7vw;
+}
+
+@mixin fontSize30pt() {
+    font-size: 30pt;
+    font-size: 40px;
+    font-size: 1.28vw;
+
+    @media all and (max-width:1440px) {
+        font-size: 1.7vw;
+    }
+}
+
+@mixin fontSize24pt() {
+    font-size: 24pt;
+    font-size: 32px;
+    font-size: 1vw;
+
+    @media all and (max-width:1440px) {
+        font-size: 1.4vw;
+    }
+
+}
+
+@mixin fontSize18pt() {
+    font-size: 18pt;
+    font-size: 24px;
+    font-size: 0.78vw;
+
+    @media all and (max-width:1440px) {
+        font-size: 1vw;
+    }
+}
+
+@mixin fontSize16pt() {
+    font-size: 16pt;
+    font-size: 22px;
+    font-size: 0.7vw;
+
+    @media all and (max-width:1920px) {
+        font-size: 16px;
+    }
+
+    @media all and (max-width:1440px) {
+        font-size: 0.9vw;
+    }
+}
+
+@mixin fontSize12pt() {
+    font-size: 12pt;
+    font-size: 16px;
+    font-size: 0.5vw;
+}
+
 @mixin cardBoxSet() {
     border-radius: 13%;
     width: 11.7vw;
@@ -33,7 +109,7 @@
     height: 16.4vw;
     // width: 300px;
     // height: 420px;
-    border: 10px solid white;
+    border: 6px solid white;
     border-radius: 6%;
     overflow: hidden;
 
@@ -143,25 +219,46 @@
 }
 
 @mixin cardTitle() {
+    position: relative;
     font-size: 1.2vw;
     color: #adbc8a;
     font-family: 'Noto Serif TC', serif;
-    font-weight: bold;
+    font-weight: 500;
     letter-spacing: 0.1em;
     z-index: 5;
-    opacity: 0;
+    // opacity: 0;
 
     @media all and (max-width:1024px) {
         font-size: 4.5vw;
     }
 
     @media all and (max-width:500px) {
-        font-size: 5vw;
+        font-size: 6vw;
+    }
+}
+
+@mixin cardTitleEn() {
+    position: absolute;
+    font-family: "Junge", cursive;
+    font-size: 1.35em;
+    font-weight: 500;
+    letter-spacing: -0.1em;
+    transform: scaleY(1.7);
+    color: #d5d9c4;
+    opacity: 0.1;
+    top: -17%;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    @include tablet(){
+        font-size: 8vw;
     }
 }
 
 @mixin cardContentBox() {
     // background-color: rgba(0, 0, 0, 0.473);
+    background-color: #565b518f;
     background-image: url(../images/back_blur_bg.png);
     // background-position: center;
     background-size: 11.7vw;
@@ -191,20 +288,34 @@
 
     @media all and (max-width:500px) {
         background-size: cover;
-        padding-top: 14vw;
+        padding-top: 16vw;
         padding-bottom: 20vw;
     }
 }
 
+@mixin cardSubTitle() {
+    margin-top: 0.2vw;
+    color: #b6b79e;
+    font-family: "Noto Serif TC", serif;
+    font-weight: 400;
+    font-size: 0.75vw;
+    letter-spacing: 0.05vw;
+    @include tablet(){
+        font-size: 4vw;
+        letter-spacing: 0.1em;
+        margin-top: 2vw;
+    }
+}
+
 @mixin cardContent() {
-    margin-top: 1.2vw;
+    margin-top: 1vw;
     font-size: 0.7vw;
     font-family: '微軟正黑體';
     letter-spacing: 0.1em;
     line-height: 1.6vw;
     z-index: 100;
     color: white;
-    opacity: 0;
+    opacity: 1;
     padding-left: 0.2vw;
 
     @media all and (max-width:1440px) {
@@ -225,6 +336,44 @@
         margin-top: 6vw;
     }
 
+}
+
+@mixin cardFooter() {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.8vw;
+    position: absolute;
+    width: 100%;
+    top: 70%;
+
+    @include tablet(){
+        top: 89%;
+        padding: 0 6vw;
+    }
+
+    .cardText {
+        font-family: "Cormorant Garamond", serif;
+        color: #d5d9c4;
+        opacity: 0.5;
+        font-size: 0.6vw;
+        letter-spacing: 0.1em;
+        margin-left: 0.4vw;
+
+        @include tablet(){
+            font-size: 3.5vw;
+            margin-left: 2vw;
+        }
+    }
+
+    .cardLine {
+        flex: 1 1;
+        width: 50%;
+        height: 1px;
+        background-color: #d5d9c4;
+        opacity: 0.3;
+    }
 }
 
 @mixin envelope() {
@@ -276,9 +425,68 @@
         width: 11.7vw;
         height: 17.5vw;
 
+        @media all and (max-width:1024px) {
+            opacity: 0;
+            width: 46.7vw;
+            height: 62.5vw;
+        }
+
         @media all and (max-width:500px) {
             width: 60.7vw;
             height: 78.5vw;
         }
     }
+}
+
+@mixin casePageBannerTitle() {
+    @include fontSize24pt();
+    color: #4e5e2c;
+    font-weight: 700;
+    font-family: 'Noto Serif TC', serif;
+    margin-bottom: 2vw;
+    letter-spacing: 0.1em;
+
+    @media all and (max-width:1024px) {
+        font-size: $main-title;
+        margin-bottom: 3vw;
+        text-align: center;
+    }
+}
+
+@mixin casePageBannerContent() {
+    @include fontSize16pt();
+    color: #595959;
+    font-family: '微軟正黑體';
+    line-height: 1.3vw;
+    letter-spacing: 0.1em;
+    word-break: keep-all;
+
+    @media all and (max-width:1440px) {
+        line-height: 2vw;
+    }
+
+    @media all and (max-width:1024px) {
+        font-size: $content;
+        line-height: 6.5vw;
+        word-break: normal;
+        text-align: justify;
+    }
+}
+
+@mixin caseListNameMoblie() {
+    font-size: 5vw;
+    font-family: 'Noto Serif TC';
+    font-weight: bold;
+    color: #595959;
+    letter-spacing: 0.1em;
+    margin-top: 4vw;
+    margin-bottom: 3vw;
+}
+
+@mixin caseListTitleMoblie() {
+    font-size: 3.7vw;
+    font-family: '微軟正黑體';
+    color: #494949;
+    letter-spacing: 0.1em;
+    margin-bottom: 2vw;
 }

@@ -10,20 +10,23 @@ body {
     //     background-image: url(images/bg.png);
     background-size: cover;
     background-repeat: repeat;
+    position: relative;
     //   width: 100%;
     //   height: 100vh;
 }
 
+
 .light-video {
     position: fixed;
     width: 100%;
-    height: 100vh;
-    top: 0;
+    height: 100%;
+    bottom: 0;
     left: 0;
     pointer-events: none;
-    opacity: 0.2;
-    z-index: 999;
-    mix-blend-mode: plus-lighter;
+    // opacity: 0.2;
+    z-index: 100;
+    mix-blend-mode: screen;
+    // transform: rotateY(180deg);
 
     video {
         width: 100%;
@@ -31,7 +34,6 @@ body {
         object-fit: cover;
     }
 }
-
 
 
 .contanier {
@@ -77,7 +79,7 @@ body {
     @media all and (max-width:500px) {
         background-size: 350% 100%;
         background-position: center;
-        padding-bottom: 10vw;
+        padding-bottom: 3vw;
     }
 
 

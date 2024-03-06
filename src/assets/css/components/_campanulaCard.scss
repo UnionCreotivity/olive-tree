@@ -421,10 +421,21 @@
 
                 .title {
                     @include cardTitle();
+                    h2{
+                        @include cardTitleEn();
+                    }
+                }
+
+                .subTitle{
+                    @include cardSubTitle();
                 }
 
                 .content {
                     @include cardContent();
+                }
+
+                .cardFooter{
+                    @include cardFooter();
                 }
 
             }

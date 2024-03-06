@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+Upright:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@500;600;700&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap');
+
+
+.clip-text {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #989898;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+[barba-href]{
+    cursor: pointer;
+}

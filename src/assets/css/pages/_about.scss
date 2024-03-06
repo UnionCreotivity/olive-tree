@@ -1,0 +1,280 @@
+.about-body {
+    background-image: url(../images/page_about/about_bg.png);
+    background-color: white;
+    width: 100%;
+    background-size: cover;
+    position: relative;
+
+    .about-main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .top-container {
+            width: 100%;
+            padding-top: 5vw;
+            display: flex;
+            justify-content: center;
+
+            // height: calc(var(--vh, 2.8vh) *100);
+            @media all and (max-width:1920px) {
+                padding-top: 8vw;
+            }
+
+            @media all and (max-width:1024px) {
+                height: auto;
+                padding-top: 20vw;
+            }
+
+            .transitions-item {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                padding-bottom: 50vw;
+
+                img {
+                    width: 45%;
+
+                    @media all and (max-width:1024px) {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+
+        .page-contaniner {
+            display: flex;
+            width: 100%;
+            padding-top: 5vw;
+            padding-bottom: 4vw;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+
+            @media all and (max-width:1024px) {
+                padding-bottom: 23vw;
+                padding-top: 10vw;
+            }
+
+            .page-title-box {
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+
+                @media all and (max-width:500px) {
+                    margin-bottom: 3vw;
+                }
+
+
+                .page-title-img {
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                    padding-right: 0.5vw;
+
+
+
+                    #page-title-img-svg {
+                        height: 5vw;
+
+                        @media all and (max-width:1024px) {
+                            height: 15vw;
+                            padding-right: 2vw;
+                        }
+
+                        @media all and (max-width:500px) {
+                            // width: 39%;
+                            padding-right: 1.5vw;
+                        }
+                    }
+                }
+
+                .page-title {
+                    margin-top: 2vw;
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                    color: #595959;
+                    font-family: 'Noto Serif TC', serif;
+                    font-size: 1.4vw;
+                    letter-spacing: 0.45em;
+                    font-weight: 600;
+
+                    @media all and (max-width:1024px) {
+                        font-size: $big-title;
+                    }
+                }
+
+            }
+
+            .page-content {
+                padding-bottom: 10vw;
+                padding-top: 3vw;
+
+                .tab-box {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    font-family: 'Noto Serif TC';
+                    color: #595959;
+                    font-weight: bold;
+                    font-size: 0.8vw;
+                    letter-spacing: 0.1em;
+
+                    .about-tab {
+                        &:after {
+                            content: "";
+                            display: inline-block;
+                            height: 1em;
+                            width: 10px;
+                            vertical-align: middle;
+                            margin-right: 1.5vw;
+                            margin-left: 2vw;
+                            margin-bottom: 0.2vw;
+                            border-left: 3px solid #595959;
+                        }
+                    }
+
+                    .idea-tab {
+                        &:after {
+                            content: "";
+                            display: inline-block;
+                            height: 1em;
+                            width: 10px;
+                            vertical-align: middle;
+                            margin-right: 1.5vw;
+                            margin-left: 2vw;
+                            margin-bottom: 0.2vw;
+                            border-left: 3px solid #595959;
+                        }
+                    }
+
+                }
+
+                .content {
+                    display: flex;
+                    width: 100%;
+                    flex-wrap: wrap;
+
+                    @media all and (max-width:1024px) {
+                        flex-direction: column;
+                    }
+
+                    .about-tab-container {
+                        display: flex;
+                        width: 100%;
+                        justify-content: center;
+
+                        .peace-victory-box {
+                            display: flex;
+                            width: 100%;
+                            justify-content: center;
+                            margin-top: 3vw;
+                            position: relative;
+
+                            .left-box {
+                                display: flex;
+                                width: 38%;
+
+                                .img-box {
+                                    width: 100%;
+
+                                    img {
+                                        border: 20px solid #b7c497;
+                                        border-radius: 50%;
+                                        width: 100%;
+                                    }
+                                }
+
+                                .img-box2 {
+                                    margin-top: 7vw;
+                                    margin-left: 1vw;
+                                }
+
+                                .peace-victory {
+                                    position: absolute;
+                                    bottom: 2vw;
+                                    // left: 0px;
+                                    margin-left: 4vw;
+
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+
+                            .right-box {
+                                display: flex;
+
+                                padding-top: 10vw;
+                                margin-left: 3vw;
+
+                                .leaf-icon {
+                                    margin-right: 0.5vw;
+
+                                    img {
+                                        width: 30px;
+                                    }
+                                }
+
+                                .title-box {
+                                    display: flex;
+                                    color: #4e5e2c;
+                                    font-family: 'Noto Serif TC';
+                                    font-weight: bold;
+                                    flex-direction: column;
+                                    letter-spacing: 0.1em;
+                                    @include fontSize24pt();
+
+                                    @media all and (max-width:1024px) {
+                                        font-size: $big-title;
+                                    }
+
+                                    .title-text {
+                                        display: flex;
+
+                                        img.title_crosses {
+                                            margin-left: 0.5vw;
+                                            margin-right: 0.5vw;
+                                            width: 20px;
+                                        }
+
+                                    }
+                                }
+
+                                .about_line {
+                                    width: 80%;
+                                    margin-top: 0.8vw;
+                                    margin-bottom: 0.5vw;
+                                }
+
+                                .content {
+                                    color: #595959;
+                                    font-family: '微軟正黑體';
+                                    letter-spacing: 0.1em;
+                                    @include fontSize16pt();
+                                    line-height: 1.5vw;
+
+
+                                    @media all and (max-width:1024px) {
+                                        font-size: $content;
+                                    }
+                                }
+
+                                .content2 {
+                                    margin-top: 1.5vw;
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

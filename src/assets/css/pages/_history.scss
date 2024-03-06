@@ -1,0 +1,610 @@
+.history-body {
+    background-color: white;
+    background-image: url(../images/page_history/bg.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+
+    .case-main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .top-container {
+            width: 100%;
+            padding-top: 5vw;
+            display: flex;
+            justify-content: center;
+
+            // height: calc(var(--vh, 2.8vh) *100);
+            @media all and (max-width:1920px) {
+                padding-top: 8vw;
+            }
+
+            @media all and (max-width:1024px) {
+                height: auto;
+                padding-top: 20vw;
+            }
+
+            .transitions-item {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                padding-bottom: 50vw;
+
+                img {
+                    width: 45%;
+
+                    @media all and (max-width:1024px) {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+
+        .page-contaniner {
+            display: flex;
+            width: 100%;
+            padding-top: 5vw;
+            flex-direction: column;
+            position: relative;
+
+            @media all and (max-width:500px) {
+                padding-top: 10vw;
+            }
+
+            .page-title-box {
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+
+                .page-title-img {
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                    padding-right: 0.5vw;
+                    // img {
+                    //     height: 5vw;
+
+                    //     @media all and (max-width:1024px) {
+                    //         height: 15vw;
+                    //         padding-right: 1vw;
+                    //     }
+
+                    //     @media all and (max-width:500px) {
+
+                    //         padding-right: 1.5vw;
+                    //     }
+                    // }
+
+                    #page-title-img-svg {
+                        height: 5vw;
+
+                        @media all and (max-width:1024px) {
+                            height: 15vw;
+                            padding-right: 2vw;
+                        }
+
+                        @media all and (max-width:500px) {
+                            // width: 39%;
+                            padding-right: 1.5vw;
+                        }
+                    }
+                }
+
+                .page-title {
+                    margin-top: 2vw;
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                    color: #595959;
+                    font-family: 'Noto Serif TC', serif;
+                    @include fontSize30pt();
+                    letter-spacing: 0.45em;
+                    font-weight: 600;
+
+                    @media all and (max-width:1024px) {
+                        font-size: $big-title;
+                    }
+                }
+
+            }
+
+            .main-container {
+                display: flex;
+                width: 100%;
+                position: relative;
+
+                .card-box {
+                    display: flex;
+                    width: 90%;
+                    justify-content: center;
+                    padding-top: 10vw;
+                    padding-bottom: 10vw;
+                    position: relative;
+                    padding-right: 3vw;
+                    padding-left: 3vw;
+
+                    @media all and (max-width:1920px) {
+                        width: 95%;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        height: 100vw;
+                        width: 100%;
+                        margin-bottom: 14vw;
+                        padding-right: 0vw;
+                        padding-left: 0vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        margin-bottom: 35vw;
+                        padding-top: 12vw;
+                        height: 115vw;
+                    }
+
+                    .swiper-wrapper {
+                        @media all and (max-width:1024px) {
+                            padding-left: 7vw;
+
+                        }
+
+                        @media all and (max-width:500px) {
+                            padding-right: 12vw;
+                            padding-left: 0vw;
+                        }
+
+                    }
+
+                    // #hidden {
+                    //     opacity: 0 !important;
+                    // }
+
+                    .history-card {
+                        width: 15.5vw;
+                        height: 25.5vw;
+                        position: relative;
+                        cursor: pointer;
+
+
+                        @media all and (max-width:1920px) {
+                            width: 17.5vw;
+                            height: 27.5vw;
+                        }
+
+                        @media all and (max-width:1440px) {
+                            width: 17.5vw;
+                            height: 28.5vw;
+                        }
+
+                        @media all and (max-width:1024px) {
+                            width: 41.5vw;
+                            height: 68vw;
+                        }
+
+                        @media all and (max-width:500px) {
+                            width: 52vw;
+                            height: 82vw;
+
+                        }
+
+                        .history-card-font {
+                            position: absolute;
+                            backface-visibility: hidden;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            width: 15.5vw;
+                            height: 25.5vw;
+                            border-radius: 17px;
+                            overflow: hidden;
+
+                            @media all and (max-width:1024px) {
+                                // transform: rotateY(180deg);
+                            }
+
+                            @media all and (max-width:1920px) {
+                                width: 17.5vw;
+                                height: 27.5vw;
+                            }
+
+                            @media all and (max-width:1024px) {
+                                width: 41.5vw;
+                                height: 68vw;
+                            }
+
+                            @media all and (max-width:500px) {
+                                width: 52vw;
+                                height: 82vw;
+
+                            }
+
+                            .history-card-tree-shadow {
+                                width: 100%;
+                                margin-top: 1.5vw;
+
+                                @media all and (max-width:500px) {
+                                    margin-top: 4vw;
+                                }
+                            }
+
+                            .case-content {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+
+                                .case {
+                                    display: flex;
+                                    flex-direction: column;
+                                    margin-top: 2vw;
+
+                                    @media all and (max-width:1024px) {
+                                        margin-top: 4vw;
+                                    }
+
+                                    .case-name {
+                                        @include fontSize30pt();
+                                        font-family: 'Noto Serif TC';
+                                        color: white;
+                                        letter-spacing: 0.1em;
+                                        font-weight: bold;
+                                        text-align: center;
+                                        text-shadow: 0 0 0.2em rgb(97, 97, 97);
+
+                                        @media all and (max-width:1024px) {
+                                            font-size: $big-title;
+                                        }
+                                    }
+
+                                    .case-add {
+                                        @include fontSize24pt();
+                                        font-family: '微軟正黑體';
+                                        color: #4f563f;
+                                        letter-spacing: 0.1em;
+                                        text-align: center;
+                                        margin-top: 0.5vw;
+
+                                        @media all and (max-width:1024px) {
+                                            font-size: $content;
+                                        }
+                                    }
+                                }
+
+                                .case-year {
+                                    display: flex;
+                                    font-family: 'Cormorant Garamond';
+                                    font-size: 4.3vw;
+                                    font-style: italic;
+                                    color: #4f563f;
+                                    margin-top: 4vw;
+                                    margin-left: 1.5vw;
+                                    letter-spacing: 0.07em;
+
+                                    @media all and (max-width:1920px) {
+                                        margin-top: 5vw;
+                                    }
+
+                                    @media all and (max-width:1440px) {
+                                        margin-top: 2.5vw;
+                                        font-size: 5.3vw;
+                                    }
+
+                                    @media all and (max-width:1024px) {
+                                        font-size: 14vw;
+                                        margin-top: 8vw;
+                                        margin-left: 4vw;
+                                    }
+
+                                    @media all and (max-width:500px) {
+                                        margin-top: 13vw;
+
+                                    }
+
+                                    .slash-box {
+                                        width: 10%;
+                                        margin-left: 1vw;
+
+                                        @media all and (max-width:500px) {
+                                            margin-left: 3vw;
+                                        }
+
+                                        #slash {
+                                            width: 100%;
+
+                                            @media all and (max-width:500px) {
+                                                width: 80%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .history-card-back {
+                            position: absolute;
+                            transform: rotateY(180deg);
+                            backface-visibility: hidden;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+
+                            @media all and (max-width:1024px) {
+
+                                width: 41.5vw;
+                                height: 68vw;
+                            }
+
+                            @media all and (max-width:500px) {
+                                width: 52vw;
+                                height: 82vw;
+                            }
+
+                            img {
+                                width: 75%;
+
+                                @media all and (max-width:1920px) {
+                                    // width: 67%;
+                                }
+
+                                @media all and (max-width:1440px) {
+                                    // width: 70%;
+                                }
+
+                                @media all and (max-width:1024px) {
+                                    width: 100%;
+                                }
+
+                                @media all and (max-width:500px) {
+                                    width: 100%;
+                                }
+                            }
+
+                            .bottom {
+                                position: absolute;
+                                z-index: 2;
+                                bottom: 1.5vw;
+                                color: white;
+
+                                @media all and (max-width:1024px) {
+                                    bottom: 2.5vw;
+                                }
+
+                                .case-year {
+                                    display: flex;
+                                    font-family: 'Cormorant Garamond';
+                                    font-size: 4.3vw;
+                                    font-style: italic;
+                                    margin-left: 1vw;
+                                    letter-spacing: 0.07em;
+                                    text-shadow: 0.2em 0.2em 0.2em rgb(43, 43, 43);
+
+                                    @media all and (max-width:1440px) {
+                                        font-size: 5.3vw;
+                                    }
+
+                                    @media all and (max-width:1024px) {
+                                        font-size: 14vw;
+                                        margin-left: 2vw;
+                                    }
+
+                                    @media all and (max-width:500px) {
+                                        margin-left: 4vw;
+
+                                    }
+
+                                    div {
+                                        width: 20%;
+                                        margin-left: 1vw;
+
+                                        img {
+                                            width: 100%;
+
+                                            @media all and (max-width:1440px) {
+                                                width: 80%;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .case {
+                                    display: flex;
+                                    flex-direction: column;
+                                    margin-top: 0.5vw;
+                                    margin-left: 1vw;
+
+                                    @media all and (max-width:1024px) {
+                                        margin-left: 2vw;
+                                        margin-top: 1vw;
+                                    }
+
+                                    @media all and (max-width:500px) {
+                                        margin-left: 4vw;
+
+                                    }
+
+                                    .case-name {
+                                        @include fontSize30pt();
+                                        font-family: 'Noto Serif TC';
+                                        letter-spacing: 0.1em;
+                                        font-weight: bold;
+                                        text-shadow: 0.2em 0.2em 0.2em rgb(43, 43, 43);
+
+                                        @media all and (max-width:1024px) {
+                                            font-size: $big-title;
+                                        }
+                                    }
+
+                                    .case-add {
+                                        @include fontSize24pt();
+                                        font-family: '微軟正黑體';
+                                        letter-spacing: 0.1em;
+                                        margin-top: 0.2vw;
+                                        text-shadow: 0.2em 0.2em 0.2em rgb(43, 43, 43);
+
+                                        @media all and (max-width:1024px) {
+                                            font-size: $content;
+                                            margin-top: 1vw;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .history-card:nth-child(4n+1) {
+
+                        .history-card-font {
+                            background-color: #b5bc9f;
+
+                            .case-content {
+                                .case-year {
+                                    .slash-box {
+
+                                        #slash {
+
+                                            stroke: #4f563f;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .history-card:nth-child(4n+2) {
+                        .history-card-font {
+                            background-color: #acb27d;
+
+                            .case-content {
+                                .case-year {
+                                    .slash-box {
+                                        #slash {
+
+                                            stroke: #4f563f;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .history-card:nth-child(4n+3) {
+
+                        .history-card-font {
+                            background-color: #788260;
+
+                            .case-content {
+                                .case {
+                                    .case-add {
+                                        color: #b8c598;
+                                    }
+                                }
+
+                                .case-year {
+                                    color: #b8c598;
+
+                                    .slash-box {
+
+                                        #slash {
+                                            stroke: #b8c598;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .history-card:nth-child(4n+4) {
+
+                        .history-card-font {
+                            background-color: #4f563f;
+
+                            .case-content {
+                                .case {
+                                    .case-add {
+                                        color: #b8c598;
+                                    }
+                                }
+
+                                .case-year {
+                                    color: #b8c598;
+
+                                    .slash-box {
+                                        #slash {
+                                            stroke: #b8c598;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+                .prev {
+
+                    z-index: 10;
+                    cursor: pointer;
+                    position: absolute;
+                    bottom: 12vw;
+                    right: 4vw;
+
+                    @media all and (max-width:1920px) {
+                        right: 5vw;
+                    }
+
+                    @media all and (max-width:1680px) {
+                        right: 6vw;
+                    }
+
+                    @media all and (max-width:1024px) {
+                        left: 1vw;
+                    }
+
+                    @media all and (max-width:500px) {
+                        bottom: 5vw;
+                        right: 0vw;
+                        left: 2vw;
+                    }
+
+                    img {
+                        @media all and (max-width:500px) {
+                            width: 35px;
+                        }
+                    }
+                }
+
+                .next {
+                    z-index: 10;
+                    cursor: pointer;
+                    position: absolute;
+                    bottom: 12vw;
+                    right: 1vw;
+
+                    @media all and (max-width:500px) {
+                        bottom: 5vw;
+                        right: 2vw;
+                    }
+
+                    img {
+                        @media all and (max-width:500px) {
+                            width: 35px;
+                        }
+                    }
+                }
+
+            }
+
+            .tree-shadow-moblie {
+                position: absolute;
+                width: 80vw;
+                left: -40vw;
+                bottom: 0px;
+                mix-blend-mode: difference;
+                display: none;
+                // z-index: 10;
+
+                @media all and (max-width:1024px) {
+                    display: block;
+                }
+            }
+        }
+    }
+}

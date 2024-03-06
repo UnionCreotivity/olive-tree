@@ -1,377 +1,219 @@
 
-import {
-    Renderer,
-    Program,
-    Mesh,
-    Triangle,
-    Vec2,
-    Texture
-} from "https://cdn.jsdelivr.net/npm/ogl@1.0.3/src/index.min.js";
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
+import {gsap} from './gsap/esm/index.js'
+import {SplitText} from './gsap/esm/SplitText.js'
 
 
-const imageSrc =
-    'https://lionsgoodnews.com/assets/images/flower/flower-imagination.png';
-
-const vertex = `
-                attribute vec2 uv;
-                attribute vec2 position;
-                uniform vec2 uResolution;
-                uniform vec2 uTextureResolution;
-                varying vec2 vUv;
-      
-                vec2 resizeUvCover() {
-                    vec2 ratio = vec2(
-                        min((uResolution.x / uResolution.y) / (uTextureResolution.x / uTextureResolution.y), 1.0),
-                        min((uResolution.y / uResolution.x) / (uTextureResolution.y / uTextureResolution.x), 1.0)
-                    );
-      
-                    return vec2(
-                        uv.x * ratio.x + (1.0 - ratio.x) * 0.5,
-                        uv.y * ratio.y + (1.0 - ratio.y) * 0.5
-                    );
-                }
-      
-                void main() {
-                  vUv = resizeUvCover();
-                  gl_Position = vec4(position, 0, 1);
-                }
-      `;
-
-const fragment = `
-      precision highp float;
-      uniform float uTime;
-      uniform sampler2D uTexture;
-      uniform vec2 uMouse;
-      uniform vec2 uMouseIntro;
-      uniform float uIntro;
-      uniform float uRadius;
-      uniform float uStrength;
-      uniform float uBulge;
-      varying vec2 vUv;
+export default function caseJS(){
     
-      vec2 bulge(vec2 uv, vec2 center) {
-    
-        uv -= center; // center to mouse
-    
-        float dist = length(uv) / uRadius; // amount of distortion based on mouse pos
-        float distPow = pow(dist, 4.); // exponential as you ar far from the mouse
-        float strengthAmount = uStrength / (1.0 + distPow); // strenght
-    
-        uv *= (1. - uBulge) + uBulge * strengthAmount; // use uBulge to smoothly reset/add effect
-    
-        uv += center; // reset pos
-    
-        return uv;
-      }
-    
-      void main() {
-          // Add bulge effect based on mouse
-          vec2 mixMouse = mix(uMouseIntro, uMouse, uIntro);
-          vec2 bulgeUV = bulge(vUv, mixMouse);
-      
-          vec4 tex = texture2D(uTexture, bulgeUV);
-      
-          gl_FragColor.rgb = tex.rgb;
-          gl_FragColor.a = tex.a;  // Ensure alpha channel is correctly set
-      }
-    `;
+    var window_width = window.screen.width;
+    var window_height = window.innerHeight;
+    let vh = window.innerHeight * 0.01;
 
-{
-    class IntersectObserver {
-        entries = {};
-        observer;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+    gsap.registerPlugin(SplitText);
+    /* menu click */
+    function menuClick() {
+        let menu_btn = document.querySelector('.menu-btn');
+        let menu_box = document.querySelector('.menu-box');
+        let menu_close = document.querySelector('.close');
+        var menu_tl = gsap.timeline({
+            paused: true
+        });
+        var menu_close_tl = gsap.timeline({
 
-        constructor() {
-            this.observer = new IntersectionObserver(this.onElementObserved, {
-                threshold: 0.0
-            });
-        }
-
-        observe(id, el, methodIn, methodOut) {
-            this.entries[id] = { el, methodIn, methodOut };
-
-            this.observer.observe(el);
-        }
-
-        onElementObserved = (entries) => {
-            entries.forEach((entry) => {
-                const id = entry.target.dataset.intersectId;
-
-                if (id && this.entries[id]) {
-                    if (entry.isIntersecting) {
-                        this.entries[id].methodIn(entry);
-                    } else {
-                        this.entries[id].methodOut(entry);
-                    }
-                }
-            });
-        };
-    }
-
-    class BulgeImage {
-        #el;
-        #renderer;
-        #mesh;
-        #program;
-        #mouse = new Vec2(0, 0);
-        #mouseTarget = new Vec2(0, 0);
-        #elRect;
-        #canMove = true;
-        #index;
-        #isTouch;
-        #visible;
-        constructor() {
-            const bulgeImage = document.querySelector(".bulge");
-            this.#el = bulgeImage.querySelector("canvas");
-            this.#index = 0;
-            this.setScene();
-            this.#el.dataset.intersectId = this.#index;
-
-            this.#isTouch = this.isTouch();
-        }
-
-        async setScene() {
-            this.#renderer = new Renderer({
-                dpr: Math.min(window.devicePixelRatio, 2),
-                canvas: this.#el,
-                width: this.#el.offsetWidth,
-                height: this.#el.offsetHeight,
-                alpha: true,  // 確保 Canvas 支持透明度
-            });
-            const { gl } = this.#renderer;
-
-            // Preloading
-            let texture;
-            await new Promise((resolve) => {
-                const image = new Image();
-                const textureGl = new Texture(gl);
-
-                image.onload = () => {
-                    textureGl.image = image;
-                    texture = textureGl;
-                    resolve(image);
-                };
-                image.src = imageSrc;
-                image.crossOrigin = "Anonymous";
-            });
-
-            gl.clearColor(1, 1, 1, 1);
-
-            this.resize();
-
-            const geometry = new Triangle(gl);
-
-            this.#program = new Program(gl, {
-                vertex,
-                fragment,
-                uniforms: {
-                    uTime: { value: 0 },
-                    uTexture: { value: texture },
-                    uTextureResolution: {
-                        value: new Vec2(texture.image.width, texture.image.height)
-                    },
-                    uResolution: {
-                        value: new Vec2(gl.canvas.offsetWidth, gl.canvas.offsetHeight)
-                    },
-                    uMouse: { value: this.#mouse },
-                    uMouseIntro: { value: new Vec2(0.5, 0) },
-                    uIntro: { value: 0 },
-                    uBulge: { value: 0 },
-                    uRadius: { value: 0.95 },
-                    uStrength: { value: 1.1 }
-                }
-            });
-
-            this.#mesh = new Mesh(gl, { geometry, program: this.#program });
-
-            this.events();
-            new IntersectObserver().observe(
-                this.#index,
-                this.#el,
-                this.show,
-                this.hide
-            );
-        }
-
-        show = () => {
-            let delay = 0;
-
-            this.tlHide?.kill();
-            this.tlShow = gsap.timeline();
-
-            gsap.delayedCall(delay, () => {
-                this.#el.parentNode.classList.add("is-visible");
-            });
-
-            this.tlShow.fromTo(
-                this.#program.uniforms.uBulge,
-                { value: 1 },
-                {
-                    value: 0,
-                    duration: 1.8,
-                    ease: "power3.out",
-                    delay
-                }
-            );
-
-            this.tlShow.to(
-                this.#program.uniforms.uIntro,
-                { value: 1, duration: 5, delay },
-                0
-            );
-
-            this.#visible = true;
-        };
-
-        hide = () => {
-            let delay = 0;
-
-            this.tlShow?.kill();
-            this.tlHide = gsap.timeline();
-
-            gsap.delayedCall(delay, () => {
-                this.#el.parentNode.classList.remove("is-visible");
-            });
-
-            this.tlHide.to(this.#program.uniforms.uBulge, {
-                value: 1,
-                duration: 1.8,
-                ease: "power3.out",
-                delay
-            });
-
-            this.tlHide.to(
-                this.#program.uniforms.uIntro,
-                { value: 0, duration: 1, delay },
-                0
-            );
-
-            this.#visible = false;
-        };
-
-        events() {
-            this.#el.addEventListener("mouseenter", this.handleMouseEnter, false);
-            this.#el.addEventListener("mouseleave", this.handleMouseLeave, false);
-        }
-
-        render = () => {
-            if (!this.#program) return;
-
-            this.#mouseTarget.x = gsap.utils.interpolate(
-                this.#mouseTarget.x,
-                this.#mouse.x,
-                0.1
-            );
-            this.#mouseTarget.y = gsap.utils.interpolate(
-                this.#mouseTarget.y,
-                this.#mouse.y,
-                0.1
-            );
-
-            this.#program.uniforms.uMouse.value = this.#mouseTarget;
-
-            // Don't need a camera if camera uniforms aren't required
-            this.#renderer.render({ scene: this.#mesh });
-        };
-
-        mouseMove = (e) => {
-            if (!this.#canMove || !this.#program || !this.#visible) return;
-
-            this.#elRect = this.#el.getBoundingClientRect();
-
-            let eventX = this.#isTouch ? e.touches[0].pageX : e.clientX;
-            let eventY = this.#isTouch ? e.touches[0].pageY : e.clientY;
-            const x = (eventX - this.#elRect.left) / this.#el.offsetWidth;
-            const y = 1 - (eventY - this.#elRect.top) / this.#el.offsetHeight;
-
-            this.#mouse.x = gsap.utils.clamp(0, 1, x);
-            this.#mouse.y = gsap.utils.clamp(0, 1, y);
-        };
-
-        handleMouseEnter = () => {
-            if (!this.#canMove) return;
-            this.tlHide?.kill();
-            this.tlShow?.kill();
-            this.tlForceIntro = new gsap.timeline();
-            this.tlForceIntro.to(this.#program.uniforms.uIntro, {
-                value: 1,
-                duration: 5,
-                ease: "expo.out"
-            });
-            gsap.to(this.#program.uniforms.uBulge, {
-                value: 1,
-                duration: 1,
-                ease: "expo.out"
-            });
-        };
-
-        handleMouseLeave = () => {
-            if (!this.#canMove) return;
-            this.tlForceIntro?.kill();
-            this.tlLeave = new gsap.timeline();
-            this.tlLeave.to(this.#program.uniforms.uBulge, {
-                value: 0,
-                duration: 1,
-                ease: "expo.out"
-            });
-        };
-
-        resize = () => {
-            const w = this.#el.parentNode.offsetWidth;
-            const h = this.#el.parentNode.offsetHeight;
-            this.#renderer.setSize(w, h);
-
-            this.#elRect = this.#el.getBoundingClientRect();
-
-            if (this.#program) {
-                this.#program.uniforms.uResolution.value = new Vec2(w, h);
-            }
-
-            this.#isTouch = this.isTouch();
-        };
-
-        isTouch() {
-            if ("standalone" in navigator) {
-                return true; // iOS devices
-            }
-            const hasCoarse = window.matchMedia("(pointer: coarse)").matches;
-            if (hasCoarse) {
-                return true;
-            }
-            const hasPointer = window.matchMedia("(pointer: fine)").matches;
-            if (hasPointer) {
-                return false; // prioritize mouse control
-            }
-
-            // Otherwise, fall-back to older style mechanisms.
-            return "ontouchstart" in window || navigator.maxTouchPoints > 0;
-        }
-    }
-
-    const bulgeImage = new BulgeImage();
-    events();
-
-    function events() {
-        gsap.ticker.add((time) => {
-            bulgeImage.render(time);
         });
 
-        window.addEventListener(
-            "resize",
-            () => {
-                bulgeImage.resize();
-            },
-            false
-        );
+        menu_tl.
+            to(menu_box,
+                {
+                    duration: 1,
+                    opacity: 1,
+                    zIndex: 9999,
+                    height: '100vh',
+                    ease: "power1.inOut"
+                }
+            )
+            .to('.menu .item',
+                { duration: 1, opacity: 1, stagger: 0.2, ease: "power1.inOut", }, '<0.3')
 
-        if (bulgeImage.isTouch()) {
-            window.addEventListener("touchmove", handleMouseMove, false);
+            .fromTo(".menu-tree-shadow", {
+                y: -10,
+                x: -5,
+                rotate: '-6deg',
+            }, {
+                y: 1,
+                x: -10,
+                rotate: '0deg',
+                yoyo: true,
+                repeat: -1,
+                ease: "power1.inOut",
+                duration: 2,
+            }, '<')
+
+
+        menu_btn.addEventListener('click', () => {
+            menu_tl.play(0);
+            $('body').css('overflow', 'hidden');
+        });
+
+        menu_close.addEventListener('click', () => {
+            $('body').css('overflow', 'unset');
+            menu_close_tl
+                .to('.menu .item',
+                    { duration: 1, opacity: 0, stagger: 0.2, ease: "power1.inOut", })
+
+                .to(menu_box,
+                    {
+                        duration: 1,
+                        opacity: 1,
+                        zIndex: 9999,
+                        height: '100vh',
+                        ease: "power1.inOut"
+                    }
+                    , '<0.3')
+        });
+    };
+    menuClick();
+
+
+    const swiper = new Swiper(".swiper", {
+        slidesPerView: 2.5,
+        // spaceBetween: 50,
+        speed: 800,
+        centeredSlides: true,
+        autoplay: {
+            delay: 3000
+        },
+
+        loop: true,
+        effect: "creative",
+        navigation: {
+            prevEl: ".prev",
+            nextEl: ".next"
+        },
+        creativeEffect: {
+
+            prev: {
+                translate: ["-92.45%", "50%", 0],
+                opacity: "0",
+                scale: 0.65,
+            },
+            next: {
+                translate: ["92.45%", "-50%", 0],
+                opacity: "0",
+                scale: 0.65,
+            },
+            limitProgress: 1,
+        },
+        on: {
+
+            slideChange: function () {
+                const index_currentSlide = this.realIndex;
+                const banner_text = document.querySelectorAll('.swiper .case-title-box');
+                const banner_year = document.querySelectorAll('.swiper .case-sign-box .year-text-box .year');
+                banner_text.forEach((text, index) => {
+
+                    let tl = gsap.timeline({});
+                    tl.to(text, { duration: 0.8, opacity: index === index_currentSlide ? 1 : 0, ease: "power1.inOut" });
+
+                });
+
+                banner_year.forEach((year, index) => {
+
+                    let tl = gsap.timeline({});
+                    tl.to(year, { duration: 0.8, opacity: index === index_currentSlide ? 1 : 0, ease: "power1.inOut" });
+
+                });
+
+            },
+
+        },
+
+    });
+
+    function caseNameAni() {
+        if (window_width <= 1024) {
+
+            const boxes = gsap.utils.toArray('.case-box');
+
+            boxes.forEach(box => {
+                const img = box.querySelectorAll('.case-img')
+                // const text = box.querySelectorAll('.case-title-box div')
+                const name = box.querySelectorAll('.case-title-box .case-name')
+                const title = box.querySelectorAll('.case-title-box .case-title')
+                const more = box.querySelectorAll('.case-title-box .more-box')
+                const sign = box.querySelectorAll('.case-sign-box')
+                let tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: box,
+                        start: "top 90%",
+                    },
+                });
+                tl.fromTo(img, { y: 50, opacity: 0 }, { duration: 1, y: 0, ease: "power1.inOut", opacity: 1 })
+                    // .fromTo(text, { y: 50, opacity: 0 }, { duration: 1, y: 0, ease: "power1.inOut", stagger: 0.2, opacity: 1 }, '<0.3')
+                    .fromTo(name, { y: 50, opacity: 0 }, { duration: 1, y: 0, ease: "power1.inOut", opacity: 1 }, '<0.3')
+                    .fromTo(title, { y: 50, opacity: 0 }, { duration: 1, y: 0, ease: "power1.inOut", opacity: 1 }, '<0.3')
+                    .fromTo(more, { y: 50, opacity: 0 }, { duration: 1, y: 0, ease: "power1.inOut", opacity: 1 }, '<0.3')
+                    .fromTo(sign, { y: 50, opacity: 0 }, { duration: 1, y: 0, ease: "power1.inOut", stagger: 0.2, opacity: 1 }, '<')
+
+            });
+
         } else {
-            window.addEventListener("mousemove", handleMouseMove, false);
+
+            let tl = gsap.timeline({
+                delay: 0.5,
+                scrollTrigger: {
+                    trigger: '.case-body .case-main .page-contaniner',
+                    start: "top 70%",
+                }
+            });
+            tl.from('.swiper', { duration: 1, y: 150, ease: "power1.inOut", })
         }
     }
+    caseNameAni();
 
-    function handleMouseMove(e) {
-        bulgeImage.mouseMove(e);
+    function caseTitleAni() {
+        let text = document.querySelectorAll('.case-title-svg');
+        let zhTitle = gsap.utils.toArray(".page-title");
+        let splitZhTitle = zhTitle.map(heading => new SplitText(heading, {
+            type: "chars,words,lines", linesClass: "clip-text"
+        }));
+        console.log(splitZhTitle)
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: text,
+                start: "top 80%",
+            }
+        });
+        // tl.from(text, { y: -200, stagger: 0.1, duration: 0.8, })
+        // tl.from(text, { y: gsap.utils.wrap([100, 100, 200, 300, 400, 500]), stagger: 0.1 })
+        tl.from(text, {
+            x: gsap.utils.wrap([-100, 100]),
+            filter: 'blur(5px)',
+            opacity: 0,
+            duration: 1,
+            // rotation: gsap.utils.wrap([-100, 100]),
+            stagger: { each: 0.05, from: "start", },
+
+        })
+            .from(splitZhTitle[0].chars,
+                {
+                    y: -100,
+                    stagger: { each: 0.05, from: 'start', },
+                    opacity: 0,
+                    duration: 1,
+
+                }, '<0.3')
+
+        // tl.from(text, {
+        //     z: gsap.utils.wrap([-100, 100]),
+        //     filter: 'blur(5px)',
+        //     opacity: 0,
+        // duration: 1,
+        //     stagger: { each: 0.1, from: "start",  } // try center ;)
+        // })
     }
+    caseTitleAni();
 }
